@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li class="active"><a href="{% url "usersettings" %}">{% trans "Profile Settings" %}</a></li>
+                                    <li><a href="{% url "changepassword" %}">{% trans "Change Password" %}</a></li>
+                                    <li><a href="{% url "integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Profile Settings" %}</h1>
+                            {% include "forms/form_edit.html" with form=form url="usersettings" %}
+{% endblock %}

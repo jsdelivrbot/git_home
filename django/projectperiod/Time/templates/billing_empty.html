@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "billing" %}">{% trans "Manual Billing" %}</a></li>
+                                    <li><a href="{% url "auto_billings" %}">{% trans "Automated Billing" %}</a></li>
+                                    <li><a href="{% url "billing_integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+
+{% block content %}
+                        <h1 class="page-header">{% trans "Billing" %}</h1>
+                        <div class="alert alert-danger">{% trans "You have to create an integration for billing" %}</div>
+{% endblock %}

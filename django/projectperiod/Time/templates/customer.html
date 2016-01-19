@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "management" %}">{% trans "Management" %}</a></li>
+                                    <li><a href="{% url "locations" %}">{% trans "Locations" %}</a></li>
+                                    <li class="active"><a href="{% url "customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "staff" %}">{% trans "Staff" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Edit customer" %}</h1>
+                            {% include "forms/form_edit.html" with form=form url="customer" id=customer.id%}
+
+{% endblock %}
