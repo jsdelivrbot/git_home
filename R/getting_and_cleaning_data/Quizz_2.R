@@ -3,7 +3,7 @@ setwd("/home/wenduowang/git/R/getting_and_cleaning_data")
 library(httr)
 library(XML)
 library(jsonlite)
-myapp <- oauth_app("github", key="5693e111dab8d0fa2945", secret="e54a9f9f03ddbf9488a6edf3e2821b8f0d922419")
+myapp <- oauth_app("github", key="", secret="")
 github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
 g_token <- config(token=github_token)
 #g_token <- "c2409940403443507ccc9178e10169d5516a880f"
