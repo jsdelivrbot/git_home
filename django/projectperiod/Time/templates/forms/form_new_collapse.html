@@ -1,0 +1,20 @@
+{% load i18n %}
+{% load addcss %}
+                        <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            <span class="glyphicon glyphicon-plus"></span> {{ text }}
+                        </button>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <form action="{% url url %}" method="post">{% csrf_token %}
+                                {% for field in form %}
+                                    <div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        <div class="controls">{{field|addcss:"form-control"}}</div>
+                                    </div>
+                                    {% for error in field.errors %}
+                                        <div class="alert alert-danger">{{ error|escape }}</div>
+                                        <script type="text/javascript">$('#collapseOne').collapse('show');</script>
+                                    {% endfor %}
+                                {% endfor %}<br>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Create" %}</button>
+                            </form>
+                        </div>
+                        <br><br>

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+<script language="javascript" type="text/javascript" src="../js/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jqplot.canvasTextRenderer.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script type="text/javascript" src="../js/plugins/jqplot.barRenderer.min.js"></script>
+
+{% trans "'MON'" as Mon %}
+{% trans "'TUE'" as Tue %}
+{% trans "'WED'" as Wed %}
+{% trans "'THU'" as Thu %}
+{% trans "'FRI'" as Fri %}
+{% trans "'SAT'" as Sat %}
+{% trans "'SUN'" as Sun %}
+
+<link rel="stylesheet" type="text/css" href="../css/jquery.jqplot.css" />
+<script>
+$(document).ready(function(){
+  var line1 = [{% for day in days %}[{% cycle Mon Tue Wed Thu Fri Sat Sun %}, {{ day }}],{% endfor %}];
+
+  var plot1 = $.jqplot('chart1', [line1], {
+    title: '{% trans "Distribution on Days" %}',
+    series:[{renderer:$.jqplot.BarRenderer}],
+    axesDefaults: {
+        tickRenderer: $.jqplot.CanvasAxisTickRenderer ,
+        tickOptions: {
+          angle: -30,
+          fontSize: '10pt'
+        }
+    },
+    axes: {
+      xaxis: {
+        renderer: $.jqplot.CategoryAxisRenderer
+      }
+    }
+  });
+});
+</script>
+
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li class="active"><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Weekly acquired time" %}</h1>
+								<div id="chart1" style="height:500px; width:90%;"></div>
+{% endblock %}

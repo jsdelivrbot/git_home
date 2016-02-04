@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+<style>
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+</style>
+{% endblock %}
+
+
+
+{% block nav_left %}
+                                <ul class="nav nav-sidebar">
+                                    <li class="active"><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Acquisition" %}</h1>
+                            <div class="control-group"><label class="control-label">{% trans "Start" %}</label><div class="controls">{{ Start }}</div></div>
+                            <div class="control-group"><label class="control-label">{% trans "Project" %}</label><div class="controls">{{ Project }}</div></div>
+                            <div class="control-group"><label class="control-label">{% trans "Location" %}</label><div class="controls">{{ Location }}</div></div>
+                            <div class="control-group"><label class="control-label">{% trans "Comment" %}</label><div class="controls">{{ Comment }}</div></div><br>
+
+                            <form action="{% url "acquisition_counter" %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="stop" id="stop" value="stop"/>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Stop Counter" %}</button>
+                            </form>
+{% endblock %}

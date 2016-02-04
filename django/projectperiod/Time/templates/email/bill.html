@@ -1,0 +1,10 @@
+Dear user,
+
+a new bill summary has been created for the customer {{ project.customer }} in the project {{ project }}.
+
+The bill includes:
+
+{% if budget %}One time bill: {{ budget }} {{ currency }}{% endif %}
+{% if acquisitions %}Acquired time and their costs:
+{% for acquisition in acquisitions %}{{ acquisition.user.first_name }} {{ acquisition.user.last_name }} on {{ acquisition.start.date }} for {{ acquisition.cost }} {{ currency }}
+{% endfor %}{% endif %}

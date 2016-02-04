@@ -1,0 +1,5 @@
+Dear user,
+
+we have found a violation in your acquisitions:
+
+{{ violation }}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "management" %}">{% trans "Management" %}</a></li>
+                                    <li><a href="{% url "locations" %}">{% trans "Locations" %}</a></li>
+                                    <li><a href="{% url "customers" %}">{% trans "Customers" %}</a></li>
+                                    <li class="active"><a href="{% url "projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "staff" %}">{% trans "Staff" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Edit project" %}</h1>
+                            <form action="{% url "project" %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="id_record" id="id_record" value="{{ project.id }}"/>
+								<input type="hidden" name="action" value="modifie"/>
+                            {% for field in form %}
+								<div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">{{ field }}</div></div>
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">{{ error|escape }}</div>
+                                {% endfor %}
+					        {% endfor %}<br>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Save" %}</button>
+                            </form>
+                        <h2 class="sub-header">{% trans "Staff" %}</h2>
+                            {% for personal in staff %}
+								<div style="width:100px; float:left">{{ personal.username }}</div>
+								<div style="width:100px; float:left">{{ personal.first_name }}</div>
+								<div style="width:100px; float:left">{{ personal.last_name }}</div>
+                                <form name="budget_staff_{{ personal.id }}" action="{% url "project" %}" method="post" style="width:100px; float:left">{% csrf_token %}
+									<input type="hidden" name="id_record" id="id_record" value="{{ project.id }}"/>
+									<input type="hidden" name="action" value="budget_staff"/>
+									<input type="hidden" name="budget_staff" value="{{ personal.id }}"/>
+                                    <p style="float:left"><input style="width:40px" name="budget" maxlength="255" type="text" id="id_budget" value="{{ personal.budget }}"/> h</p>
+                                    <span class="glyphicon glyphicon-ok-sign" style="padding-left: 20px; padding-bottom: 0px; float:left; font-size:20px;" onclick="budget_staff_{{ personal.id }}.submit();"></span>
+
+								</form>
+								{% if personal != project.responsible %}
+								<form name="remove_staff_{{ personal.id }}" action="{% url "project" %}" method="post">{% csrf_token %}
+									<input type="hidden" name="id_record" id="id_record" value="{{ project.id }}"/>
+									<input type="hidden" name="action" value="remove_staff"/>
+									<input type="hidden" name="remove_staff" value="{{ personal.id }}"/>
+                                    <span class="glyphicon glyphicon-remove-sign" style="padding-left: 20px; padding-bottom: 0px; float:left; font-size:20px;" onclick="remove_staff_{{ personal.id }}.submit();"></span>
+								</form>
+                                {% endif %}
+                                <br><br>
+                                {% endfor %}
+                        <h2 class="sub-header">{% trans "Add employe" %}</h2>
+                            {% if users %}
+								<form action="{% url "project" %}" method="post">{% csrf_token %}
+									<input type="hidden" name="id_record" id="id_record" value="{{ project.id }}"/>
+									<input type="hidden" name="action" value="add_staff"/>
+									<div class="fieldWrapper">
+								        <div style="width:100px; float:left">{% trans "Emlopyee" %}:</div>
+								        <select name="add_staff" id="id_add_staff">
+										{% for user in users %}
+											<option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+									    {% endfor %}
+										</select>
+								    </div>
+									<div class="fieldWrapper">
+								        <div style="width:100px; float:left">{% trans "Hours" %}:</div><input style="width:100px" name="budget" maxlength="255" type="text" id="id_budget" />
+								    </div>
+								    <p><input type="submit" value="{% trans "Save" %}" /></p>
+								</form>
+								{% else %}
+								<p>{% trans "Your whole staff is in this project" %}</p>
+								{% endif %}
+                        <h2 class="sub-header">{% trans "Budget planning" %}</h2>
+                            <p>{{ planned_budget }} / {{ project.budget }} {{ currency }}</p>
+{% endblock %}

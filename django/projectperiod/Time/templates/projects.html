@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_tables2 %}
+
+{% block script %}
+    <script src="../js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "management" %}">{% trans "Management" %}</a></li>
+                                    <li><a href="{% url "locations" %}">{% trans "Locations" %}</a></li>
+                                    <li><a href="{% url "customers" %}">{% trans "Customers" %}</a></li>
+                                    <li class="active"><a href="{% url "projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "staff" %}">{% trans "Staff" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+                        <h1 class="page-header">{% trans "Projects" %}</h1>
+                        {% trans "Add project" as button_text %}
+                        {% include "forms/form_new_collapse.html" with form=form url="projects" text=button_text %}
+
+                            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                              <li class="active"><a href="#new" role="tab" data-toggle="tab">New</a></li>
+                              <li><a href="#active" role="tab" data-toggle="tab">Active</a></li>
+                              <li><a href="#closed" role="tab" data-toggle="tab">Closed</a></li>
+                              <li><a href="#all" role="tab" data-toggle="tab">All</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                              <div class="tab-pane active" id="new">{% render_table newtable "table.html" %}</div>
+                              <div class="tab-pane" id="active">{% render_table activetable "table.html" %}</div>
+                              <div class="tab-pane" id="closed">{% render_table closedtable "table.html" %}</div>
+                              <div class="tab-pane" id="all">{% render_table table "table.html" %}</div>
+                            </div>
+
+                            {% for project in projects %}
+                              <form name="edit_{{ project.id }}" action="{% url "project" %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="id_record" id="id_record" value="{{ project.id }}"/>
+                              </form>
+                             {% endfor %}
+
+                            <script>
+                              $(function () {
+                                $('#myTab a:last').tab('show')
+                              })
+                            </script>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+<link href="../css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
+<style>
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+</style>
+<script>
+$(function() {
+  document.getElementById('id_customer').onchange = function(){change()};
+
+  $("#findWorkItem").click(function(){
+    button = '<span class="glyphicon glyphicon-time" style="font-size:20px;" alt="{% trans "Loading" %}"></span>'
+    $("#modal-body").prepend(button);
+    var projectId = document.getElementById("id_project").options[document.getElementById("id_project").selectedIndex].value;
+    $.getJSON("../api_getWorkItems/?id_project=" + projectId ,function(result){
+      $("#modal-body").html("");
+      $.each(result, function(i, field){
+        button = '<button type="button" class="btn btn-default" onclick="choose(' + "'" + i + ': ' + field + "'" + ');">' + i + ': ' + field + '</button><br>'
+        $("#modal-body").prepend(button);
+      });
+    });
+  });
+});
+
+function change() {
+    document.getElementById('choosedcustomer').value = document.getElementById('id_customer').value;
+	document.form_change.submit();
+}
+
+function choose(text) {
+	document.getElementById('id_comment').value = text;
+    $('#myModal').modal('hide');
+}
+</script>
+
+{% endblock %}
+
+
+
+{% block nav_left %}
+                                <ul class="nav nav-sidebar">
+                                    <li class="active"><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Acquisition" %}</h1>
+                            <form action="{% url "acquisition_counter" %}" method="post">{% csrf_token %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">{{ error|escape }}</div>
+                                {% endfor %}
+                                {% if field.id_for_label == 'id_customer' %}
+                                    <div class="control-group" ><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">
+                                    <select class="form-control" id="id_customer" name="customer">
+                                    {% for customer in customers %}
+                                    <option value="{{ customer.id }}" {% if customer == activcustomer %}selected{% endif %}>{{ customer }}</option>
+									{% endfor %}
+                                    </select></div></div>
+                                {% elif field.id_for_label == 'id_project' %}
+                                    <div class="control-group" ><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">
+                                    <select class="form-control" id="id_project" name="project">
+                                        {% for project in projects %}
+                                        <option value="{{ project.id }}">{{ project }}</option>
+									    {% endfor %}
+                                    </select></div></div>
+                                {% elif field.id_for_label == 'id_comment' %}
+                                    <div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls"><div class="input-group">
+                                        <input type="text" class="form-control" id="id_comment" name="comment">
+                                        <span class="input-group-btn"><button class="btn btn-default" id="findWorkItem" type="button" data-toggle="modal" data-target="#myModal">{% trans "Find WorkItem" %}</button></span>
+                                    </div></div></div>
+                                {% else %}
+                                    {% for error in field.errors %}
+                                    <div class="alert alert-danger">{{ error|escape }}</div>
+                                    {% endfor %}
+								    <div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">{{ field }}</div></div>
+                                {% endif %}
+					        {% endfor %}
+                                <br>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Start" %}</button>
+                            </form>
+							<form id="form_change" name="form_change" action="{% url "acquisition_counter" %}" method="post">{% csrf_token %}
+                                <input type="hidden" name="choosedcustomer" id="choosedcustomer" />
+							</form>
+                            <p><a class="btn btn-default" href="{% url "acquisition_explicit" %}" role="button">{% trans "Switch to Explicit Aquisition" %} &raquo;</a></p>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">{% trans "Find WorkItem" %}</h4>
+                                  </div>
+                                  <div class="modal-body" id="modal-body"></div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+{% endblock %}

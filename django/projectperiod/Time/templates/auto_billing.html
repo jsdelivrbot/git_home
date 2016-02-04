@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+<link href="../css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+<style>
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 600px; }
+#selectable li { margin: 3px; padding: 1px; float: left; width: 50px; height: 15px; text-align: center; }
+</style>
+<script>
+$(function() {
+  $( "#id_start" ).datepicker();
+  $( "#id_start" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+  $( "#id_end" ).datepicker();
+  $( "#id_end" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+});
+</script>
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "billing" %}">{% trans "Manual Billing" %}</a></li>
+                                    <li><a href="{% url "auto_billings" %}">{% trans "Automated Billing" %}</a></li>
+                                    <li><a href="{% url "billing_integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Edit Billing" %}</h1>
+                            {% include "forms/form_edit.html" with form=form url="auto_billing" id=billing.id%}
+{% endblock %}
