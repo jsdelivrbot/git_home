@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+<link href="../css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+<style>
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 600px; }
+#selectable li { margin: 3px; padding: 1px; float: left; width: 50px; height: 15px; text-align: center; }
+</style>
+<script>
+$(function() {
+  $( "#id_date1" ).datepicker();
+  $( "#id_date1" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+  $( "#id_date2" ).datepicker();
+  $( "#id_date2" ).datepicker( "option", "dateFormat", "dd.mm.yy" );
+  document.getElementById('id_date1').value = "{% if today.day < 10 %}0{{ today.day }}{% else %}{{ today.day }}{% endif %}.{% if today.month < 10 %}0{{ today.month }}{% else %}{{ today.month }}{% endif %}.{{ today.year }}"
+  document.getElementById('id_date2').value = "{% if today.day < 10 %}0{{ today.day }}{% else %}{{ today.day }}{% endif %}.{% if today.month < 10 %}0{{ today.month }}{% else %}{{ today.month }}{% endif %}.{{ today.year }}"
+});
+</script>
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li class="active"><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Vacation" %}</h1>
+                        <h2 class="sub-header">{% trans "Add Vacation" %}</h2>
+                            <form action="{% url "vacation" %}" method="post">{% csrf_token %}
+                            {% for field in form %}
+								<div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">{{ field }}</div></div>
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">{{ error|escape }}</div>
+                                {% endfor %}
+					        {% endfor %}<br><input type="hidden" name="action" id="action" value="add"/>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Add" %}</button>
+                            </form><br>
+                            {% for row in msg %}<div class="alert alert-success">{{ row }}</div>{% endfor %}
+                            {% for row in error %}<div class="alert alert-danger">{{ row }}</div>{% endfor %}
+                        <h2 class="sub-header">{% trans "Consumed Vacation Days" %}</h2>
+                                {{ vacation_used }} / {{ vacation }} {% trans "days" %}
+                            <div class="progress">
+                              <div class="progress-bar" role="progressbar"  aria-valuenow="60" aria-valuemin="20" aria-valuemax="100" style="width: {{ percent }}%;">
+                              </div>
+                            </div>
+                        <h2 class="sub-header">{% trans "Vacation Days" %}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Date" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for ac in acquisitions %}
+                                    <tr>
+                                      <td>{{ ac.start.date }}</td>
+                                      <td><span class="glyphicon glyphicon-remove" style="font-size:20px;" alt="{% trans "Delete entry" %}" onclick="delete_entry_{{ ac.id }}.submit();"></span>
+                                      <form name="delete_entry_{{ ac.id }}" action="../vacation/" method="post">{% csrf_token %}
+                                        <input type="hidden" name="id_entry" id="id_entry" value="{{ ac.id }}"/>
+                                        <input type="hidden" name="action" id="action" value="delete"/>
+                                      </form></td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+
+{% endblock %}

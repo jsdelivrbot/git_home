@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+    <script src="../js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "usersettings" %}">{% trans "Profile Settings" %}</a></li>
+                                    <li><a href="{% url "changepassword" %}">{% trans "Change Password" %}</a></li>
+                                    <li class="active"><a href="{% url "integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Integrations" %} <span class="glyphicon glyphicon-question-sign" style="font-size:20px;" alt="{% trans "Help" %}" data-toggle="modal" data-target="#myModal"/></h1>
+                            {% trans "Add integration" as button_text %}
+                            {% include "forms/form_new_collapse.html" with form=form url="integrations" text=button_text %}
+
+
+                            <h2 class="sub-header">{% trans "Integrations" %}</h2>
+                                <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Tool" %}</th>
+                                      <th>{% trans "Project" %}</th>
+                                      <th>{% trans "URL" %}</th>
+                                      <th>{% trans "Username" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for integration in integrations %}
+                                    <tr>
+                                      <td>{{ integration.get_tool_display }}</td>
+                                      <td>{{ integration.project.name }}</td>
+                                      <td>{{ integration.url }}</td>
+                                      <td>{{ integration.username }}</td>
+                                      <td><span class="glyphicon glyphicon-pencil" style="font-size:20px;" alt="{% trans "Edit integration" %}" onclick="edit_integration_{{ integration.id }}.submit();"></span>
+                                        <span class="glyphicon glyphicon-remove" style="font-size:20px;" alt="{% trans "Deactivate integration" %}" onclick="delete_integration_{{ integration.id }}.submit();"></span>
+                                        <form name="edit_integration_{{ integration.id }}" action="{% url "integration" %}" method="post">{% csrf_token %}
+                                            <input type="hidden" name="id_integration" id="id_entry" value="{{ integration.id }}"/>
+                                        </form>
+                                        <form name="delete_integration_{{ integration.id }}" action="{% url "integrations" %}" method="post">{% csrf_token %}
+                                            <input type="hidden" name="id_integration" id="id_integration" value="{{ integration.id }}"/>
+                                            <input type="hidden" name="action" id="action" value="delete"/>
+                                        </form>
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                                </div>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">{% trans "Help" %}</h4>
+                                  </div>
+                                  <div class="modal-body" id="modal-body"><h4>TheBugGenie</h4>
+                                      {% trans "To integrate with TheBugGenie you have to fill User/Password and this fields:" %}<br>
+                                      {% trans "URL" %}: http://yourdomain.com/thebuggenie/yourproject<br>
+                                      <h4>Polarion</h4>
+                                      {% trans "To integrate with Polarion you have to fill User/Password and this fields:" %}<br>
+                                      {% trans "URL" %}: http://yourdomain.com/polarion<br>
+                                      {% trans "Query" %}: project.id:YourPeriod AND type:defect<br>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+{% endblock %}

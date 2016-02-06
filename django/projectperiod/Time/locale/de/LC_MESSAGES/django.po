@@ -1,0 +1,769 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-09 14:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/acquisition.html:38 templates/acquisition_counter.html:16
+msgid "Loading"
+msgstr "Lade"
+
+#: templates/acquisition.html:69 templates/acquisition.html.py:85
+#: templates/acquisition_counter.html:46 templates/acquisition_counter.html:61
+#: templates/acquisition_counter_stop.html:15
+#: templates/acquisition_counter_stop.html:30
+#: templates/acquisition_empty.html:12 templates/acquisition_empty.html:27
+#: templates/base.html:51 templates/overview_day.html:51
+#: templates/overview_day.html.py:84 templates/overview_month.html:42
+#: templates/overview_week.html:50 templates/overview_year.html:42
+#: templates/personal_budget.html:11 templates/sick.html:27
+#: templates/user_csv.html:28 templates/vacation.html:27
+msgid "Acquisition"
+msgstr "Zeiterfassung"
+
+#: templates/acquisition.html:70 templates/acquisition_counter.html:47
+#: templates/acquisition_counter_stop.html:16
+#: templates/acquisition_empty.html:13 templates/overview_day.html:52
+#: templates/overview_month.html:43 templates/overview_week.html:51
+#: templates/overview_year.html:43 templates/personal_budget.html:12
+#: templates/sick.html:28 templates/user_csv.html:29
+#: templates/vacation.html:28
+msgid "Daily"
+msgstr "Tag"
+
+#: templates/acquisition.html:71 templates/acquisition_counter.html:48
+#: templates/acquisition_counter_stop.html:17
+#: templates/acquisition_empty.html:14 templates/overview_day.html:53
+#: templates/overview_month.html:44 templates/overview_week.html:52
+#: templates/overview_year.html:44 templates/personal_budget.html:13
+#: templates/sick.html:29 templates/user_csv.html:30
+#: templates/vacation.html:29
+msgid "Weekly"
+msgstr "Woche"
+
+#: templates/acquisition.html:72 templates/acquisition_counter.html:49
+#: templates/acquisition_counter_stop.html:18
+#: templates/acquisition_empty.html:15 templates/overview_day.html:54
+#: templates/overview_month.html:45 templates/overview_week.html:53
+#: templates/overview_year.html:45 templates/personal_budget.html:14
+#: templates/sick.html:30 templates/user_csv.html:31
+#: templates/vacation.html:30
+msgid "Monthly"
+msgstr "Monat"
+
+#: templates/acquisition.html:73 templates/acquisition_counter.html:50
+#: templates/acquisition_counter_stop.html:19
+#: templates/acquisition_empty.html:16 templates/overview_day.html:55
+#: templates/overview_month.html:46 templates/overview_week.html:54
+#: templates/overview_year.html:46 templates/personal_budget.html:15
+#: templates/sick.html:31 templates/user_csv.html:32
+#: templates/vacation.html:31
+msgid "Yearly"
+msgstr "Jahr"
+
+#: templates/acquisition.html:74 templates/acquisition_counter.html:51
+#: templates/acquisition_counter_stop.html:20
+#: templates/acquisition_empty.html:17 templates/analysis_customers.html:31
+#: templates/analysis_projects.html:29 templates/overview_day.html:56
+#: templates/overview_month.html:47 templates/overview_week.html:55
+#: templates/overview_year.html:47 templates/personal_budget.html:16
+#: templates/personal_budget.html.py:25 templates/personal_budget.html:44
+#: templates/sick.html:32 templates/user_csv.html:33
+#: templates/vacation.html:32
+msgid "Budget"
+msgstr "Budget"
+
+#: templates/acquisition.html:75 templates/acquisition_counter.html:52
+#: templates/acquisition_counter_stop.html:21
+#: templates/acquisition_empty.html:18 templates/overview_day.html:57
+#: templates/overview_month.html:48 templates/overview_week.html:56
+#: templates/overview_year.html:48 templates/personal_budget.html:17
+#: templates/sick.html:33 templates/user_csv.html:34
+#: templates/vacation.html:33 templates/vacation.html.py:41
+msgid "Vacation"
+msgstr "Urlaub"
+
+#: templates/acquisition.html:76 templates/acquisition_counter.html:53
+#: templates/acquisition_counter_stop.html:22
+#: templates/acquisition_empty.html:19 templates/overview_day.html:58
+#: templates/overview_month.html:49 templates/overview_week.html:57
+#: templates/overview_year.html:49 templates/personal_budget.html:18
+#: templates/sick.html:34 templates/user_csv.html:35
+#: templates/vacation.html:34
+msgid "Sick"
+msgstr "Krankheit"
+
+#: templates/acquisition.html:77 templates/acquisition_counter.html:54
+#: templates/acquisition_counter_stop.html:23
+#: templates/acquisition_empty.html:20 templates/overview_day.html:59
+#: templates/overview_month.html:50 templates/overview_week.html:58
+#: templates/overview_year.html:50 templates/personal_budget.html:19
+#: templates/sick.html:35 templates/user_csv.html:36
+#: templates/user_csv.html.py:43 templates/vacation.html:35
+msgid "CSV Import/Export"
+msgstr "CSV Import/Export"
+
+#: templates/acquisition.html:105 templates/acquisition.html.py:143
+#: templates/acquisition_counter.html:84
+#: templates/acquisition_counter.html:106
+msgid "Find WorkItem"
+msgstr "Suche WorkItem"
+
+#: templates/acquisition.html:114 templates/login.html:53
+msgid "More"
+msgstr "Mehr"
+
+#: templates/acquisition.html:126 templates/changepassword.html:27
+#: templates/project.html:29 templates/project.html.py:70
+#: templates/forms/form_edit.html:10
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/acquisition.html:136
+msgid "Switch to Counter Aquisition"
+msgstr "Wechsel zur Zeitbuchung mit Counter"
+
+#: templates/acquisition_counter.html:94
+#: templates/acquisition_counter_stop.html:31
+#: templates/analysis_project.html:29 templates/overview_day.html:77
+#: templates/overview_day.html.py:89 templates/user_csv.html:55
+msgid "Start"
+msgstr "Start"
+
+#: templates/acquisition_counter.html:99
+msgid "Switch to Explicit Aquisition"
+msgstr "Wechsel zur Zeitbuchung auf Uhrzeiten"
+
+#: templates/acquisition_counter_stop.html:32
+#: templates/analysis_customers.html:28 templates/analysis_projects.html:26
+#: templates/analysis_staff.html:40 templates/integrations.html:28
+#: templates/overview_day.html:91 templates/user_csv.html:55
+msgid "Project"
+msgstr "Projekt"
+
+#: templates/acquisition_counter_stop.html:33
+#: templates/analysis_project.html:32 templates/overview_day.html:93
+#: templates/user_csv.html:55
+msgid "Location"
+msgstr "Standort"
+
+#: templates/acquisition_counter_stop.html:34
+#: templates/analysis_project.html:33 templates/overview_day.html:94
+#: templates/user_csv.html:55
+msgid "Comment"
+msgstr "Kommentar"
+
+#: templates/acquisition_counter_stop.html:38
+msgid "Stop Counter"
+msgstr "Stoppe Counter"
+
+#: templates/acquisition_empty.html:28
+msgid "You have not been assigned to any active project"
+msgstr "Sie wurden keinem aktiven Projekt zugewiesen"
+
+#: templates/analysis.html:11 templates/analysis.html.py:21
+#: templates/analysis_customers.html:11 templates/analysis_project.html:11
+#: templates/analysis_projects.html:11 templates/analysis_staff.html:11
+#: templates/analysis_violation.html:11 templates/base.html:54
+msgid "Analysis"
+msgstr "Auswertung"
+
+#: templates/analysis.html:12 templates/analysis.html.py:25
+#: templates/analysis_customers.html:12 templates/analysis_project.html:12
+#: templates/analysis_projects.html:12 templates/analysis_staff.html:12
+#: templates/analysis_violation.html:12 templates/customer.html:13
+#: templates/customers.html:14 templates/employe.html:13
+#: templates/location.html:13 templates/locations.html:14
+#: templates/management.html:14 templates/management.html.py:37
+#: templates/project.html:13 templates/projects.html:14
+#: templates/projects.html.py:20 templates/staff.html:14
+msgid "Projects"
+msgstr "Projekte"
+
+#: templates/analysis.html:13 templates/analysis.html.py:31
+#: templates/analysis_customers.html:13 templates/analysis_project.html:13
+#: templates/analysis_projects.html:13 templates/analysis_staff.html:13
+#: templates/analysis_violation.html:13 templates/customer.html:12
+#: templates/customers.html:13 templates/customers.html.py:20
+#: templates/employe.html:12 templates/location.html:12
+#: templates/locations.html:13 templates/management.html:13
+#: templates/management.html.py:31 templates/project.html:12
+#: templates/projects.html:13 templates/staff.html:13
+msgid "Customers"
+msgstr "Kunden"
+
+#: templates/analysis.html:14 templates/analysis.html.py:37
+#: templates/analysis_customers.html:14 templates/analysis_project.html:14
+#: templates/analysis_projects.html:14 templates/analysis_staff.html:14
+#: templates/analysis_violation.html:14 templates/customer.html:14
+#: templates/customers.html:15 templates/employe.html:14
+#: templates/location.html:14 templates/locations.html:15
+#: templates/management.html:15 templates/management.html.py:43
+#: templates/project.html:14 templates/project.html.py:31
+#: templates/projects.html:15 templates/staff.html:15
+#: templates/staff.html.py:20
+msgid "Staff"
+msgstr "Mitarbeiter"
+
+#: templates/analysis.html:15 templates/analysis.html.py:43
+#: templates/analysis_customers.html:15 templates/analysis_project.html:15
+#: templates/analysis_projects.html:15 templates/analysis_staff.html:15
+#: templates/analysis_violation.html:15
+msgid "Violations"
+msgstr "Verstöße"
+
+#: templates/analysis.html:27 templates/analysis.html.py:33
+#: templates/analysis.html:39 templates/analysis.html.py:45
+msgid "Analyze"
+msgstr "Auswerten"
+
+#: templates/analysis_customers.html:21
+msgid "Analysis of customers"
+msgstr "Auswertung der Kunden"
+
+#: templates/analysis_customers.html:29 templates/analysis_projects.html:27
+#: templates/analysis_staff.html:41 templates/personal_budget.html:42
+msgid "Consumed"
+msgstr "Aufgebraucht"
+
+#: templates/analysis_customers.html:30 templates/analysis_projects.html:28
+#: templates/analysis_staff.html:42
+msgid "Assigned"
+msgstr "Zugewiesen"
+
+#: templates/analysis_project.html:21
+msgid "Analysis of project"
+msgstr "Auswertung des Projekts"
+
+#: templates/analysis_project.html:22
+msgid "Acquired time for this project"
+msgstr "Gebuchte Zeit auf das Projekt"
+
+#: templates/analysis_project.html:27
+msgid "Employe"
+msgstr "Mitarbeiter"
+
+#: templates/analysis_project.html:28 templates/analysis_violation.html:30
+#: templates/analysis_violation.html:57 templates/sick.html:61
+#: templates/vacation.html:65
+msgid "Date"
+msgstr "Datum"
+
+#: templates/analysis_project.html:30 templates/overview_day.html:78
+#: templates/overview_day.html.py:90 templates/user_csv.html:55
+msgid "End"
+msgstr "Ende"
+
+#: templates/analysis_project.html:31
+msgid "Duration"
+msgstr "Dauer"
+
+#: templates/analysis_project.html:34 templates/analysis_project.html.py:48
+#: templates/overview_day.html:95 templates/overview_day.html.py:109
+msgid "Billable"
+msgstr "Abrechenbar"
+
+#: templates/analysis_project.html:50 templates/overview_day.html:111
+msgid "Not billable"
+msgstr "Nicht abrechenbar"
+
+#: templates/analysis_projects.html:21
+msgid "Analysis of projects"
+msgstr "Auswertung der Projekte"
+
+#: templates/analysis_projects.html:30
+msgid "Employees"
+msgstr "Mitarbeiter"
+
+#: templates/analysis_projects.html:31 templates/overview_day.html:96
+msgid "Action"
+msgstr "Aktion"
+
+#: templates/analysis_projects.html:42
+msgid "View project"
+msgstr "Projekt analysieren"
+
+#: templates/analysis_projects.html:43
+msgid "Export project"
+msgstr "Projekt exportieren"
+
+#: templates/analysis_staff.html:21
+msgid "Analysis of staff"
+msgstr "Auswertung der Mitarbeiter"
+
+#: templates/analysis_staff.html:22
+msgid "Choose employee"
+msgstr "Mitarbeiter auswählen"
+
+#: templates/analysis_staff.html:30 templates/analysis_violation.html:23
+msgid "Analyse"
+msgstr "Auswertung"
+
+#: templates/analysis_staff.html:33
+msgid "Assigned for"
+msgstr "Zugewiesen an"
+
+#: templates/analysis_staff.html:34 templates/personal_budget.html:60
+msgid "of"
+msgstr "von"
+
+#: templates/analysis_staff.html:34 templates/personal_budget.html:60
+msgid "hours"
+msgstr "Stunden"
+
+#: templates/analysis_staff.html:35
+msgid "Analysis for"
+msgstr "Auswertung für"
+
+#: templates/analysis_violation.html:21
+msgid "Analysis of violations"
+msgstr "Auswertung der Verstöße"
+
+#: templates/analysis_violation.html:25 templates/analysis_violation.html:34
+#: templates/analysis_violation.html:61 templates/overview_day.html:79
+msgid "Break"
+msgstr "Pause"
+
+#: templates/analysis_violation.html:31 templates/analysis_violation.html:58
+msgid "First name"
+msgstr "Vorname"
+
+#: templates/analysis_violation.html:32 templates/analysis_violation.html:59
+msgid "Last name"
+msgstr "Nachname"
+
+#: templates/analysis_violation.html:33 templates/analysis_violation.html:60
+msgid "Working time"
+msgstr "Arbeitszeit"
+
+#: templates/analysis_violation.html:52
+msgid "Overtime"
+msgstr "Überstunden"
+
+#: templates/auto_billing.html:24 templates/auto_billings.html:25
+#: templates/billing.html:26 templates/billing_empty.html:12
+#: templates/billing_integration.html:10
+#: templates/billing_integrations.html:11
+msgid "Manual Billing"
+msgstr "Manuelle Rechnung"
+
+#: templates/auto_billing.html:25 templates/auto_billings.html:26
+#: templates/billing.html:27 templates/billing_empty.html:13
+#: templates/billing_integration.html:11
+#: templates/billing_integrations.html:12
+msgid "Automated Billing"
+msgstr "Automatisierte Rechnung"
+
+#: templates/auto_billing.html:26 templates/auto_billings.html:27
+#: templates/base.html:62 templates/billing.html:28
+#: templates/billing_empty.html:14 templates/billing_integration.html:12
+#: templates/billing_integrations.html:13
+#: templates/billing_integrations.html:18 templates/changepassword.html:12
+#: templates/integration.html:12 templates/integrations.html:12
+#: templates/integrations.html.py:17 templates/integrations.html:22
+#: templates/usersettings.html:12
+msgid "Integrations"
+msgstr "Integrationen"
+
+#: templates/auto_billing.html:31
+msgid "Edit Billing"
+msgstr "Rechnung bearbeiten"
+
+#: templates/auto_billings.html:32
+msgid "Billings"
+msgstr "Rechnungen"
+
+#: templates/auto_billings.html:33 templates/billing_integrations.html:19
+msgid "Add billing"
+msgstr "Rechnung hinzufügen"
+
+#: templates/base.html:53 templates/customer.html:10
+#: templates/customers.html:11 templates/employe.html:10
+#: templates/location.html:10 templates/locations.html:11
+#: templates/management.html:11 templates/management.html.py:21
+#: templates/project.html:10 templates/projects.html:11
+#: templates/staff.html:11
+msgid "Management"
+msgstr "Planung"
+
+#: templates/base.html:55 templates/billing.html:35
+#: templates/billing_empty.html:21
+msgid "Billing"
+msgstr "Rechnung"
+
+#: templates/base.html:60 templates/changepassword.html:10
+#: templates/integration.html:10 templates/integrations.html:10
+#: templates/usersettings.html:10 templates/usersettings.html.py:17
+msgid "Profile Settings"
+msgstr "Einstellungen"
+
+#: templates/base.html:61 templates/changepassword.html:11
+#: templates/changepassword.html.py:17 templates/integration.html:11
+#: templates/integrations.html:11 templates/usersettings.html:11
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: templates/base.html:64
+msgid "Logout"
+msgstr "Abmelden"
+
+#: templates/billing.html:36
+msgid "Create a new Bill"
+msgstr "Neue Rechnung anlegen"
+
+#: templates/billing_empty.html:22
+msgid "You have to create an integration for billing"
+msgstr "Sie müssen für die Rechnungen eine Integration anlegen"
+
+#: templates/billing_integration.html:17 templates/integration.html:17
+msgid "Edit Integration"
+msgstr "Integration bearbeiten"
+
+#: templates/billing_integrations.html:18
+#: templates/billing_integrations.html:29 templates/integrations.html:17
+#: templates/integrations.html.py:61
+msgid "Help"
+msgstr "Hilfe"
+
+#: templates/billing_integrations.html:32
+msgid "Choose CSV and let all fields be empty"
+msgstr "Wählen Sie CSV und lassen Sie die restlichen Felder leer"
+
+#: templates/billing_integrations.html:34
+msgid "Choose EMail and fill only the EMail field"
+msgstr "Wählen Sie EMail und füllen Sie nur das EMail Feld aus"
+
+#: templates/customer.html:11 templates/customers.html:12
+#: templates/employe.html:11 templates/location.html:11
+#: templates/locations.html:12 templates/locations.html.py:20
+#: templates/management.html:12 templates/management.html.py:25
+#: templates/project.html:11 templates/projects.html:12
+#: templates/staff.html:12
+msgid "Locations"
+msgstr "Standorte"
+
+#: templates/customer.html:19
+msgid "Edit customer"
+msgstr "Kunden bearbeiten"
+
+#: templates/customers.html:21
+msgid "Add customer"
+msgstr "Neuen Kunden anlegen"
+
+#: templates/employe.html:19
+msgid "Edit employe"
+msgstr "Mitarbeiter bearbeiten"
+
+#: templates/integrations.html:18
+msgid "Add integration"
+msgstr "Integration anlegen"
+
+#: templates/integrations.html:27
+msgid "Tool"
+msgstr "Tool"
+
+#: templates/integrations.html:29 templates/integrations.html.py:65
+#: templates/integrations.html:68
+msgid "URL"
+msgstr "URL"
+
+#: templates/integrations.html:30
+msgid "Username"
+msgstr "Benutzer"
+
+#: templates/integrations.html:40
+msgid "Edit integration"
+msgstr "Integration bearbeiten"
+
+#: templates/integrations.html:41
+msgid "Deactivate integration"
+msgstr "Integration deaktivieren"
+
+#: templates/integrations.html:64
+msgid ""
+"To integrate with TheBugGenie you have to fill User/Password and this fields:"
+msgstr ""
+"Um sich mit TheBugGenie zu verbinden, müssen Sie User/Password und diese Felder ausfüllen:"
+
+#: templates/integrations.html:67
+msgid ""
+"To integrate with Polarion you have to fill User/Password and this fields:"
+msgstr ""
+"Um sich mit Polarion zu verbinden, müssen Sie User/Password und diese Felder ausfüllen:"
+
+#: templates/integrations.html:69
+msgid "Query"
+msgstr "Abfrage"
+
+#: templates/location.html:19
+msgid "Edit location"
+msgstr "Standort bearbeiten"
+
+#: templates/locations.html:21
+msgid "Add location"
+msgstr "Neuen Standort anlegen"
+
+#: templates/login.html:50
+msgid "Please login"
+msgstr "Bitte anmelden"
+
+#: templates/login.html:51
+msgid "User"
+msgstr "Benutzer"
+
+#: templates/login.html:52
+msgid "Password"
+msgstr "Passwort"
+
+#: templates/login.html:53
+msgid "Login"
+msgstr "Anmelden"
+
+#: templates/login.html:60
+msgid "Password lost"
+msgstr "Passwort verloren"
+
+#: templates/login.html:61
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: templates/login.html:62
+msgid "Reset"
+msgstr "Rücksetzen"
+
+#: templates/management.html:26 templates/management.html.py:32
+#: templates/management.html:38 templates/management.html.py:44
+msgid "Amount"
+msgstr "Menge"
+
+#: templates/management.html:27 templates/management.html.py:33
+#: templates/management.html:39 templates/management.html.py:45
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/overview_day.html:25
+msgid "Distribution to Projects"
+msgstr "Verteilung auf Projekte"
+
+#: templates/overview_day.html:64
+msgid "Daily acquired time"
+msgstr "Gebuchte Zeit auf einen Tag"
+
+#: templates/overview_day.html:65
+msgid "Day"
+msgstr "Tag"
+
+#: templates/overview_day.html:73 templates/personal_budget.html:34
+#: templates/user_csv.html:52
+msgid "Choose"
+msgstr "Auswählen"
+
+#: templates/overview_day.html:75
+msgid "Overview"
+msgstr "Übersicht"
+
+#: templates/overview_day.html:80
+msgid "Total"
+msgstr "Gesamt"
+
+#: templates/overview_day.html:82
+msgid "You did not acquirred for this day"
+msgstr "Sie haben an diesem Tag keine Zeit gebucht"
+
+#: templates/overview_day.html:92
+msgid "Customer"
+msgstr "Kunde"
+
+#: templates/overview_day.html:113 templates/sick.html:68
+#: templates/vacation.html:72
+msgid "Delete entry"
+msgstr "Eintrag löschen"
+
+#: templates/overview_day.html:123
+msgid "Diagram"
+msgstr "Diagramm"
+
+#: templates/overview_month.html:20
+msgid "Distribution in Days for the Month"
+msgstr "Verteilung auf die Tage des Monats"
+
+#: templates/overview_month.html:55
+msgid "Monthly acquired time"
+msgstr "Gebuchte Zeit auf einem Monat"
+
+#: templates/overview_month.html:56 templates/overview_year.html:56
+msgid "Before"
+msgstr "Vorher"
+
+#: templates/overview_month.html:58 templates/overview_year.html:58
+msgid "After"
+msgstr "Nacher"
+
+#: templates/overview_week.html:14
+msgid "'MON'"
+msgstr "'Mo'"
+
+#: templates/overview_week.html:15
+msgid "'TUE'"
+msgstr "'Di'"
+
+#: templates/overview_week.html:16
+msgid "'WED'"
+msgstr "'Mi'"
+
+#: templates/overview_week.html:17
+msgid "'THU'"
+msgstr "'Do'"
+
+#: templates/overview_week.html:18
+msgid "'FRI'"
+msgstr "'Fr'"
+
+#: templates/overview_week.html:19
+msgid "'SAT'"
+msgstr "'Sa'"
+
+#: templates/overview_week.html:20
+msgid "'SUN'"
+msgstr "'So'"
+
+#: templates/overview_week.html:28
+msgid "Distribution on Days"
+msgstr "Verteilung auf Tage"
+
+#: templates/overview_week.html:63
+msgid "Weekly acquired time"
+msgstr "Gebuchte Zeit auf einer Woche"
+
+#: templates/overview_year.html:20
+msgid "Distribution in Months for the Year"
+msgstr "Verteilung auf Monate im Jahr"
+
+#: templates/overview_year.html:55
+msgid "Yearly acquired time"
+msgstr "Gebuchte Zeit auf einem Jahr"
+
+#: templates/personal_budget.html:26
+msgid "Year"
+msgstr "Jahr"
+
+#: templates/personal_budget.html:36
+msgid "Consumed Budget"
+msgstr "Aufgebrauchtes Budget"
+
+#: templates/personal_budget.html:41
+msgid "Projectname"
+msgstr "Projektname"
+
+#: templates/personal_budget.html:43
+msgid "Consumed all years"
+msgstr "Über die Jahre aufgebraucht"
+
+#: templates/personal_budget.html:59
+msgid "Worked"
+msgstr "Gearbeitet"
+
+#: templates/personal_budget.html:72
+msgid "Forecast for this Year"
+msgstr "Vorhersage für dieses Jahr"
+
+#: templates/project.html:19
+msgid "Edit project"
+msgstr "Projekt bearbeiten"
+
+#: templates/project.html:54
+msgid "Add employe"
+msgstr "Mitarbeiter anlegen"
+
+#: templates/project.html:60
+msgid "Emlopyee"
+msgstr "Mitarbeiter"
+
+#: templates/project.html:68
+msgid "Hours"
+msgstr "Stunden"
+
+#: templates/project.html:73
+msgid "Your whole staff is in this project"
+msgstr "Alle Mitarbeiter sind in diesem Projekt"
+
+#: templates/project.html:75
+msgid "Budget planning"
+msgstr "Budgetplanung"
+
+#: templates/projects.html:21
+msgid "Add project"
+msgstr "Neues Projekt anlegen"
+
+#: templates/sick.html:41 templates/sick.html.py:56
+msgid "Sick Days"
+msgstr "Krankheitstage"
+
+#: templates/sick.html:42
+msgid "Add Sick Day"
+msgstr "Krankheitstag hinzufügen"
+
+#: templates/sick.html:50 templates/vacation.html:50
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: templates/sick.html:54
+msgid "Consumed Sick Days"
+msgstr "Aufgebrauchte Krankheitstage"
+
+#: templates/sick.html:55 templates/vacation.html:55
+msgid "days"
+msgstr "Tage"
+
+#: templates/staff.html:21
+msgid "Add employee"
+msgstr "Mitarbeiter anlegen"
+
+#: templates/user_csv.html:44
+msgid "Export your acquisition into a CSV file"
+msgstr "Exportiere deine Zeiten in eine CSV Datei"
+
+#: templates/user_csv.html:54
+msgid "Import your acquisition from a CSV file"
+msgstr "Importiere deine Zeiten aus einer CSV Datei"
+
+#: templates/user_csv.html:55
+msgid ""
+"The CSV file needs to have the same syntax like the export with the columns"
+msgstr ""
+"Die CSV Datei muss die selbe Syntax besitzen, wie der Export und die Spalten "
+"Project, Location, Comment, Start, End haben"
+
+#: templates/user_csv.html:63
+msgid "Upload"
+msgstr "Hochladen"
+
+#: templates/vacation.html:42
+msgid "Add Vacation"
+msgstr "Urlaub hinzufügen"
+
+#: templates/vacation.html:54
+msgid "Consumed Vacation Days"
+msgstr "Aufgebrauchte Urlaubstage"
+
+#: templates/vacation.html:60
+msgid "Vacation Days"
+msgstr "Urlaubstage"
+
+#: templates/forms/form_new_collapse.html:17
+msgid "Create"
+msgstr "Anlegen"

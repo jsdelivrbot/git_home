@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "analysis" %}">{% trans "Analysis" %}</a></li>
+                                    <li><a href="{% url "analysis_projects" %}">{% trans "Projects" %}</a></li>
+                                    <li class="active"><a href="{% url "analysis_customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "analysis_staff" %}">{% trans "Staff" %}</a></li>
+                                    <li><a href="{% url "analysis_violations" %}">{% trans "Violations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Analysis of customers" %}</h1>
+                        {% for customer in customers %}
+                        <h2 class="sub-header">{{ customer.name }}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Project" %}</th>
+                                      <th>{% trans "Consumed" %}</th>
+                                      <th>{% trans "Assigned" %}</th>
+                                      <th>{% trans "Budget" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for project in customer.projectlist %}
+                                    <tr>
+                                      <td>{{ project.name }}</td>
+                                      <td>{{ project.consumed }} h</td>
+                                      <td>{{ project.hours }} h</td>
+                                      <td>{{ project.budget }} {{ currency }}</td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                        {% endfor %}
+{% endblock %}
