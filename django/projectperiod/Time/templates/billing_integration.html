@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "billing" %}">{% trans "Manual Billing" %}</a></li>
+                                    <li><a href="{% url "auto_billings" %}">{% trans "Automated Billing" %}</a></li>
+                                    <li><a href="{% url "billing_integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Edit Integration" %}</h1>
+                            {% include "forms/form_edit.html" with form=form url="billing_integration" id=billing.id%}
+{% endblock %}

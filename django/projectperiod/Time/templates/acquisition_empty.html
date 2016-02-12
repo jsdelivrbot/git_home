@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li class="active"><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+
+{% block content %}
+                        <h1 class="page-header">{% trans "Acquisition" %}</h1>
+                        <div class="alert alert-danger">{% trans "You have not been assigned to any active project" %}</div>
+{% endblock %}

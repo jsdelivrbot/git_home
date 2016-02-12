@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "analysis" %}">{% trans "Analysis" %}</a></li>
+                                    <li><a href="{% url "analysis_projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "analysis_customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "analysis_staff" %}">{% trans "Staff" %}</a></li>
+                                    <li><a href="{% url "analysis_violations" %}">{% trans "Violations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Analysis of project" %} {{ project.name }}</h1>
+                        <h2 class="sub-header">{% trans "Acquired time for this project" %}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Employe" %}</th>
+                                      <th>{% trans "Date" %}</th>
+                                      <th>{% trans "Start" %}</th>
+                                      <th>{% trans "End" %}</th>
+                                      <th>{% trans "Duration" %}</th>
+                                      <th>{% trans "Location" %}</th>
+                                      <th>{% trans "Comment" %}</th>
+                                      <th>{% trans "Billable" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for entry in acquisitions %}
+                                    <tr>
+                                      <td>{{ entry.user.first_name }} {{ entry.user.last_name }}</td>
+                                      <td>{{ entry.start.date }}</td>
+                                      <td>{{ entry.start.time }}</td>
+                                      <td>{{ entry.end.time }}</td>
+                                      <td>{{ entry.duration }}</td>
+                                      <td>{{ entry.location }}</td>
+                                      <td>{{ entry.comment }}</td>
+                                      {% if entry.billable == True %}
+                                      <td><span class="glyphicon glyphicon-ok" style="font-size:20px;" alt="{% trans "Billable" %}"></span></td>
+                                      {% else %}
+                                      <td><span class="glyphicon glyphicon-minus" style="font-size:20px;" alt="{% trans "Not billable" %}"></span></td>
+								      {% endif %}
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+{% endblock %}
