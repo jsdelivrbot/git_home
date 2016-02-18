@@ -2,7 +2,6 @@ import smtplib, getpass
 
 def prompt(prompt):
     return input(prompt).strip()
-
 from_addr = prompt("From:")
 to_addrs = []
 
