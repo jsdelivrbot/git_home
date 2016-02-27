@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_tables2 %}
+
+{% block script %}
+    <script src="../js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "management" %}">{% trans "Management" %}</a></li>
+                                    <li><a href="{% url "locations" %}">{% trans "Locations" %}</a></li>
+                                    <li><a href="{% url "customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "projects" %}">{% trans "Projects" %}</a></li>
+                                    <li class="active"><a href="{% url "staff" %}">{% trans "Staff" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+						<h1 class="page-header">{% trans "Staff" %}</h1>
+                        {% trans "Add employee" as button_text %}
+                        {% include "forms/form_new_collapse.html" with form=form url="staff" text=button_text %}
+
+                        {% render_table table "table.html" %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load django_tables2 %}
+
+{% block script %}
+    <script src="../js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "billing" %}">{% trans "Manual Billing" %}</a></li>
+                                    <li><a href="{% url "auto_billings" %}">{% trans "Automated Billing" %}</a></li>
+                                    <li><a href="{% url "billing_integrations" %}">{% trans "Integrations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+{% block content %}
+                        <h1 class="page-header">{% trans "Integrations" %} <span class="glyphicon glyphicon-question-sign" style="font-size:20px;" alt="{% trans "Help" %}" data-toggle="modal" data-target="#myModal"/></h1>
+                        {% trans "Add integration" as button_text %}
+                        {% include "forms/form_new_collapse.html" with form=form url="billing_integrations" text=button_text %}
+
+                        {% render_table table "table.html" %}
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">{% trans "Help" %}</h4>
+                                  </div>
+                                  <div class="modal-body" id="modal-body"><h4>CSV</h4>
+                                      {% trans "Choose CSV and let all fields be empty" %}<br>
+                                      <h4>EMail</h4>
+                                      {% trans "Choose EMail and fill only the EMail field" %}<br>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+{% endblock %}

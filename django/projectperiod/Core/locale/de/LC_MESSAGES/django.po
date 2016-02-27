@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-09 14:39+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: forms.py:28 forms.py:67 forms.py:71 forms.py:79 models.py:76 models.py:130
+#: views.py:659
+msgid "Customer"
+msgstr "Kunde"
+
+#: forms.py:70 forms.py:100 views.py:703
+msgid "Date"
+msgstr "Datum"
+
+#: forms.py:70 forms.py:100 forms.py:103 forms.py:104 forms.py:131
+#: forms.py:132
+msgid "Please enter a date"
+msgstr "Bitte ein Datum eintragen"
+
+#: forms.py:71 forms.py:79
+msgid "A customer is required"
+msgstr "Ein Kunde wird benötigt"
+
+#: forms.py:72 forms.py:80 forms.py:150 forms.py:155 models.py:214
+#: views.py:659 views.py:672
+msgid "Project"
+msgstr "Projekt"
+
+#: forms.py:73 forms.py:81 views.py:659 views.py:673 views.py:703
+msgid "Location"
+msgstr "Standort"
+
+#: forms.py:73 forms.py:81
+msgid "A location is required"
+msgstr "Ein Standort wird benötigt"
+
+#: forms.py:74 forms.py:83 views.py:659 views.py:674 views.py:703
+msgid "Comment"
+msgstr "Kommentar"
+
+#: forms.py:75 forms.py:82 views.py:659 views.py:678 views.py:680 views.py:703
+msgid "Billable"
+msgstr "Abrechenbar"
+
+#: forms.py:76
+msgid "Time"
+msgstr "Zeit"
+
+#: forms.py:76
+msgid "Please enter a time"
+msgstr "Bitte eine Zeit eintragen"
+
+#: forms.py:86 forms.py:109
+msgid "First name"
+msgstr "Vorname"
+
+#: forms.py:86 forms.py:109
+msgid "Please enter a first name"
+msgstr "Bitte einen Vornamen eintragen"
+
+#: forms.py:87 forms.py:110
+msgid "Last name"
+msgstr "Nachname"
+
+#: forms.py:87 forms.py:110
+msgid "Please enter a last name"
+msgstr "Bitte einen Nachnamen eintragen"
+
+#: forms.py:88
+msgid "Daily begin"
+msgstr "Tagesbeginn"
+
+#: forms.py:89
+msgid "Daily end"
+msgstr "Tagesende"
+
+#: forms.py:90
+msgid "periods"
+msgstr "Zeitabschnitte"
+
+#: forms.py:91
+msgid "Acquisition"
+msgstr "Zeitbuchung"
+
+#: forms.py:92 forms.py:108 forms.py:119
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: forms.py:92 forms.py:108 forms.py:119
+msgid "Please enter an E-Mail"
+msgstr "Bitte eine E-Mail eintragen"
+
+#: forms.py:95
+msgid "Old Password"
+msgstr "Altes Passwort"
+
+#: forms.py:95
+msgid "Please enter your old password"
+msgstr "Bitte trage dein altes Passwort ein"
+
+#: forms.py:96 forms.py:97
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: forms.py:96 forms.py:97
+msgid "Please enter your new password"
+msgstr "Bitte trage dein neues Passwort ein"
+
+#: forms.py:103 forms.py:131
+msgid "From"
+msgstr "Von"
+
+#: forms.py:104 forms.py:132
+msgid "To"
+msgstr "Bis"
+
+#: forms.py:107 forms.py:122 forms.py:143 models.py:199
+msgid "Username"
+msgstr "Benutzername"
+
+#: forms.py:107
+msgid "Please enter an user name"
+msgstr "Bitte einen Benutzernamen eintragen"
+
+#: forms.py:111
+msgid "Vacation days"
+msgstr "Urlaubstage"
+
+#: forms.py:111
+msgid "Please enter vacation days"
+msgstr "Bitte Urlaubstage eintragen"
+
+#: forms.py:112
+msgid "Min hours per year"
+msgstr "Min. Stunden im Jahr"
+
+#: forms.py:112
+msgid "Please enter the min amount of working hours per year"
+msgstr "Bitte gib eine mindestanzahl an Arbeitsstunden im Jahr ein"
+
+#: forms.py:113
+msgid "Max hours per year"
+msgstr "Max. Stunden im Jahr"
+
+#: forms.py:113
+msgid "Please enter the max amount of working hours per year"
+msgstr "Bitte gib eine maximalanzahl an Arbeitsstunden im Jahr ein"
+
+#: forms.py:114
+msgid "Hourly rate"
+msgstr "Stundenlohn"
+
+#: forms.py:114
+msgid "Please enter a hourl rate"
+msgstr "Bitte einen Stundenlohn eintragen"
+
+#: forms.py:115
+msgid "Management permission"
+msgstr "Management Rechte"
+
+#: forms.py:116
+msgid "API permission"
+msgstr "API Nutzung"
+
+#: forms.py:125
+msgid "File"
+msgstr "Datei"
+
+#: forms.py:128
+msgid "Year"
+msgstr "Jahr"
+
+#: forms.py:133
+msgid "Include Weekend"
+msgstr "Wochenenden einschließen"
+
+#: forms.py:141 models.py:197 models.py:215
+msgid "Tool"
+msgstr "Tool"
+
+#: forms.py:142 models.py:198
+msgid "URL"
+msgstr "URL"
+
+#: forms.py:144 models.py:200
+msgid "Password"
+msgstr "Passwort"
+
+#: forms.py:145
+msgid "Query"
+msgstr "Abfrage"
+
+#: forms.py:156
+msgid "Export"
+msgstr "Export"
+
+#: models.py:50 models.py:73 models.py:125
+msgid "Name"
+msgstr "Name"
+
+#: models.py:51 models.py:126
+msgid "Street"
+msgstr "Straße"
+
+#: models.py:52 models.py:127
+msgid "Postcode"
+msgstr "Postleitzahl"
+
+#: models.py:53 models.py:128
+msgid "City"
+msgstr "Stadt"
+
+#: models.py:54 models.py:129
+msgid "Country"
+msgstr "Land"
+
+#: models.py:55 models.py:77
+msgid "Status"
+msgstr "Status"
+
+#: models.py:74
+msgid "Description"
+msgstr "Beschreibung"
+
+#: models.py:75
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+#: models.py:78
+msgid "Budget in "
+msgstr "Budget in"
+
+#: models.py:79 models.py:218
+msgid "Billing"
+msgstr "Rechnung"
+
+#: models.py:80
+msgid "Hourly Rate"
+msgstr "Stundenlohn"
+
+#: models.py:82 models.py:216 views.py:659 views.py:676 views.py:678
+#: views.py:680 views.py:703
+msgid "Start"
+msgstr "Start"
+
+#: models.py:83 models.py:217 views.py:659 views.py:676 views.py:678
+#: views.py:680 views.py:703
+msgid "End"
+msgstr "Ende"
+
+#: models.py:201
+msgid "EMail"
+msgstr "E-Mail"
+
+#: views.py:377 views.py:391
+msgid "Already planned vacation for: "
+msgstr "Bereits geplanter Urlaub für: "
+
+#: views.py:383 views.py:389
+msgid "Planned vacation for: "
+msgstr "Geplante Urlaubstage: "
+
+#: views.py:393 views.py:456
+msgid "From must be before To"
+msgstr "Von muss vor Nach sein"
+
+#: views.py:440
+msgid "Already planed for: "
+msgstr "Bereits geplanter Urlaub für: "
+
+#: views.py:446 views.py:452
+msgid "Planned for: "
+msgstr "Geplante Urlaubstage: "
+
+#: views.py:454
+msgid "Already vacation for: "
+msgstr "Bereits geplanter Urlaub für: "
+
+#: views.py:609
+msgid "User not found"
+msgstr "Benutzer nicht gefunden"
+
+#: views.py:626
+msgid "Password resetted"
+msgstr "Passwort zurückgesetzt"
+
+#: views.py:629
+msgid "User not identical. More then one user with this email"
+msgstr ""
+"Der Benutzer ist nicht eindeutig. Es ist mehr als ein Benutzer mit dieser E-"
+"Mail vorhanden."
+
+#: views.py:681
+msgid "Import: "
+msgstr "Importiere:"
+
+#: views.py:685
+msgid "Could not import: "
+msgstr "Konnte nicht importieren:"
+
+#: views.py:703
+msgid "Employe"
+msgstr "Mitarbeiter"
+
+#: views.py:703
+msgid "Duration in hours"
+msgstr "Dauer in Stunden"

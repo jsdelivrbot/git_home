@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "analysis" %}">{% trans "Analysis" %}</a></li>
+                                    <li class="active"><a href="{% url "analysis_projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "analysis_customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "analysis_staff" %}">{% trans "Staff" %}</a></li>
+                                    <li><a href="{% url "analysis_violations" %}">{% trans "Violations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Analysis of projects" %}</h1>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Project" %}</th>
+                                      <th>{% trans "Consumed" %}</th>
+                                      <th>{% trans "Assigned" %}</th>
+                                      <th>{% trans "Budget" %}</th>
+                                      <th>{% trans "Employees" %}</th>
+                                      <th>{% trans "Action" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for project in projects %}
+                                    <tr>
+                                      <td>{{ project.name }}</td>
+                                      <td>{{ project.consumed }} h</td>
+                                      <td>{{ project.hours }} h</td>
+                                      <td>{{ project.budget }} {{ currency }}</td>
+                                      <td>{{ project.employees }}</td>
+                                      <td><span class="glyphicon glyphicon-search" style="font-size:20px;" alt="{% trans "View project" %}" onclick="view_project_{{ project.id }}.submit();"></span>
+                                          <span class="glyphicon glyphicon-download" style="font-size:20px;" alt="{% trans "Export project" %}" onclick="export_project_{{ project.id }}.submit();"></span>
+                                          <form name="view_project_{{ project.id }}" action="../analysis_project/" method="post">{% csrf_token %}
+                                            <input type="hidden" name="id_project" id="id_project" value="{{ project.id }}"/>
+                                          </form>
+                                          <form name="export_project_{{ project.id }}" action="../project_csv/" method="post">{% csrf_token %}
+                                            <input type="hidden" name="id_project" id="id_project" value="{{ project.id }}"/>
+                                          </form>
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+{% endblock %}

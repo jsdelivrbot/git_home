@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "analysis" %}">{% trans "Analysis" %}</a></li>
+                                    <li><a href="{% url "analysis_projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "analysis_customers" %}">{% trans "Customers" %}</a></li>
+                                    <li class="active"><a href="{% url "analysis_staff" %}">{% trans "Staff" %}</a></li>
+                                    <li><a href="{% url "analysis_violations" %}">{% trans "Violations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Analysis of staff" %}</h1>
+                            <h2 class="sub-header">{% trans "Choose employee" %}:</h2>
+                                <form action="{% url "analysis_staff" %}" method="post">{% csrf_token %}
+                                {% for field in form %}
+                                    <div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">{{ field }}</div></div>
+                                    {% for error in field.errors %}
+                                        <div class="alert alert-danger">{{ error|escape }}</div>
+                                    {% endfor %}
+                                {% endfor %}<br>
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Analyse" %}</button>
+                                </form>
+                            {%  if userRequest %}
+                            <h2 class="sub-header">{% trans "Assigned for" %} {{ userRequest.user.first_name }} {{ userRequest.user.last_name }}</h2>
+                            {{ assigned }} {% trans "of" %} {{ userRequest.min_hours }}(min) / {{ userRequest.max_hours }}(max) {% trans "hours" %}
+                            <p class="subtitle">{% trans "Analysis for" %} {{ userRequest.user.first_name }} {{ userRequest.user.last_name }}</p>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Project" %}</th>
+                                      <th>{% trans "Consumed" %}</th>
+                                      <th>{% trans "Assigned" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for project in projects %}
+                                    <tr>
+                                      <td>{{ project.project.name }}</td>
+                                      <td>{{ project.consumed }} h</td>
+                                      <td>{{ project.hours }} h</td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                            {% endif %}
+{% endblock %}

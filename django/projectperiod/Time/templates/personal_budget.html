@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "acquisition" %}">{% trans "Acquisition" %}</a></li>
+                                    <li><a href="{% url "overview_day" %}">{% trans "Daily" %}</a></li>
+                                    <li><a href="{% url "overview_week" %}">{% trans "Weekly" %}</a></li>
+                                    <li><a href="{% url "overview_month" %}">{% trans "Monthly" %}</a></li>
+                                    <li><a href="{% url "overview_year" %}">{% trans "Yearly" %}</a></li>
+                                    <li class="active"><a href="{% url "personal_budget" %}">{% trans "Budget" %}</a></li>
+                                    <li><a href="{% url "vacation" %}">{% trans "Vacation" %}</a></li>
+                                    <li><a href="{% url "sick" %}">{% trans "Sick" %}</a></li>
+                                    <li><a href="{% url "user_csv" %}">{% trans "CSV Import/Export" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Budget" %}</h1>
+                        <h2 class="sub-header">{% trans "Year" %}</h2>
+                            <form name="form_date" action="{% url "personal_budget" %}" method="post">{% csrf_token %}
+                            {% for field in form %}
+								<div class="control-group"><label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label><div class="controls">{{ field }}</div></div>
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">{{ error|escape }}</div>
+                                {% endfor %}
+					        {% endfor %}<br><input type="hidden" name="action" id="action" value="choosedate"/>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Choose" %}</button>
+                            </form>
+                        <h2 class="sub-header">{% trans "Consumed Budget" %}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Projectname" %}</th>
+                                      <th>{% trans "Consumed" %}</th>
+                                      <th>{% trans "Consumed all years" %}</th>
+                                      <th>{% trans "Budget" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for project in projects %}
+                                    <tr>
+                                      <td>{{ project.name }}</td>
+                                      <td>{{ project.consumed }} h</td>
+                                      <td>{{ project.consumed_all }} h</td>
+                                      <td>{{ project.my_hours }} h</td>
+                                    </tr>
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                        <h2 class="sub-header">{% trans "Worked" %}</h2>
+                            {{ worked }} {% trans "of" %} {{ userProfile.min_hours }}(min) / {{ userProfile.max_hours }}(max) {% trans "hours" %}
+                            <div class="progress">
+                              <div class="progress-bar progress-bar-success" style="width: {{ percent_green }}%">
+                                <span class="sr-only">35% Complete (success)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-warning" style="width: {{ percent_yellow }}%">
+                                <span class="sr-only">20% Complete (warning)</span>
+                              </div>
+                              <div class="progress-bar progress-bar-danger" style="width: {{ percent_red }}%">
+                                <span class="sr-only">10% Complete (danger)</span>
+                              </div>
+                            </div>
+                        <h2 class="sub-header">{% trans "Forecast for this Year" %}</h2>
+                            {{ expected }} h
+{% endblock %}

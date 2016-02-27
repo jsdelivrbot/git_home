@@ -1,0 +1,3 @@
+MESSAGES = {
+    "default" : "Hello World!",
+}

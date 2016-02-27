@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block script %}
+
+{% endblock %}
+
+
+{% block nav_left %}
+								<ul class="nav nav-sidebar">
+                                    <li><a href="{% url "analysis" %}">{% trans "Analysis" %}</a></li>
+                                    <li><a href="{% url "analysis_projects" %}">{% trans "Projects" %}</a></li>
+                                    <li><a href="{% url "analysis_customers" %}">{% trans "Customers" %}</a></li>
+                                    <li><a href="{% url "analysis_staff" %}">{% trans "Staff" %}</a></li>
+                                    <li class="active"><a href="{% url "analysis_violations" %}">{% trans "Violations" %}</a></li>
+                                </ul>
+{% endblock %}
+
+
+{% block content %}
+						<h1 class="page-header">{% trans "Analysis of violations" %}</h1>
+                            <form action="{% url "analysis_violations" %}" method="post">{% csrf_token %}
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Analyse" %}</button>
+                            </form>
+                        <h2 class="sub-header">{% trans "Break" %}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Date" %}</th>
+                                      <th>{% trans "First name" %}</th>
+                                      <th>{% trans "Last name" %}</th>
+                                      <th>{% trans "Working time" %}</th>
+                                      <th>{% trans "Break" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for violation in violations %}
+                                      {% if violation.type == 0 and violation.deativated == 0 %}
+                                    <tr>
+                                      <td>{{ violation.start.date }}</td>
+                                      <td>{{ violation.user.first_name }}</td>
+                                      <td>{{ violation.user.last_name }}</td>
+                                      <td>{{ violation.duration }}</td>
+                                      <td>{{ violation.pause }}</td>
+                                    </tr>
+                                      {%  endif %}
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+                        <h2 class="sub-header">{% trans "Overtime" %}</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th>{% trans "Date" %}</th>
+                                      <th>{% trans "First name" %}</th>
+                                      <th>{% trans "Last name" %}</th>
+                                      <th>{% trans "Working time" %}</th>
+                                      <th>{% trans "Break" %}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                  {% for violation in violations %}
+                                      {% if violation.type == 1 and violation.deativated == 0 %}
+                                    <tr>
+                                      <td>{{ violation.start.date }}</td>
+                                      <td>{{ violation.user.first_name }}</td>
+                                      <td>{{ violation.user.last_name }}</td>
+                                      <td>{{ violation.duration }}</td>
+                                      <td>{{ violation.pause }}</td>
+                                    </tr>
+                                      {%  endif %}
+                                  {% endfor %}
+                                  </tbody>
+                                </table>
+                            </div>
+{% endblock %}

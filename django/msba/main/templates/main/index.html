@@ -1,0 +1,7 @@
+{% if error_message %}<h2>{{ error_message }}</h2>{% endif %}
+
+<form action="{% url "main:signup" %}" method="post">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Sign-up" />
+</form>
