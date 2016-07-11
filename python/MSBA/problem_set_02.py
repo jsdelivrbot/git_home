@@ -1,4 +1,3 @@
-"""
 def print_multiplication_table():
     for i in range(1,13):
         for j in range(1, 13):
@@ -93,7 +92,7 @@ def print_pythagoreans_under_100():
     print "total: %s" % count
 
 print_pythagoreans_under_100()
-"""
+
 def triangle_classifier():
     a = int(raw_input("Type in a: "))
     b = int(raw_input("Type in b: "))

@@ -4,7 +4,7 @@ def visualize(num):
     else:
         return num + visualize(num - 1)
 
-#print visualize(5), visualize(10), visualize(-1)
+print visualize(5), visualize(10), visualize(-1)
 
 def factorial(num):
     if num <= 1:
@@ -132,7 +132,7 @@ def hangman():
     else:
         print "Sorry, almost.\nThe word is {}.".format(word)
 
-#hangman()
+hangman()
 
 def palindrome(word):
     word = word.lower()
