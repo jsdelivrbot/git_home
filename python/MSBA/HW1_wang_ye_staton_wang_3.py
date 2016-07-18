@@ -111,6 +111,8 @@ def count_ocur(obj, elem):
 #define a function to create a posting list given a list of full quotes
 def postings_list(quotes):
     
+    start_time = time()
+    
     if type(quotes) != list:
         
         print "This function only takes list arguments."
@@ -122,6 +124,10 @@ def postings_list(quotes):
     for pair in [(quote, dict(Counter(words_in_quote(quote)))) for quote in quotes]:
         
         postings_list_dict[pair[0]] = pair[1]
+        
+    end_time = time()
+    
+    print end_time - start_time
 
     return postings_list_dict
 
@@ -134,10 +140,12 @@ end_time = time()
 print end_time - start_time
 
 
-# In[11]:
+# In[25]:
 
 #define a function to create a reverse posting list given a list of full quotes
 def rev_postings_list(quotes):
+    
+    start_time = time()
     
     if type(quotes) != list:
         
@@ -148,14 +156,26 @@ def rev_postings_list(quotes):
     rev_postings_list_dict = {}
     
     words = []
+    
+    start_time_listcomprehension1 = time()
 
     [words.extend(words_in_quote(quote)) for quote in quote_list]
 
     words = Counter(words).keys()
+    
+    print "[words.extend(words_in_quote(quote)) for quote in quote_list] took", time() - start_time_listcomprehension1, "seconds."
 
+    start_time_forloop = time()
+    
+    inner_listcomprehension_time = 0
+    
     for word in words:
+        
+        start_time_innerloop = time()
 
         quote_word_list = [(quote, words_in_quote(quote).count(word)) for quote in quotes]
+        
+        inner_listcomprehension_time += time() - start_time_innerloop
 
         rev_postings_list_dict[word] = {}
 
@@ -164,11 +184,19 @@ def rev_postings_list(quotes):
             if elem[1] > 0:
 
                 rev_postings_list_dict[word][elem[0]] = elem[1]
+                
+    print "for loop took:", time() - start_time_listcomprehension1, "seconds."
+    
+    print "the inner list comprehension took", inner_listcomprehension_time, "seconds in total."
+                
+    end_time = time()
+    
+    print end_time - start_time
           
     return rev_postings_list_dict
 
 
-# In[12]:
+# In[26]:
 
 #warning: trying printing reverse_postings_list_dict foreshadows disaster!
 start_time = time()
@@ -178,6 +206,53 @@ print end_time - start_time
 
 
 # In[13]:
+
+#define a function to create a reverse posting list given a list of full quotes
+def rev_postings_list_2(quotes):
+    
+    start_time = time()
+    
+    if type(quotes) != list:
+        
+        print "This function only takes list arguments."
+        
+        return {}
+    
+    rev_postings_list_dict = {}
+    
+    forward_dict = postings_list(quotes)
+    
+    for quote, word_count in forward_dict.items():
+        
+        for word, count in word_count.items():
+            
+            if word not in rev_postings_list_dict:
+                
+                rev_postings_list_dict[word] = {}
+                
+                rev_postings_list_dict[word][quote] = count
+                
+            else:
+                
+                rev_postings_list_dict[word][quote] = count
+                
+    end_time = time()
+    
+    print end_time - start_time
+          
+    return rev_postings_list_dict
+
+
+# In[14]:
+
+#warning: trying printing reverse_postings_list_dict foreshadows disaster!
+start_time = time()
+reverse_postings_list_dict = rev_postings_list_2(quote_list)
+end_time = time()
+print end_time - start_time
+
+
+# In[15]:
 
 #this function take a tuple of (quote, word) and returns the TF_IDF index of word in quote
 def tf_idf((quote, word)):
@@ -211,12 +286,12 @@ def tf_idf((quote, word)):
     return TF_IDF
 
 
-# In[14]:
+# In[16]:
 
 tf_idf(("We are all worms, but I do believe I am a glow-worm. - Winston Churchill", "we"))
 
 
-# In[15]:
+# In[17]:
 
 #print TF_IDF index of "entertainer" in the Marlon Brando quote to verify the result
 start_time = time()
@@ -225,7 +300,7 @@ end_time = time()
 print end_time - start_time
 
 
-# In[24]:
+# In[18]:
 
 #define a function to search a single word in all quotes
 def sg_word_search(default_word=""):
@@ -267,7 +342,7 @@ def sg_word_search(default_word=""):
     return search_dict
 
 
-# In[25]:
+# In[19]:
 
 #this function takes a list of words and return all the quotes containing any of the words
 #and shows the sum of the TF_IDF index of every word in every quote 
@@ -328,7 +403,7 @@ def mul_word_search():
     return search_dict2
 
 
-# In[26]:
+# In[20]:
 
 #print out a sample result of calling sg_word_search on keyword "and"
 #check the length of the returned list to verify the result
@@ -338,7 +413,7 @@ end_time = time()
 print end_time - start_time
 
 
-# In[27]:
+# In[21]:
 
 #print out the result of mul_word_search
 start_time = time()
@@ -347,7 +422,7 @@ end_time = time()
 print end_time - start_time
 
 
-# In[20]:
+# In[22]:
 
 #stop timing and print out total running time
 end_time0 = time()

@@ -1,8 +1,10 @@
 #setting up the working directory
 setwd("~/git/git_home/R/MSBA/")
 
-#include necessary libraries
+#include dplyr library to access advanced data.frame functions
 library(dplyr)
+#include neuralnet library to access neural network functions
+library(neuralnet)
 
 #define the column variable types
 col_classes <- c("integer",
@@ -146,4 +148,96 @@ Y_train <- training_set[, c(1, col_num)]
 X_cv <- validation_set[, -col_num]
 Y_cv <- validation_set[, c(1, col_num)]
 
-summary(lm(Y_train[,2]~X_train[,-1]))
+# training_set_matrix <- as.numeric(as.matrix(training_set))
+# training_set_matrix[training_set_matrix == TRUE] <- 1
+# training_set_matrix[training_set_matrix == FALSE] <- 0
+# training_set_matrix[is.na(training_set_matrix)] <- 0
+# training_set_org <- data.frame(training_set_matrix)
+# dim(training_set_org)
+# summary(training_set_org)
+
+formula_expression <- "`X` ~ `trim: 320`"
+
+for (i in c(3:ncol(training_set))){
+    variable_quote <- paste("`", names(training_set)[i], "`", sep="")
+    formula_expression <- paste(formula_expression, variable_quote, sep="+")
+}
+
+formula <- as.formula(formula_expression)
+
+training_set_converted <- model.matrix(X~., training_set)
+
+for (i in c(1:ncol(training_set_converted))){
+    colnames(training_set_converted)[i] <- gsub("`|TRUE", "", colnames(training_set_converted)[i])
+}
+
+training_set_converted <- data.frame(training_set_converted)
+
+training_set_converted$mileage <- log(training_set_converted$mileage)
+
+training_set_converted$featureCount <- training_set_converted$featureCount^.5
+
+# formula_expression <- "price ~ `trim..320`"
+# 
+# for (i in c(3:(ncol(training_set_converted)-1))){
+#     variable_quote <- paste("`", colnames(training_set_converted)[i], "`", sep="")
+#     formula_expression <- paste(formula_expression, variable_quote, sep="+")
+# }
+# 
+# formula <- as.formula(formula_expression)
+
+# counting <- 0
+# 
+# for (i in c(1:ncol(training_set_converted))){
+#     counting <- counting + sum(is.na(training_set_converted[,i]))
+# }
+# 
+# print(counting)
+
+# nn <- neuralnet(
+#     formula=formula,
+#     data=training_set_converted,
+#     hidden=10,
+#     rep=5,
+#     stepmax=1e+06,
+#     threshold=0.01,
+#     algorithm="backprop",
+#     learningrate=0.01,
+#     linear.output=TRUE
+#     )
+# 
+# head(nn$response)
+# 
+# nn$act.fct
+# summary(nn$net.result)
+
+lm_model <- lm(price~., data=training_set_converted)
+summary((lm_model$residuals^2)^.5)
+
+formula_expression <- "`X` ~ `trim: 320`"
+
+for (i in c(3:ncol(validation_set))){
+    variable_quote <- paste("`", names(validation_set)[i], "`", sep="")
+    formula_expression <- paste(formula_expression, variable_quote, sep="+")
+}
+
+formula <- as.formula(formula_expression)
+
+validation_set_converted <- model.matrix(X~., validation_set)
+
+for (i in c(1:ncol(validation_set_converted))){
+    colnames(validation_set_converted)[i] <- gsub("`|TRUE", "", colnames(validation_set_converted)[i])
+}
+
+validation_set_converted <- data.frame(validation_set_converted)
+
+validation_set_converted$mileage <- log(validation_set_converted$mileage)
+
+validation_set_converted$featureCount <- validation_set_converted$featureCount^.5
+
+lm_model_RMSE <- mean((predict(lm_model, validation_set_converted) - validation_set_converted$price)^2)^.5
+
+lm_model_RMSE
+#model.matrix(X~., cars_data)
+
+confint(lm_model, level=0.95)
