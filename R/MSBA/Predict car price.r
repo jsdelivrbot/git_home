@@ -246,7 +246,13 @@ validation_set_converted$featureCount <- validation_set_converted$featureCount^.
 lm_model_RMSE <- mean((predict(lm_model, validation_set_converted) - validation_set_converted$price)^2)^.5
 
 lm_model_RMSE
+
+lm_model_2 <- lm(price~.*mileage, data=training_set_converted)
 #model.matrix(X~., cars_data)
+
+lm_model_RMSE_2 <- mean((predict(lm_model_2, validation_set_converted) - validation_set_converted$price)^2)^.5
+
+lm_model_RMSE_2
 
 confint(lm_model, level=0.95)[,1]*confint(lm_model, level=0.95)[,2] < 0
 

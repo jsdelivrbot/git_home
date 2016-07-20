@@ -50,4 +50,24 @@ print(confint(lm_model_multiple))
 ```
 
 When all the predictors are simultaneously fitted against `crim`, the result turns out very different from the previous single linear regression models.
-First, the previously strong predictor `nox` is now largely irrelevant. Actually in this case only `zn`, `dis` and `rad` show a significant correlation with `crim`, which is equivalent to rejecting the null hypothesis that $$\beta_[0]$$
+First, the previously strong predictor `nox` is now largely irrelevant. Actually in this case only `zn`, `dis` and `rad` show a significant correlation with `crim`, which is equivalent to rejecting the null hypothesis that _H~0~_: $\beta$~j~=0.
+
+(d)
+To inspect if there is a correlation in the form of $$crim = \beta_0 + \beta_1 X + \beta_2 X^2 + \beta_3 X^3$$we create a linear regression model for each predictor against `crim`, in the format of `lm(crim ~ x + x^2 + x^3, data=training_set)`, and then inspect the model's coefficient confidence interval.
+```{r}
+for (i in c(1:ncol(Boston))){
+    if (colnames(Boston)[i]=="crim"){
+        next
+    }
+    variable <- colnames(Boston)[i]
+    formula <- as.formula(paste("crim ~ ", variable, " + I(", variable, "^2) + I(", variable, "^3)", sep=""))
+    cat("For predictor:", colnames(Boston)[i], "\n")
+    pn_model_3 <- lm(formula, data=training_set)
+    print(confint(pn_model_3))
+    cat("\n")
+}
+
+```
+
+As seen from the output confidence intervals, it is first noticed that `chas^2` and `chas^3` do not have coefficients. That is due to that `chas` is a binary variable, whose squre or cube is essentially itself, so in this case `chas`, `chas^2` and `chas^3` are linearly related, and therefore the latter two polynomial terms are not fitted in the model.
+`chas` put aside, several polynomial terms exhibit correlation with `crim`, whose 95% coefficient confidence intervals exclude zero. For example, `nox^2` and `nox^3`.
