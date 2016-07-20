@@ -1,0 +1,100 @@
+---
+title: "Exam Chapter 2"
+author: "Wenduo Wang"
+date: "July 19, 2016"
+output: html_document
+---
+
+Problem 10
+
+(a, b)
+Load the MASS library and explore the Boston dataset a little bit.
+```{r}
+library(MASS)
+summary(Boston)
+cat("There are", nrow(Boston), "rows and", ncol(Boston), "columns in the Boston dataset")
+pairs(medv~lstat+rm+ptratio+dis+nox+crim, data=Boston)
+```
+
+From the scatterplot it is observed that the median value of owner-occupied homes (`medv`) has a strong negative correlation with low status population and strong positive correlation with room numbers (`rm`).
+However, such correlation is less obvious for other variables.
+
+(c)
+Let's explore the correlation between per capita crime rate by town (`crim`) against other variables.
+```{r}
+par(mfrow=c(5,3), mar=rep(1.5, 4), oma=rep(1,4))
+for (i in c(1:ncol(Boston))){
+    if (colnames(Boston)[i]=="crim"){
+        next
+    }
+    plot(y=Boston$crim, x=Boston[,i], ylab="", xlab="", main=paste("crim ~ ", colnames(Boston)[i]))
+}
+```
+
+From the output plot it is difficult to assert correlations against per capita crime rate. However, there is a negative correlation between `crim` and `dis`, which also applies to `medv`, which means the per capita crime rate tends to be higher in areas closer to the five Boston employment centres (or where the median house value is lower). In contrast, in places with higer `lstat`, lower status population, `crim` is also higher, showing a positive correlation. Similar relationship is also implied between `crim` and `nox`, nitrogen oxides concentration.
+
+(d)
+```{r}
+library(car)
+par(mfrow=c(1,3))
+boxplot(Boston$crim, main="per capita crime rate", id.n=Inf)
+boxplot(Boston$tax, main="tax", id.n=Inf)
+boxplot(Boston$ptratio, main="pupil-teacher ratio", id.n=Inf)
+cat("The stats of per capita crime rate is below:")
+summary(Boston$crim)
+cat("The stats of full-value property-tax rate per $10,000 is below:")
+summary(Boston$tax)
+cat("The stats of pupil-teacher ratio is below:")
+summary(Boston$ptratio)
+```
+
+The box plot shows that several areas have extraordinarily high per capita crime rate, and a couple are particularly low in pupil-teacher ratio. Yet the property tax rate is within the normal range among all areas.
+
+(e)
+```{r}
+cat("There are", sum(Boston$chas==1), "suburbs bound the Charles River in the dataset.")
+```
+
+(f)
+```{r}
+cat("The median value of the pupil-teacher ratio is", median(Boston$ptratio), "in the Boston dataset.")
+```
+
+(g)
+```{r}
+library(ggplot2)
+library(reshape2)
+low_medv <- Boston[Boston$medv==min(Boston$medv),]
+if (nrow(low_medv)>1){
+    cat("There are", nrow(low_medv), "suburbs with the lowest median house value.")
+    cat("Their row numbers are", paste(which(Boston$medv==min(Boston$medv))), ".")
+} else {
+    cat("Suburb", which(Boston$medv==min(Boston$medv)), "has the lowest median house value.")
+}
+
+par(mfrow=c(dim(Boston)[2], 1), mar=rep(1, 4))
+for (i in c(1:dim(Boston)[2])){
+    boxplot(Boston[i], border="lightgray", col="lightgray", horizontal=TRUE, lwd=0.5)
+    boxplot(low_medv[i], borde="red", col="red", horizontal=TRUE, lwd=1, add=TRUE)
+}
+```
+
+To compare the predictors of low median house value suburbs with the sample population, the boxplots of all predictors are put together.
+From top to bottom are the `crim` to `medv` 
+The lightgray areas and points represents the sample population, while red areas and dark lines are the low median house value suburbs. The pattern demonstrates that suburbs whose median value of houses also have predictors away from the sample mean/median. For example, on the top of the boxplots is the per capita crime rate predictor, the low median house value suburbs (indicated by the red shade) have significantly higher values than the sample population (rendered in lightgray).
+After analyzing each predictor, it is found that the low median house value is postively related to `crim`, `indus`, `nox`, `age`, `rad`, `ptratio`, `tax` and `lstat`; while `zn`, `chas`, `rm` and `dis` is negatively related to the low median house value.
+
+(h)
+```{r}
+cat(sum(Boston$rm > 7), "suburbs average more than seven rooms per dwelling.")
+cat(sum(Boston$rm > 8), "suburbs average more than eight rooms per dwelling.")
+more_room <- Boston[Boston$rm > 8,]
+par(mfrow=c(dim(Boston)[2], 1), mar=rep(1, 4))
+for (i in c(1:dim(Boston)[2])){
+    boxplot(Boston[i], border="lightgray", col="lightgray", horizontal=TRUE, lwd=0.5)
+    boxplot(more_room[i], borde="green", col="green", horizontal=TRUE, lwd=1, add=TRUE)
+}
+```
+
+Simiar to the analysis of low median house value suburbs, the boxplots of suburbs averaging more than 8 rooms per dwelling is plotted (green) against the sample population (lightgray).
+Closer observation reveals that these suburbs, relative to the sample, also have considerably lower `crim`, `indus`, `rad`, `tax`, `lstat` and `medv`.

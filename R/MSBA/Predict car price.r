@@ -240,4 +240,30 @@ lm_model_RMSE <- mean((predict(lm_model, validation_set_converted) - validation_
 lm_model_RMSE
 #model.matrix(X~., cars_data)
 
-confint(lm_model, level=0.95)
+confint(lm_model, level=0.95)[,1]*confint(lm_model, level=0.95)[,2] < 0
+
+min.model <- lm(log(price)~mileage, data=training_set_converted)
+
+max.model <- formula(lm(log(price)~., data=training_set_converted))
+
+fwd.model <- step(min.model, direction="forward", scope=max.model)
+
+bwd.model <- step(fwd.model, direction="backward", scope=min.model)
+
+#twoway.model <- step(min.model, direction="both", scope=max.model)
+
+# confint(fwd.model)
+#
+# confint(bwd.model)
+#
+# confint(twoway.model)[,1] * confint(twoway.model)[,2] > 0
+
+mean((exp(predict(bwd.model, data=validation_set_converted) - log(validation_set_converted$price))^2)^.5
+validation_set_converted_log <- validation_set_converted
+validation_set_converted_log$price <- log(validation_set_converted_log$price)
+mean((exp(predict(bwd.model, data=validation_set_converted_log))-validation_set_converted$price)^2)^.5
+# summary(fwd.model$residuals^2)^.5
+# 
+# summary(bwd.model$residuals^2)^.5
+# 
+# summary(twoway.model$residuals^2)^.5
