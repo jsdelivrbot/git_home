@@ -1,0 +1,53 @@
+---
+title: "Chapter 3"
+author: "Wenduo Wang"
+date: "July 20, 2016"
+output: html_document
+---
+
+Problem  15
+
+(a)
+Let's create a simple linear regression model for each variable against `crim`, and plot the fitted line and actual data points.
+```{r}
+library(MASS)
+library(dplyr)
+summary(Boston)
+row_no <- nrow(Boston)
+training_rows <- sample(row_no, round(row_no*0.8))
+training_set <- Boston[training_rows,]
+test_set <- setdiff(Boston, training_set)
+confint_df <- data.frame()
+par(mfrow=c(4, 4), mar=c(2, 1, 2, 1))
+for (i in c(1:ncol(Boston))){
+    if (colnames(Boston)[i]=="crim"){
+        next
+    }
+    formula <- as.formula(paste("crim~", colnames(Boston)[i]))
+    lm_model <- lm(formula, data=training_set)
+    plot(y=Boston$crim, x=Boston[,i], main=paste("crim ~", colnames(Boston)[i]), pch=1, col="lightgray")
+    abline(lm_model$coef[1], lm_model$coef[2], col="red")
+    confint_df <- rbind(confint_df, confint(lm_model)[2,])
+}
+print(dim(confint_df))
+colnames(confint_df) <- c("2.5%", "97.5%")
+row.names(confint_df) <- colnames(Boston)[colnames(Boston)!="crim"]
+```
+
+The linear model does not fit the data very well according to the plots. To further assess the correlation, let's have a closer look at the coefficients of these models
+
+```{r}
+print(confint_df)
+```
+
+The above code lists the 95% confindence intervals of coefficients for all the predictors with respect to each linear model. As seen from the result, the confident interval of the coefficient of `chas` contains zero, which means this predictor is probably not correlated with `crim`. Meanwhile, other predictors mostly have very small coefficients close to 0, with the exception of `nox`. So up to now, it appears `nox` is most likely to be a true predictor of `crim`.
+
+(b, c)
+Now let's create a linear model of `crim` on all predictors, and see their coefficients' confident intervals.
+```{r}
+lm_model_multiple <- lm(crim~., data=training_set)
+print(confint(lm_model_multiple))
+```
+
+When all the predictors are simultaneously fitted against `crim`, the result turns out very different from the previous single linear regression models.
+First, the previously strong predictor `nox` is now largely irrelevant. Actually in this case only `zn`, `dis` and `rad` show a significant correlation with `crim`, which is equivalent to rejecting the null hypothesis that $$\beta_[0]$$

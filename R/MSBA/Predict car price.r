@@ -1,5 +1,5 @@
 #setting up the working directory
-setwd("~/git/git_home/R/MSBA/")
+#setwd("~/git/git_home/R/MSBA/")
 
 #include dplyr library to access advanced data.frame functions
 library(dplyr)
@@ -177,14 +177,14 @@ training_set_converted$mileage <- log(training_set_converted$mileage)
 
 training_set_converted$featureCount <- training_set_converted$featureCount^.5
 
-# formula_expression <- "price ~ `trim..320`"
-# 
-# for (i in c(3:(ncol(training_set_converted)-1))){
-#     variable_quote <- paste("`", colnames(training_set_converted)[i], "`", sep="")
-#     formula_expression <- paste(formula_expression, variable_quote, sep="+")
-# }
-# 
-# formula <- as.formula(formula_expression)
+formula_expression <- "price ~ `trim..320`"
+
+for (i in c(3:(ncol(training_set_converted)-1))){
+    variable_quote <- paste("`", colnames(training_set_converted)[i], "`", sep="")
+    formula_expression <- paste(formula_expression, variable_quote, sep="+")
+}
+
+formula <- as.formula(formula_expression)
 
 # counting <- 0
 # 
@@ -211,6 +211,12 @@ training_set_converted$featureCount <- training_set_converted$featureCount^.5
 # nn$act.fct
 # summary(nn$net.result)
 
+lm_ridge_model <- lm.ridge(price~mileage+`trim..320`, data=training_set_converted)
+
+lm_ridge_model$coef
+
+summary((lm_ridge_model$residuals^2)^.5)
+
 lm_model <- lm(price~., data=training_set_converted)
 summary((lm_model$residuals^2)^.5)
 
@@ -234,6 +240,8 @@ validation_set_converted <- data.frame(validation_set_converted)
 validation_set_converted$mileage <- log(validation_set_converted$mileage)
 
 validation_set_converted$featureCount <- validation_set_converted$featureCount^.5
+
+
 
 lm_model_RMSE <- mean((predict(lm_model, validation_set_converted) - validation_set_converted$price)^2)^.5
 
