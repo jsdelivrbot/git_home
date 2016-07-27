@@ -11,7 +11,7 @@
 
 <meta name="author" content="Summer Wang, Yawen Ye, Matt Staton, Wenduo Wang" />
 
-<meta name="date" content="2016-07-22" />
+<meta name="date" content="2016-07-24" />
 
 <title>Predict Car Price With Lasso Regression</title>
 
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Predict Car Price With Lasso Regression</h1>
 <h4 class="author"><em>Summer Wang, Yawen Ye, Matt Staton, Wenduo Wang</em></h4>
-<h4 class="date"><em>July 22, 2016</em></h4>
+<h4 class="date"><em>July 24, 2016</em></h4>
 
 </div>
 
@@ -143,13 +143,16 @@ $(document).ready(function () {
 <pre class="r"><code>rm(list=ls())
 gc()</code></pre>
 <pre><code>##          used (Mb) gc trigger (Mb) max used (Mb)
-## Ncells 364620 19.5     592000 31.7   460000 24.6
-## Vcells 564724  4.4    1308461 10.0   786432  6.0</code></pre>
-<p>Then include essential libraries for data frame, matrix and Lasso regression functions, which in this case are <code>dplyr</code> and <code>glmnet</code>. <code>knitr</code> and <code>formatR</code> libraries are required for formatting the R Markdown document.</p>
+## Ncells 364622 19.5     592000 31.7   460000 24.6
+## Vcells 564771  4.4    1308461 10.0   786432  6.0</code></pre>
+<p>Then include essential libraries for data frame, matrix and Lasso regression functions, which in this case are <code>dplyr</code> and <code>glmnet</code>. <code>knitr</code> and <code>formatR</code> libraries are required for formatting the R Markdown document. <code>compiler</code> library offers performance boost by setting <code>enableJIT(3)</code>, which is a quasi-pre-compiling function speeding up <code>for</code> loops.</p>
 <pre class="r"><code>library(dplyr)
 library(glmnet)
 library(knitr)
-library(formatR)</code></pre>
+library(formatR)
+library(compiler)
+enableJIT(3)</code></pre>
+<pre><code>## [1] 0</code></pre>
 <p>The method described below can be summarised as:</p>
 <ul>
 <li>Read in training data and convert categorical variables into dummy variables with logical values of <code>TRUE</code> or <code>FAlSE</code>, and thus removing <code>NA's</code></li>
@@ -622,7 +625,6 @@ library(formatR)</code></pre>
     
     # clean up variables to free memory
     rm(interact_terms)
-    # rm(RMSE)
     gc()
     
     return(RMSE)
@@ -698,7 +700,7 @@ test_set &lt;- read.csv(&quot;group_test.csv&quot;, header = T, sep = &quot;,&qu
 <p>With necessary functions all defined above, to build the Lasso regression model, simply pass the raw data to <code>data_pruning</code> function and use the returned matrix in <code>lasso_fit</code> function. What we have then is the fitted model.</p>
 <pre class="r"><code>training_set_4lasso &lt;- data_pruning(input_data)
 lasso_model &lt;- lasso_fit(training_set_4lasso)</code></pre>
-<pre><code>## In sample RMSE: 7543.981</code></pre>
+<pre><code>## In sample RMSE: 7671.978</code></pre>
 <p>The <em>out of sample RMSE</em>, on the other hand, is usually larger, in the range of 8000~8100. This is understandable given the new information and combinations of predictors in the test data.</p>
 </div>
 <div id="predict-price-with-test-data" class="section level2">
@@ -710,10 +712,10 @@ rm(test_set)
 rm(test_set_4lasso)
 gc()</code></pre>
 <pre><code>##           used (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells 1341360 71.7    2164898  115.7   1770749   94.6
-## Vcells 6214668 47.5  180263797 1375.4 352077284 2686.2</code></pre>
+## Ncells 1409833 75.3    2164898  115.7   2164898  115.7
+## Vcells 6360549 48.6  180381701 1376.3 293521413 2239.4</code></pre>
 <pre class="r"><code>cat(&quot;Out of sample RMSE:&quot;, RMSE_out)</code></pre>
-<pre><code>## Out of sample RMSE: 8069.792</code></pre>
+<pre><code>## Out of sample RMSE: 8146.535</code></pre>
 </div>
 <div id="predict-price-with-cars_x_out.csv-data." class="section level2">
 <h2>2.4. Predict <span class="math">\(price\)</span> with <code>Cars_X_out.csv</code> data.</h2>
@@ -732,8 +734,8 @@ rm(input_data)
 rm(training_set_4lasso)
 gc()</code></pre>
 <pre><code>##           used (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells 1314801 70.3    2164898  115.7   1770749   94.6
-## Vcells 3725250 28.5  144211037 1100.3 352077284 2686.2</code></pre>
+## Ncells 1383275 73.9    2164898  115.7   2164898  115.7
+## Vcells 3871157 29.6  144305360 1101.0 293521413 2239.4</code></pre>
 <pre class="r"><code>cars_out_price &lt;- lasso_prediction(lasso_model, prediction_set_4lasso, out_data)
 
 write.csv(cars_out_price, &quot;Cars_out_price.csv&quot;)</code></pre>

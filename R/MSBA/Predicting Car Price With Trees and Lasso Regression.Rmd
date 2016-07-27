@@ -1,0 +1,9 @@
+---
+title: "Predicting Car Price With Trees and Lasso Regression"
+author: "Summer Wang, Yawen Ye, Matt Staton, Wenduo Wang"
+date: "July 25, 2016"
+output: html_document
+---
+
+## Introduction
+In this study, we applied two categories of regression methods to build a model for predicting car prices, which are Trees methods, including random forest and boosting, and linear regression aided with Lasso method. The 

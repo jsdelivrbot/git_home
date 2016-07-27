@@ -46,4 +46,7 @@ cat("The prediction RMSE using Lasso regression is", RMSE)
 print(data.frame("Lambda"=lasso_model$lambda, "Non-zero coefs"=lasso_model$nzero))
 ```
 
-(e) 
+(e) Fit a PCR model on the training set, with M chosen by cross-validation. Report the test error obtained, along with the value of M selected by cross-validation.
+```{r}
+
+```
