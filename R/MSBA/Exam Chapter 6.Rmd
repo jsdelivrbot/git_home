@@ -6,6 +6,10 @@ output: html_document
 ---
 
 Problem 9
+```{r, echo=FALSE, results="hide"}
+library(compiler)
+enableJIT(3)
+```
 
 ```{r}
 library(dplyr)
@@ -43,10 +47,10 @@ lasso_model <- cv.glmnet(x=training_set_4ridge, y=training_set$Apps, nfolds=10, 
 lasso_model_lambda <- lasso_model$lambda.1se
 RMSE <- mean((predict(lasso_model, model.matrix(Apps~., test_set[, -1])) - test_set$Apps)^2)^.5
 cat("The prediction RMSE using Lasso regression is", RMSE)
-print(data.frame("Lambda"=lasso_model$lambda, "Non-zero coefs"=lasso_model$nzero))
+print(head(data.frame("Lambda"=lasso_model$lambda, "Non-zero coefs"=lasso_model$nzero)))
 ```
 
 (e) Fit a PCR model on the training set, with M chosen by cross-validation. Report the test error obtained, along with the value of M selected by cross-validation.
 ```{r}
-
+pc_training <- prcomp(training_set_4ridge[, -1], scale=TRUE)
 ```

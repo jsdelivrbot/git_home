@@ -146,7 +146,7 @@ test_set &lt;- College[-training_index,]</code></pre>
 <pre class="r"><code>lm_model &lt;- lm(Apps ~ ., data=training_set[, -1])
 RMSE &lt;- mean((predict(lm_model, test_set) - test_set$Apps)^2)^.5
 cat(&quot;The prediction RMSE using simple linear model is&quot;, RMSE)</code></pre>
-<pre><code>## The prediction RMSE using simple linear model is 1081.269</code></pre>
+<pre><code>## The prediction RMSE using simple linear model is 712.5712</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>We will use the <code>cv.glmnet()</code> function supplied in <code>glmnet</code> package to do the ridge regression.</li>
 </ol>
@@ -159,7 +159,7 @@ ridge_model &lt;- cv.glmnet(x=training_set_4ridge, y=training_set$Apps, nfolds=1
 ridge_model_lambda &lt;- ridge_model$lambda.1se
 RMSE &lt;- mean((predict(ridge_model, model.matrix(Apps~., test_set[, -1])) - test_set$Apps)^2)^.5
 cat(&quot;The prediction RMSE using Ridge regression is&quot;, RMSE)</code></pre>
-<pre><code>## The prediction RMSE using Ridge regression is 1225.312</code></pre>
+<pre><code>## The prediction RMSE using Ridge regression is 1078.893</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
 <li>For Lasso regression, the function is the same as Ridge regression, with the difference of setting <code>alpha=1</code>. The following code implements Lasso regression on the training set, and calculate the prediction RMSE on the test set. The <span class="math">\(\lambda\)</span> is determined by cross-validation, all of which are printed with corresponding non-zero coefficient counts.</li>
 </ol>
@@ -167,91 +167,19 @@ cat(&quot;The prediction RMSE using Ridge regression is&quot;, RMSE)</code></pre
 lasso_model_lambda &lt;- lasso_model$lambda.1se
 RMSE &lt;- mean((predict(lasso_model, model.matrix(Apps~., test_set[, -1])) - test_set$Apps)^2)^.5
 cat(&quot;The prediction RMSE using Lasso regression is&quot;, RMSE)</code></pre>
-<pre><code>## The prediction RMSE using Lasso regression is 1126.634</code></pre>
-<pre class="r"><code>print(data.frame(&quot;Lambda&quot;=lasso_model$lambda, &quot;Non-zero coefs&quot;=lasso_model$nzero))</code></pre>
-<pre><code>##          Lambda Non.zero.coefs
-## s0  3830.531715              0
-## s1  3490.237835              1
-## s2  3180.174725              1
-## s3  2897.656767              1
-## s4  2640.236927              1
-## s5  2405.685555              1
-## s6  2191.971080              1
-## s7  1997.242411              1
-## s8  1819.812900              1
-## s9  1658.145737              1
-## s10 1510.840640              1
-## s11 1376.621722              1
-## s12 1254.326442              1
-## s13 1142.895538              1
-## s14 1041.363848              1
-## s15  948.851954              1
-## s16  864.558562              1
-## s17  787.753562              1
-## s18  717.771707              1
-## s19  654.006846              2
-## s20  595.906681              2
-## s21  542.967974              2
-## s22  494.732195              2
-## s23  450.781551              2
-## s24  410.735360              2
-## s25  374.246763              2
-## s26  340.999712              3
-## s27  310.706237              3
-## s28  283.103951              3
-## s29  257.953777              3
-## s30  235.037874              3
-## s31  214.157757              3
-## s32  195.132572              3
-## s33  177.797532              3
-## s34  162.002490              4
-## s35  147.610635              4
-## s36  134.497313              4
-## s37  122.548942              4
-## s38  111.662032              5
-## s39  101.742285              5
-## s40   92.703781              5
-## s41   84.468232              5
-## s42   76.964307              6
-## s43   70.127010              6
-## s44   63.897120              8
-## s45   58.220676              8
-## s46   53.048512              9
-## s47   48.335828              9
-## s48   44.041806             10
-## s49   40.129254             11
-## s50   36.564281             12
-## s51   33.316011             12
-## s52   30.356309             12
-## s53   27.659538             12
-## s54   25.202341             13
-## s55   22.963434             13
-## s56   20.923426             13
-## s57   19.064647             14
-## s58   17.370996             15
-## s59   15.827805             15
-## s60   14.421706             15
-## s61   13.140521             15
-## s62   11.973154             15
-## s63   10.909492             15
-## s64    9.940323             15
-## s65    9.057252             15
-## s66    8.252630             15
-## s67    7.519489             16
-## s68    6.851479             16
-## s69    6.242812             16
-## s70    5.688218             16
-## s71    5.182892             16
-## s72    4.722459             16
-## s73    4.302928             16
-## s74    3.920668             16
-## s75    3.572367             16
-## s76    3.255007             16
-## s77    2.965842             16
-## s78    2.702364             16</code></pre>
+<pre><code>## The prediction RMSE using Lasso regression is 851.8596</code></pre>
+<pre class="r"><code>print(head(data.frame(&quot;Lambda&quot;=lasso_model$lambda, &quot;Non-zero coefs&quot;=lasso_model$nzero)))</code></pre>
+<pre><code>##      Lambda Non.zero.coefs
+## s0 3792.699              0
+## s1 3455.766              1
+## s2 3148.765              1
+## s3 2869.038              1
+## s4 2614.160              1
+## s5 2381.925              1</code></pre>
 <ol start="5" style="list-style-type: lower-alpha">
-<li></li>
+<li>Fit a PCR model on the training set, with M chosen by cross-validation. Report the test error obtained, along with the value of M selected by cross-validation.</li>
 </ol>
+<pre class="r"><code>pc_training &lt;- prcomp(training_set_4ridge[, -1], scale=TRUE)</code></pre>
 
 
 
