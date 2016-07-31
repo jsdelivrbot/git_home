@@ -2,7 +2,7 @@
 title: "Chapter 3"
 author: "Wenduo Wang"
 date: "July 20, 2016"
-output: html_document
+output: pdf_document
 ---
 
 Problem  15
@@ -14,7 +14,7 @@ library(MASS)
 library(dplyr)
 summary(Boston)
 row_no <- nrow(Boston)
-training_rows <- sample(row_no, round(row_no*0.8))
+training_rows <- sample(1:row_no, round(row_no*0.8))
 training_set <- Boston[training_rows,]
 test_set <- setdiff(Boston, training_set)
 confint_df <- data.frame()

@@ -1,0 +1,166 @@
+---
+title: "Exam Chapter 4"
+author: "Wenduo Wang"
+date: "July 30, 2016"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+---
+
+# Problem 10
+
+__(a) Produce some numerical and graphical summaries of the Weekly data. Do there appear to be any patterns?__
+
+First load the data set from `ISLR` package. And make a summary on `Weekly`. Let's explore if there is a qualitative correlation between the previous X weeks return and the current week's return.
+
+This is done by creating a new data frame called `co_move`, whose columns are `TRUE` if the product of the two returns is positive.
+
+```{r, message=FALSE}
+library(ISLR)
+library(dplyr)
+```
+
+```{r, results="hold", comment=">>>"}
+summary(Weekly)
+co_move <- data.frame(lapply(Weekly[, 2:6], function(v) v*Weekly[, 8]>0))
+cat("The output below is the probability that the current weekly percentage return is positive given that of the previous X weeks is also positive.")
+sapply(co_move, function(x) sum(x)/length(x))
+```
+
+From the result, it is difficult to draw a clear pattern, since it appears the current week's return is remotely related to historic weekly returns. Let's dig deeper by drawing some plots between them.
+
+```{r, message=FALSE}
+library(ggplot2)
+library(gridExtra)
+library(reshape2)
+```
+
+```{r, echo=FALSE, eval=FALSE}
+p1 <- ggplot(data=Weekly, aes(x=Lag1, y=Today))
+p1 + geom_point()
+
+p2 <- ggplot(data=Weekly, aes(x=Lag2, y=Today))
+p2 + geom_point()
+
+p3 <- ggplot(data=Weekly, aes(x=Lag3, y=Today))
+p3 + geom_point()
+
+p4 <- ggplot(data=Weekly, aes(x=Lag4, y=Today))
+p4 + geom_point()
+
+p5 <- ggplot(data=Weekly, aes(x=Lag5, y=Today, colour))
+p5 + geom_point()
+
+grid.arrange(p1, p2, p3, p4, p5, ncol=2)
+```
+
+__(b) Use the full data set to perform a logistic regression with Direction as the response and the five lag variables plus Volume as predictors. Use the summary function to print the results. Do any of the predictors appear to be statistically significant? If so, which ones?__
+
+A vanilla logistic regression is done on the dataset, and from the model summary, it is seen only Lag2 is statistically significant (if intercept is ignored), as determined by the _p-value_.
+
+```{r, highlight=TRUE, results="hold", comment=">>>"}
+logistic_fit <- glm(Direction~.-Year-Today, data=Weekly, family=binomial)
+cat("The fitted coefficients of the logistic model are listed below.")
+coef(logistic_fit)
+cat("The response signal created by R in place of Direction is like this.")
+contrasts(Weekly$Direction)
+cat("The summary of the fitted model is below.")
+print(summary(logistic_fit))
+prediction_logistic <- sapply(predict(logistic_fit, type="response"), function(x) ifelse(x>0.5, "Up", "Down"))
+```
+
+__(c) Compute the confusion matrix and overall fraction of correct predictions. Explain what the confusion matrix is telling you about the types of mistakes made by logistic regression.__
+
+The confusion matrix is created with `table()` function. Yet before creating the matrix, an extra procedure is necessary to translate the response signal into _Up_ or _Down_.
+
+The confusion matrix has four cells. Mistakes are in the cells where the row index and column index are different. So in this case, the most common mistake is when the regression model predicts _Up_ while the actual return went _Down_ (more than 400 occurrences). In fact, the prediction model is highly biased towards _Up_ vs _Down_ `r cat(sum(prediction_logistic=="Up"), ":", sum(prediction_logistic=="Down"))`, where in reality both sides are almost equally likely.
+
+```{r, results="hold", comment=">>>"}
+cat("The prediction vs actual Direction is tabulated below.")
+table(prediction_logistic, Weekly$Direction)
+```
+
+__(d) Now fit the logistic regression model using a training data period from 1990 to 2008, with Lag2 as the only predictor. Compute the confusion matrix and the overall fraction of correct predictions for the held out data (that is, the data from 2009 and 2010).__
+
+For this problem, the `Weekly` dataset is split into a training set composed of record on and prior to 2008, while the fitted model will be tested on the records from 2009 onwards.
+When modeling solely on `Lag2`, the prediction quality is similar to the previous example. While in reality the _Up/Down_ ratio is $\frac{56+5}{34+9}\approx1.4$, the prediction gives $\frac{34+56}{9+5}\approx6.4$, which is equivalent to an overall fraction of correct predictions of $\frac{56+9}{56+9+5+34}=62.5\%$.
+
+```{r, highlight=TRUE, results="hold", comment=">>>"}
+training_set <- Weekly[Weekly$Year<=2008, ]
+test_set <- Weekly[Weekly$Year>2008, ]
+logistic_fit <- glm(Direction~Lag2, data=training_set, family=binomial)
+prediction_logistic <- sapply(predict(logistic_fit, newdata=test_set, type="response"), function(x) ifelse(x>0.5, "Up", "Down"))
+table(prediction_logistic, test_set$Direction)
+```
+
+__(g), (h) Repeat (d) using KNN with K = 1.__
+
+First load the `class` library which is necessary for `knn()` method.
+
+```{r, message=FALSE}
+library(class)
+```
+
+To use `knn()` method, the training data and test data are converted to matrix. Yet unsimilar to normal logistic regression, `knn()` does fitting and prediction in the same function. The returned result, moreover, is recorded as factors which eliminates the need of conversion.
+
+The prediciton is printed in a confusion matrix as in (d). In this case, the prediction is less biased toward _Up_, but comparatively the accuracy is lower $\frac{21+32}{21+32+22+29}\approx51.0\%$ than the vanilla logistic regression.
+
+In comparison, the vanilla logistic regression returns higher prediction accuracy than the knn method used.
+
+```{r, hightlight=TRUE, results="hold", comment=">>>"}
+prediction_knn <- knn(train=matrix(training_set$Lag2), test=matrix(test_set$Lag2), cl=matrix(training_set$Direction), k=1)
+table(prediction_knn, test_set$Direction)
+```
+
+__(i) Experiment with different combinations of predictors, including possible transformations and interactions, for each of the methods. Report the variables, method, and associated confusion matrix that appears to provide the best results on the held out data. Note that you should also experiment with values for K in the KNN classifier.__
+
+Let's first dig a little bit deeper into the KNN method, by varying `k`- number of neighbours used in estimating new data.
+
+In the previous problem, only `k=1` was used, here `k=2:10` is used to explore how the accuracy changes with `k`.
+
+```{r, hightlight=TRUE, results="hold", comment=">>>"}
+knn_k <- function(nk){
+    prediction_tmp <- knn(train=matrix(training_set$Lag2), test=matrix(test_set$Lag2), cl=matrix(training_set$Direction), k=nk)
+    t_tmp <- table(prediction_tmp, test_set$Direction)
+    accuracy <- sum(t_tmp[1, 1], t_tmp[2, 2])/sum(t_tmp)
+    return(accuracy)
+}
+
+k_accuracy <- sapply(2:10, knn_k)
+
+k_df <- data.frame(k=2:10, accuracy=k_accuracy)
+
+p2 <- qplot(x=k, y=accuracy, data=k_df, geom="auto")
+
+p2
+
+cat("When k=", which.max(k_accuracy)+1, "the prediction is the most accurate.")
+cat("Max accuracy is:", k_accuracy[which.max(k_accuracy)]*100, "%")
+```
+
+Then let's trying improving the prediction using logistic regression. The baseline was established on `Direction~Lag2` because when all `Lag` variables are included together with `Volume`, only `Lag2` was statistically significant. To improve the model's capability, now let's try adding more features into the formula, and creating interactions between some of them.
+
+A function is defined to help choose the right combination of predictors, which is expressed below. It takes a list of predictors and add the predictors to the baseline formula and train a new model. Then it prints out the confusion matrix of the prediction and returns the predicion accuracy.
+
+An example is given below. By calling `glm_n` function with `Lag3`, `Lag3` is added into the baseline model, and the confusion matrix of the new model `Direction~Lag2+Lag3` is returned.
+
+```{r, hightlight=TRUE, results="hold", comment=">>>"}
+glm_n <- function(names){
+    formula <- as.formula(paste("Direction~Lag2", sapply(names, function(s) paste("+", s))))
+    logistic_fit <- glm(formula, data=training_set, family=binomial)
+    prediction_logistic <- sapply(predict(logistic_fit, newdata=test_set, type="response"), function(x) ifelse(x>0.5, "Up", "Down"))
+    tabl <- table(prediction_logistic, test_set$Direction)
+    glm_accuracy <- (tabl[1, 1]+tabl[2, 2])/sum(tabl)
+    print(tabl)
+    return(glm_accuracy)
+}
+
+glm_n("Lag3")
+
+```
+
+After trying out different combinations, it is found that with `Direction~Lag2+Lag3*Lag4` the model gives best prediction results, as seen below.
+
+```{r, hightlight=TRUE, results="hold", comment=">>>"}
+glm_n("Lag3*Lag4")
+```

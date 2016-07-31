@@ -1,0 +1,165 @@
+---
+title: "Chapter 8"
+author: "Wenduo Wang"
+date: "July 31, 2016"
+output: pdf_document
+---
+
+# Problem 8
+
+__8. In the lab, a classification tree was applied to the Carseats data set after converting Sales into a qualitative response variable. Now we will seek to predict Sales using regression trees and related approaches, treating the response as a quantitative variable.__
+
+```{r, message=FALSE, echo=FALSE}
+library(compiler)
+enableJIT(3)
+rm(list=ls())
+gc()
+```
+
+First load necessary libraries 
+
+```{r}
+library(tree)
+library(ISLR)
+library(randomForest)
+```
+
+__(a) Split the data set into a training set and a test set.__
+
+```{r, message=FALSE}
+set.seed(2)
+training_index <- sample(nrow(Carseats), 0.8*nrow(Carseats))
+training_set <- Carseats[training_index,]
+test_set <- Carseats[-training_index,]
+```
+
+__(b) Fit a regression tree to the training set. Plot the tree, and interpret the results. What test MSE do you obtain?__
+
+The regression tree is summarised below, from the plot it is clear that `ShelveLoc` is an important predictor of `Sales` since it sits on the top of the tree. `Price` is also critical because it is included in more than one level.
+
+```{r, highlight=TRUE, results="hold"}
+tree_fit <- tree(Sales~., data=training_set)
+summary(tree_fit)
+plot(tree_fit)
+text(tree_fit, pretty=0, cex=0.5)
+tree_prediction <- predict(tree_fit, newdata=test_set)
+MSE <- mean((tree_prediction - test_set$Sales)^2)
+cat("The test MSE is:", MSE)
+```
+
+__(c) Use cross-validation in order to determine the optimal level of tree complexity. Does pruning the tree improve the test MSE?__
+
+`cv.tree()` function is employed to determine the optimal level of tree complexity based on the model from last question. The pruning result is printed after the code. Interestingly, after repeating the pruning process with random training sets and test sets, it is found pruning does not necessarily improve test MSE. While in some cases the pruning process reduces the tree size, in many cases it doesn't, and therefore the test MSE is the same with the previous question.
+
+```{r, highlight=TRUE, results="hold"}
+cv_tree_fit <- cv.tree(tree_fit, FUN=prune.tree, K=10)
+cv_tree_fit
+
+cat("The optimal level of tree complexity is determined by cross-validation as:", cv_tree_fit$size[which.min(cv_tree_fit$dev)])
+
+prune_fit <- prune.tree(tree_fit, best=cv_tree_fit$size[which.min(cv_tree_fit$dev)])
+
+prune_prediction <- predict(prune_fit, newdata=test_set)
+
+MSE_prune <- mean((prune_prediction - test_set$Sales)^2)
+cat("The test MSE after pruning the tree is:", MSE_prune)
+```
+
+__(d) Use the bagging approach in order to analyze this data. What test MSE do you obtain? Use the importance() function to determine which variables are most important.__
+
+Bagging is a special case of Random Forest where for each tree all the predictors will be used. Therefore its implementation is the same with RF. Below is the result of building a Bagging model on the training data and test on the test data. By calling `importance()` function on the fitted model, the importance of variables are printed, where there are two columns, and for each column, a larger value indicates higher importance of the corresponding predictor. In this case, the importance result agrees with previous judgement that `ShelveLoc` and `Price` are the two most important predictors, whereas `CompPrice` is also an influential factor.
+
+```{r, highlight=TRUE, results="hold"}
+set.seed(3)
+bagging_fit <- randomForest(Sales~., data=training_set, mtry=ncol(training_set)-1, importance=TRUE)
+print(importance(bagging_fit))
+prediction_bagging <- predict(bagging_fit, newdata=test_set)
+MSE_bagging <- mean((prediction_bagging-test_set$Sales)^2)
+cat("The test MSE using Bagging is:", MSE_bagging)
+```
+
+__(e) Use random forests to analyze this data. What test MSE do you obtain? Use the importance() function to determine which variables are most important. Describe the effect of m, the number of variables considered at each split, on the error rate obtained.__
+
+To investigate the effect of _m_ on the error rate (also measured as MSE) obtained, a function is defined that takes an _m_ value and produce a RF model on the training data, and test on the test data. The importance of each predictor during the modeling process is also printed. Each prediction's MSE is recorded and plotted against _m_.
+
+The code output of `importance()` function shows that while `ShelveLoc` remains the most important predictor regardless of _m_, the relative importance between these variables is more differentiated as _m_ increase, which is saying when _m_ is small, many predictors are relatively important, as they each contains some information about `Sales`, however, when _m_ increases, the less important predictors are overshadowed by the more influential ones.
+
+Looking at the final plot of _MSE vs m_, it is clear that as _m_ becomes larger, the test MSE is reduced, which is equivalent to more accurate predictions.
+
+```{r, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(reshape2)
+```
+
+
+```{r, highlight=TRUE, results="hold"}
+set.seed(4)
+
+rf_m <- function(m){
+    rf_fit_tmp <- randomForest(Sales~., data=training_set, ntree=bagging_fit$ntree, mtry=m, importance=TRUE)
+    cat("The variable importance for m =", m, ":")
+    print(importance(rf_fit_tmp))
+    prediction_rf_tmp <- predict(rf_fit_tmp, newdata=test_set)
+    MSE_rf_tmp <- mean((prediction_rf_tmp-test_set$Sales)^2)
+    return(MSE_rf_tmp)
+}
+
+MSE_rf <- sapply(1:(ncol(training_set)-1), rf_m)
+
+MSE_rf_df <- data.frame(M=1:(ncol(training_set)-1), MSE=MSE_rf)
+
+print(MSE_rf_df)
+
+qplot(x=M, y=MSE, data=MSE_rf_df, geom="auto")
+```
+
+# Problem 11
+
+__(a) Create a training set consisting of the first 1,000 observations, and a test set consisting of the remaining observations.__
+
+First load `gbm` library.
+
+```{r, message=FALSE}
+library(gbm)
+```
+
+
+```{r, highlight=TRUE, results="hold"}
+training_set <- Caravan[1:1000,]
+test_set <- Caravan[1001:nrow(Caravan),]
+```
+
+__(b) Fit a boosting model to the training set with Purchase as the response and the other variables as predictors. Use 1,000 trees, and a shrinkage value of 0.01. Which predictors appear to be the most important?__
+
+`gbm` function is called to build a boosting model, with 10 fold cross-validation. Here the response is the customer's decision _Yes/No_, which is converted to 1/0, whose distribution is assumed Bernoulli. The predictor relative influence is summarised and plotted by calling `summary()` function.
+
+```{r, highlight=TRUE, results="hold", warning=FALSE}
+set.seed(5)
+training_set$Purchase <- ifelse(training_set$Purchase=="Yes", 1, 0)
+boost_fit <- gbm(Purchase~., data=training_set, n.trees=1000, shrinkage=0.01, interaction.depth=4, distribution="bernoulli", cv.folds=10, n.cores=4)
+print(summary(boost_fit))
+```
+
+__(c) Use the boosting model to predict the response on the test data. Predict that a person will make a purchase if the estimated probability of purchase is greater than 20 %. Form a confusion matrix. What fraction of the people predicted to make a purchase do in fact make one? How does this compare with the results obtained from applying KNN or logistic regression to this data set?__
+
+The confusion matrix using boosting on the test data is tabulated below.
+
+```{r, highlight=TRUE, results="hold", warning=FALSE}
+prediction_boost <- sapply(predict(boost_fit, newdata=test_set, type="response", n.trees=1000), function(x) ifelse(x>0.2, "Yes", "No"))
+tabl <- table(prediction_boost, test_set$Purchase)
+tabl
+cat(100*tabl[2,2]/sum(tabl[2,]), "% of the predicted purchases happened in reality.")
+```
+
+Generally logistic regression is more suitable for predicting binomial variables, and therefore it is compared with boosting. Here the decision threshold for a purchase decision is the same with boosting as 20%.
+
+```{r, highlight=TRUE, results="hold", warning=FALSE}
+set.seed(6)
+logistic_fit <- glm(Purchase~., data=training_set, family=binomial)
+prediction_logistic <- sapply(predict(logistic_fit, newdata=test_set, type="response"), function(x) ifelse(x>0.2, "Yes", "No"))
+tabl1 <- table(prediction_logistic, test_set$Purchase)
+tabl1
+cat(100*tabl1[2,2]/sum(tabl1[2,]), "% of the predicted purchases happened in reality (logistic regression).")
+```
+
+From the output it is seen that logistic regression's prediction has a slightly higher purchase conversion rate compared with boosting, however, in terms of correct prediction, i.e. both correct _Yes_ and _No_, boosting is slightly higher than logistic regression.
