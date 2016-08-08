@@ -157,6 +157,8 @@ ggplot(data=green, aes(x=Rent)) +
 
 In the above graph, Class A buildings are rendered in red and Class B in blue, and for both classes, the mean rent and standard deviation is calculated and marked on the graph. The red vertical lines are $mean(Rent)\pm sd(Rent)$ for Class A, and the blue lines are that for Class B. Without the knowledge of local real estate market, the analyst could have been too optimistic about the project profitability, if the building were to be offered at $20/sqft a year.
 
+***
+
 ## Bootstrapping
 
 Load necessary libraries.
@@ -328,7 +330,9 @@ row.names(portfolio_summary) <- c("Mean Return", "Std")
 portfolio_summary
 ```
 
-# Market segmentation
+***
+
+## Market segmentation
 
 ```{r, highlight=TRUE, results="hold", comment=">>>", warning=FALSE}
 tweets <- read.csv("~/git/git_home/data/social_marketing.csv")
@@ -382,4 +386,4 @@ ggplot(data=pc1_df, aes(x=Topic, y=Projection)) +
     geom_bar(stat="identity", fill="red", alpha=0.6)
 ```
 
-The barplot shows the projection of PC1 on each topics, which is equivalent to the weight of each topic contained in PC1. From the projection pattern it is observed `food`, `parenting`, `religion`, `sports_fandom` and `school` are the most represented in PC1. Repeating the above process across PC2 to PC18, more combinations can be found, and thereby generating information of such combinations, the company could differentiate its messages from others and attract specific consumer groups.s
+The barplot shows the projection of PC1 on each topics, which is equivalent to the weight of each topic contained in PC1. From the projection pattern it is observed `food`, `parenting`, `religion`, `sports_fandom` and `school` are most represented in PC1. Repeating the above process across PC2 to PC18 will give more combinations, with which the company could tailor its messages to specific consumer groups. However, this should be done in caution, since PC in nature captures most variable features. Variance in our context here could also indicate controversy in the topic, which some users try to avoid while others find noteworthy. Unconscious involvement in such issues may risk the business.
