@@ -33,7 +33,7 @@ test_set <- College[-training_index,]
 __(b) Fit a linear model using least squares on the training set, and report the test error obtained.__
 
 Fit a linear model using all variables except school names (`X`). This simplifies the problem, but because each school appears only once in the dataset, not including school names in the training set will not affect prediction on other schools.
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 lm_model <- lm(Apps ~ ., data=training_set[, -1])
 prediction_lm <- predict(lm_model, test_set)
 RMSE <- mean((prediction_lm - test_set$Apps)^2)^.5
@@ -44,7 +44,7 @@ __(c)Fit a ridge regression model on the training set, with λ chosen by cross-v
 
 We will use the `cv.glmnet()` function supplied in `glmnet` package to do the ridge regression, with $\lambda$ chosen by cross-validation.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 library(glmnet)
 training_set_4ridge <- model.matrix(~., data=training_set[,-c(1, 3)])
 ridge_model <- cv.glmnet(x=training_set_4ridge, y=training_set$Apps, nfolds=10, alpha=0)
@@ -60,7 +60,7 @@ For Lasso regression, the function is the same as Ridge regression, with the dif
 
 The $\lambda$ is determined by cross-validation, all of which are printed with corresponding non-zero coefficient counts.
 
-```{r, collapse=TRUE}
+```{r, results="hold"}
 lasso_model <- cv.glmnet(x=training_set_4ridge, y=training_set$Apps, nfolds=10, alpha=1)
 lambda_ind <- match(lasso_model$lambda.1se, lasso_model$lambda)
 prediction_lasso <- predict(lasso_model, model.matrix(Apps~., test_set[, -1]))
@@ -73,7 +73,7 @@ __(e) Fit a PCR model on the training set, with M chosen by cross-validation. Re
 
 Here `pcr()` function from `pls` library is used to fit PCA model on the training data. Before fitting the model, missing values are dropped from the training set, as required by the function. Within `pcr()` function, feature scaling and cross-validation are enforced, and therefore the number of component _M_ is chosen automatically by the function. Before making prediction on test set, the model is trained on the whole training set with 2 principal components.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 library(pls)
 training_set_4pcr <- na.omit(training_set)[, -1]
 set.seed(1)
@@ -89,7 +89,7 @@ __(f) Fit a PLS model on the training set, with _M_ chosen by cross-validation. 
 
 The process of using partial least squares is very similar to PCA, which applies on the same dataset, except for `plsr` function is used in place of `pcr`.  With `plsr`, _M_ is chosen by specifying cross-validation.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 pls_model <- plsr(Apps~., data=training_set_4pcr, scale=TRUE, validation="CV")
 cat("The M chosen by cross-validation is", pls_model$ncomp)
 pls_model <- plsr(Apps~., data=training_set_4pcr, scale=TRUE, ncomp=pls_model$ncomp)
@@ -106,7 +106,7 @@ It is observed that in terms of residual pattern/distribution, simple linear reg
 
 Generally, with the five models, the prediction accuracy in terms of RMSE is around 1200 for linear regression, Lasso and Ridge regression, while PLS is slightly higher at ~1500, and PCA result in an RMSE in the range of 3000~4000.
 
-```{r, warning=FALSE, collapse=TRUE, message=FALSE}
+```{r, warning=FALSE, results="hold", message=FALSE}
 library(ggplot2)
 Residual <- c(prediction_lm, prediction_ridge, prediction_lasso, prediction_pca, prediction_pls)
 
@@ -141,7 +141,7 @@ library(pls)
 
 Before delving into the modeling process, the data is normalized by function `stdize` as expressed as $\frac{x-\mu}{\sigma}$, where $\mu$ and $\sigma$ are the mean and standard deviation of the whole dataset. This is because by observation it is found that the column variables within the dataset have different scales, and by normalizing the variables, all the variables are brought to the same level, which is very important for regularized regression methods, e.g. Lasso and Ridge. Then the full dataset is randomly split into a training set and a test set, where 80% of the data is allocated for training.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 mean_b <- sapply(Boston, mean)
 sd_b <- sapply(Boston, sd)
 
@@ -150,7 +150,6 @@ stdize <- function(dfx, meanx=mean_b, sdx=sd_b){
     sd_mat <- matrix(rep(sdx, nrow(dfx)), nrow=nrow(dfx), byrow=TRUE)
     std_dfx <- (dfx - mean_mat)/sd_mat
     mtx <- as.matrix(std_dfx)
-    # mtx <- mtx[, colSums(is.na(mtx))==0]
     return(mtx)
 }
 
@@ -164,7 +163,7 @@ Here plain linear regression is used as a baseline, and dimension reduction tech
 
 The most straight forward way is to apply plain linear regression on the training set. The fitted linear model is then used to predict on the test set. The RMSE on the test set is printed at the end of the code.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 lm_fit <- lm(crim~., data=as.data.frame(training_set))
 prediction_lm <- predict(lm_fit, as.data.frame(test_set))
 RMSE_lm <- mean(((prediction_lm-test_set[, 1])*sd_b[1])^2)^.5
@@ -173,7 +172,7 @@ cat("The plain linear regression method returns an RMSE on the test set of", RMS
 
 A more advanced way to build a robust prediction model is Lasso regression, and this is done with `cv.glmnet` which incorporates k-fold cross-validation. The prediction RMSE on the test set is also printed.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 lasso_fit <- cv.glmnet(training_set[, -match("crim", colnames(training_set))],
                        y=training_set[, "crim"],
                        nfold=length(training_index),
@@ -186,7 +185,7 @@ cat("Lasso regression returns an RMSE on the test set of", RMSE_lasso)
 
 Principal Component regression is also tried here with the hope to improve prediction accuracy, with `ncomp` chose by cross-validation within `pcr` function.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 training_set_4pcr <- as.data.frame(na.omit(training_set[, -4]))
 pc_fit <- pcr(crim~., data=training_set_4pcr, scale=TRUE, validation="CV" )
 prediction_pcr <- predict(pc_fit, na.omit(test_set[, -c(1, 4)]))
@@ -196,7 +195,7 @@ cat("Principal component regression returns an RMSE on the test set of", RMSE_pc
 
 The result can be viewed from a relative perspective by dividing the RMSE by the standard deviation of `crim`. The RMSE are typically about 1 standard deviation of `crim`.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 rel_RMSE <- sapply(c(RMSE_lm, RMSE_lasso, RMSE_pcr), function(x) x/sd_b[1])
 method <- factor(c("lm", "Lasso", "PCA"))
 rel_RMSE_df <- data.frame("Method"=method, "Rel_RMSE"=rel_RMSE)
@@ -209,16 +208,16 @@ Comparing the test set RMSE of the three models, it is interesting that plain li
 
 First a PLS model is fitted on the same dataset as PCA. The `chas` column is dropped, because PCA and PLS require the dataset to be clean from missing values, and also, a constant column causes error while the function tries to assign a unique coefficient to it. Since `chas` variable is sparsely populated, it should be dropped as a result. Other than `chas`, other variables are all kept within the model, since PLS will automatically work out the contribution of each variable to `crim`, and by assigning small coefficients to less important variables, thus reducing the dimension in question.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 pls_fit <- plsr(crim~., data=training_set_4pcr, scale=TRUE, validation="CV" )
 prediction_pls <- predict(pls_fit, na.omit(test_set[, -c(1, 4)]))
 RMSE_pls <- mean(((prediction_pls - test_set[, 1])*sd_b[1])^2)^0.5
 cat("Partial least square regression returns an RMSE on the test set of", RMSE_pls)
 ```
 
-To intuitively compare the results from the four models, another points plot is made. A similar pattern to what was shown in Problem 9 appeared, with simple linear regression and Lasso regression exhibiting relatively concentrated and small residuals, which the PCA and PLS methods displaying larger error spread. Despite of this disadvantage, PLS is still useful when the data volumn is small compared with the number of features. The mechanism of PLS assists solving overfitting as usually caused by small $\frac{data}{feature}$ ratio.
+To intuitively compare the results from the four models, another points plot is made. A similar pattern to what was shown in Problem 9 appeared, with simple linear regression and Lasso regression exhibiting relatively concentrated and small residuals, which the PCA and PLS methods displaying larger error spread. Despite of this disadvantage, PLS is still useful when the data volume is small compared with the number of features. The mechanism of PLS assists solving overfitting as usually caused by small $\frac{data}{feature}$ ratio.
 
-```{r, comment="output>>>", hightlight=TRUE, collapse=TRUE, warning=FALSE}
+```{r, comment=">>>", hightlight=TRUE, results="hold", warning=FALSE}
 library(ggplot2)
 Residual <- c(prediction_lm, prediction_lasso, prediction_pcr, prediction_pls)
 
