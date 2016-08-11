@@ -1,0 +1,2166 @@
+"","1"
+"(Intercept)",110838.797959946
+"trim: 320",-15613.9126179144
+"trim: 350",0
+"trim: 400",0
+"trim: 420",-15051.350448825
+"trim: 430",-12629.6837569646
+"trim: 450",0
+"trim: 500",-12419.3824219542
+"trim: 550",989.198341383596
+"trim: 55 AMG",-2020.36841121043
+"trim: 600",0
+"trim: 63 AMG",22779.8829441441
+"trim: 65 AMG",23202.867616408
+"trim: unknown",0
+"subTrim: Hybrid",0
+"subTrim: unknown",0
+"condition: CPO",0
+"condition: New",0
+"condition: Used",0
+"isOneOwner: f",0
+"isOneOwner: t",0
+"mileage",-5924.70212919079
+"year: 1988",0
+"year: 1994",-2373.16190679143
+"year: 1995",-2098.59716929043
+"year: 1996",-1460.23015904235
+"year: 1997",-1520.58912206257
+"year: 1998",-169.388542519479
+"year: 1999",-486.258837434855
+"year: 2000",-2578.63879621742
+"year: 2001",-2761.67193869386
+"year: 2002",-2093.63041161845
+"year: 2003",-1235.10881465409
+"year: 2004",-109.079109252277
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",86.3709923413051
+"year: 2012",0
+"year: 2013",2868.17387519125
+"year: 2014",0
+"year: 2015",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",-87.2541216408341
+"color: Turquoise",0
+"color: unknown",0
+"color: White",844.765820572308
+"color: Yellow",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",-10148.1699398631
+"displacement: 4.2 L",0
+"displacement: 4.3 L",-819.013264069676
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",-37.0001131774424
+"displacement: 5.5 L",425.830615101677
+"displacement: 5.8 L",-9603.21144967383
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"fuel: Diesel",0
+"fuel: Gasoline",0
+"fuel: Hybrid",0
+"fuel: unknown",7919.52415407875
+"state: AK",0
+"state: AL",0
+"state: AR",0
+"state: AZ",0
+"state: CA",0
+"state: CO",0
+"state: CT",0
+"state: DC",0
+"state: DE",0
+"state: FL",-119.922137860069
+"state: GA",0
+"state: HI",0
+"state: IA",0
+"state: ID",0
+"state: IL",0
+"state: IN",0
+"state: KS",0
+"state: KY",0
+"state: LA",0
+"state: MA",0
+"state: MD",0
+"state: ME",0
+"state: MI",0
+"state: MN",0
+"state: MO",0
+"state: MS",0
+"state: MT",0
+"state: NC",0
+"state: ND",0
+"state: NE",0
+"state: NH",0
+"state: NJ",0
+"state: NM",0
+"state: NV",0
+"state: NY",0
+"state: OH",0
+"state: OK",0
+"state: ON",0
+"state: OR",0
+"state: PA",0
+"state: RI",0
+"state: SC",0
+"state: SD",0
+"state: TN",0
+"state: TX",0
+"state: unknown",0
+"state: UT",0
+"state: VA",0
+"state: WA",0
+"state: WI",0
+"state: WV",0
+"state: WY",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",2801.91573792107
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"featureCount",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",-4454.11342134175
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",-6764.43065460902
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",-4347.5247243393
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",-3769.12173718964
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",-17156.6145608393
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",-613.463350042983
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",-2858.09565877705
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",7203.43357331107
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",17023.3572365043
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",11157.9714151124
+"displacement: 5.8 L",0
+"displacement: 6.0 L",29501.0254171144
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",13909.5666839314
+"displacement: 5.8 L",0
+"displacement: 6.0 L",42935.4336086686
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",25229.3648106659
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",16917.5225454501
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",10145.054781906
+"displacement: 5.8 L",0
+"displacement: 6.0 L",47890.3295359119
+"displacement: 6.3 L",0
+"displacement: unknown",1252.44802122021
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",-15.9937379324259
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",-2653.45747903823
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",-7.46019249443963
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",-1.23145305997226
+"year: 2004",-11.0469445645829
+"year: 2005",-248.34807063592
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",13488.4016571363
+"year: 2011",11475.6814629236
+"year: 2012",12321.2586307348
+"year: 2013",4929.35445144376
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",-1.15018520217703
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",14.7138625599734
+"year: 2015",20660.0547384695
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",-14.5554459791019
+"year: 2007",-1.60993445385959
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",117.736033772618
+"year: 2012",1.21379750806209
+"year: 2013",0
+"year: 2014",0
+"year: 2015",19390.5874756173
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",34724.7088055651
+"displacement: 3.0 L",308.096510355822
+"displacement: 3.2 L",0
+"displacement: 3.5 L",-20.8036400617951
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",541.974323770976
+"displacement: 4.7 L",2002.7427687223
+"displacement: 5.0 L",-37.5269301916123
+"displacement: 5.4 L",-568.917355973214
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",-480.019133811463
+"displacement: unknown",0
+"trim: 320",0
+"trim: 350",0
+"trim: 400",0
+"trim: 420",0
+"trim: 430",0
+"trim: 450",0
+"trim: 500",-0.00605745841242
+"trim: 550",0
+"trim: 55 AMG",-0.325970401945326
+"trim: 600",0
+"trim: 63 AMG",0
+"trim: 65 AMG",0
+"trim: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"displacement: 3.0 L",0
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",0
+"displacement: 4.7 L",0
+"displacement: 5.0 L",0
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",0
+"displacement: 6.0 L",1037.67333401542
+"displacement: 6.3 L",0
+"displacement: unknown",6137.06784563462
+"displacement: 3.0 L",3346.31246080457
+"displacement: 3.2 L",0
+"displacement: 3.5 L",0
+"displacement: 3.7 L",0
+"displacement: 4.2 L",0
+"displacement: 4.3 L",0
+"displacement: 4.6 L",4846.89330147063
+"displacement: 4.7 L",0
+"displacement: 5.0 L",-57.2174682839307
+"displacement: 5.4 L",0
+"displacement: 5.5 L",0
+"displacement: 5.8 L",-295.170459094001
+"displacement: 6.0 L",0
+"displacement: 6.3 L",0
+"displacement: unknown",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",-3083.53571236756
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",-43.0779647261038
+"year: 1995",-102.041811407352
+"year: 1996",-47.05809346778
+"year: 1997",-65.588471927389
+"year: 1998",-11.1310034716104
+"year: 1999",-11.4743361588242
+"year: 2000",-264.948018182632
+"year: 2001",-235.666390928218
+"year: 2002",-266.0510961276
+"year: 2003",-147.15178790713
+"year: 2004",-30.2587199405915
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",800.931848305482
+"year: 2010",6893.2033404688
+"year: 2011",8125.07454749166
+"year: 2012",3399.01319978521
+"year: 2013",3314.68694428489
+"year: 2014",5381.7764773217
+"year: 2015",12493.5525095132
+"year: 1988",0
+"year: 1994",0
+"year: 1995",-18.3797141350729
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",380.823623096187
+"year: 2014",3654.44800207017
+"year: 2015",4275.39625424173
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",2710.37673496218
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",2655.54707037667
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",1158.28587314304
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"year: 1988",0
+"year: 1994",0
+"year: 1995",0
+"year: 1996",0
+"year: 1997",0
+"year: 1998",0
+"year: 1999",0
+"year: 2000",0
+"year: 2001",0
+"year: 2002",0
+"year: 2003",0
+"year: 2004",0
+"year: 2005",0
+"year: 2006",0
+"year: 2007",0
+"year: 2008",0
+"year: 2009",0
+"year: 2010",0
+"year: 2011",0
+"year: 2012",0
+"year: 2013",0
+"year: 2014",0
+"year: 2015",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",17748.2624372351
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",80.3409254220953
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",349.021815302762
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",6549.26766568233
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",2584.3615716057
+"region: New",0
+"region: Pac",0
+"region: SoA",0
+"region: unknown",0
+"region: WNC",0
+"region: WSC",32.8869754890893
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",359.755271541011
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",10.4372961526378
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"wheelType: Alloy",0
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
+"trim: 320",0
+"trim: 350",0
+"trim: 400",0
+"trim: 420",0
+"trim: 430",0
+"trim: 450",0
+"trim: 500",0
+"trim: 550",0
+"trim: 55 AMG",0
+"trim: 600",0
+"trim: 63 AMG",0
+"trim: 65 AMG",0
+"trim: unknown",0
+"trim: 320",0
+"trim: 350",0
+"trim: 400",0
+"trim: 420",0
+"trim: 430",0
+"trim: 450",0
+"trim: 500",0
+"trim: 550",0
+"trim: 55 AMG",0
+"trim: 600",15552.1595998232
+"trim: 63 AMG",0
+"trim: 65 AMG",25898.6114482596
+"trim: unknown",0
+"trim: 320",0
+"trim: 350",0
+"trim: 400",0
+"trim: 420",0
+"trim: 430",-493.856630429
+"trim: 450",0
+"trim: 500",-451.667415126301
+"trim: 550",0
+"trim: 55 AMG",0
+"trim: 600",0
+"trim: 63 AMG",0
+"trim: 65 AMG",0
+"trim: unknown",-2063.41830628972
+"condition: CPO",0
+"condition: New",1453.52445859757
+"condition: Used",-1321.33324223727
+"isOneOwner: f",-29.7090365193589
+"isOneOwner: t",0
+"soundSystem: Alpine",0
+"soundSystem: Bang Olufsen",0
+"soundSystem: Bose",0
+"soundSystem: Boston Acoustic",0
+"soundSystem: Harman Kardon",0
+"soundSystem: Premium",0
+"soundSystem: unknown",0
+"wheelSize: 16",0
+"wheelSize: 17",0
+"wheelSize: 18",0
+"wheelSize: 19",0
+"wheelSize: 20",0
+"wheelSize: 21",0
+"wheelSize: 22",0
+"wheelSize: unknown",0
+"color: Beige",0
+"color: Black",0
+"color: Blue",0
+"color: Bronze",0
+"color: Brown",0
+"color: Gold",0
+"color: Gray",0
+"color: Green",0
+"color: Purple",0
+"color: Red",0
+"color: Silver",0
+"color: Turquoise",0
+"color: unknown",0
+"color: White",0
+"color: Yellow",0
+"",0
+"region: ENC",0
+"region: ESC",0
+"region: Mid",0
+"region: Mtn",0
+"region: New",0
+"region: Pac",0
+"region: SoA",-0.173898330677649
+"region: unknown",0
+"region: WNC",0
+"region: WSC",0
+"wheelType: Alloy",-20.4133194703372
+"wheelType: Chrome",0
+"wheelType: Premium",0
+"wheelType: Steel",0
+"wheelType: unknown",0
