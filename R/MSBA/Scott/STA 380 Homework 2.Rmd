@@ -1,0 +1,12 @@
+---
+title: "STA 380 Homework 2"
+author: "Anthony Garino, Wenduo Wang"
+date: "August 12, 2016"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+---
+
+```{r, result="hold", comment=">"}
+groceries <- read.transactions("data/groceries.txt", sep=",")
+```

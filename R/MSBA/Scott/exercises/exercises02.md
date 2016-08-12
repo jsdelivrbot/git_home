@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 # STA 380, Part 2: Exercises 2
 
 Turn these in by 12 PM on Tuesday, August 16th.  As before, prepare your reports using RMarkdown so that they are fully reproducible, carefully integrating visual and quantitative evidence with prose.
