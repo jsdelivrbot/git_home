@@ -1,0 +1,74 @@
+---
+title: "Naive Bayes continued and Principal Component Regression"
+author: "Anthony Garino, Wenduo Wang"
+date: "August 11, 2016"
+output: 
+  pdf_document: 
+    latex_engine: xelatex
+---
+
+### Continuing on Naive Bayes
+
+To estimate the probability of a word $P(word j is randomly selected)$, the normal ways is $$\hat{w_{j}}=\frac{\#word\ j\ in\ corpus}{total\ \#words\ in\ corpus}$$ However there are problems associated with this approach.
+ 
+    1 It doesn't work for alien words that appear in test set but not included in training set.
+    2 The model are biased toward certain words in the sample if the sample size is small and doesn't represent the whole population.
+    
+To overcome this problem, we add a _pseudo-count_ so that $$\tilde{x_{ij}}=x_{ij}+r$$ where r is the _pseudo-count_ or _smoothing factor_. Therefore, if a new word shows up, the model will assign a non-zero weight to it, and as the training set grows larger, the effect of a new word becomes smaller. A way to choose _r_ is given by _Laplacian smoothing_ $r=\frac{1}{N}$ where N is the total number of words in the corpus.
+
+As an example, if a person only sees 3 white swans, he is not so sure to predict all the swans are white, so he could say there will be a probability $\frac{3}{4}$ that the next swan is also white. But as he becomes with more experience, he is more confident to assert the next swan he will see is white.
+
+### Another example of text mining in R
+
+For text mining, `tm` library is the most popular tool in R which provides a ton of classes and functions.
+
+```{r, message=FALSE}
+library(tm) 
+```
+
+After reading in the corpus, i.e. a list of several texts in R, use `Corpus(VectorSource())` function to convert the corpus into a `tm` `Corpus` object.
+
+And as a routine, there are a set of procedures to tokenize the corpus, including make all the words lower case, stem numbers, remove punctuations and strip extra spaces.
+
+```{r, eval=FALSE}
+my_documents = tm_map(my_documents, content_transformer(tolower))
+my_documents = tm_map(my_documents, content_transformer(removeNumbers))
+my_documents = tm_map(my_documents, content_transformer(removePunctuation))
+my_documents = tm_map(my_documents, content_transformer(stripWhitespace))
+```
+
+Another important procedure is to remove the stopwords, which can be assisted by the `stopwords` methods in `tm` library. Below is an example which will return a list of stopwords in English.
+
+```{r, comment=">"}
+stopwords("en")[1:10]
+```
+
+Then remove the stopwords from the corpus.
+
+```{r, eval=FALSE}
+my_documents = tm_map(my_documents, content_transformer(removeWords), stopwords("en"))
+```
+
+Next transform the `Corpus` object to a `DocumentTermMatrix` object which is mathematically easier to work with.
+
+With the _DTM_ object you can perform different analysis
+
+```{r, eval=FALSE}
+DTM_simon = DocumentTermMatrix(my_documents)
+inspect(DTM_simon)
+findFreqTerms(DTM_simon, 50)
+findAssocs(DTM_simon, "market", .5) 
+```
+
+As another way to simplify the computation is to remove sparse terms in the _DTM_ object and convert it to a normal matrix.
+
+The matrix allows us to calculate the term frequency of each word and apply PCA.
+
+```{r, eval=FALSE}
+DTM_simon = removeSparseTerms(DTM_simon, 0.95)
+X = as.matrix(DTM_simon)
+X = X/rowSums(X)
+
+pca_simon = prcomp(X, scale=TRUE)
+```
+
