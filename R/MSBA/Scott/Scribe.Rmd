@@ -10,9 +10,9 @@ output:
 ### Continuing on Naive Bayes
 
 To estimate the probability of a word $P(word j is randomly selected)$, the normal ways is $$\hat{w_{j}}=\frac{\#word\ j\ in\ corpus}{total\ \#words\ in\ corpus}$$ However there are problems associated with this approach.
- 
-    1 It doesn't work for alien words that appear in test set but not included in training set.
-    2 The model are biased toward certain words in the sample if the sample size is small and doesn't represent the whole population.
+
+    1. It doesn't work for alien words that appear in test set but not included in training set.
+    2. The model are biased toward certain words in the sample if the sample size is small and doesn't represent the whole population.
     
 To overcome this problem, we add a _pseudo-count_ so that $$\tilde{x_{ij}}=x_{ij}+r$$ where r is the _pseudo-count_ or _smoothing factor_. Therefore, if a new word shows up, the model will assign a non-zero weight to it, and as the training set grows larger, the effect of a new word becomes smaller. A way to choose _r_ is given by _Laplacian smoothing_ $r=\frac{1}{N}$ where N is the total number of words in the corpus.
 
@@ -72,3 +72,35 @@ X = X/rowSums(X)
 pca_simon = prcomp(X, scale=TRUE)
 ```
 
+### Principal Component Regression
+
+In real life, there are high-dimension problems that are better solved by PCR. Such problems have two characteristics:
+
+    1. Feature # is close to or even larger than sample size
+    2. Features are highly correlated with each other
+
+In such cases, it is generally more efficient to extract the principal components of the samples and translate original values into scores on the PCs, where $score=x\cdotp v$, then run regression on the score vectors to fit a model. Thereby comes the name PCR.
+
+Below is an example to apply PCR on gasoline Near-infrared spectroscopy data analysis. In this example, there are more features than observations.
+
+Without PCR, the normal linear regression on the data will return an $R^{2}=1$, which usually indicates a problem. This can be understood in this case that since there are more features, it is possible for the model to create a unique set of features for each observation, but that model will not work for other observations, and therefore is problematic.
+
+```{r, result="hold", comment=">"}
+gasoline = read.csv('data/gasoline.csv', header=TRUE)
+X = as.matrix(gasoline[,-1])
+y = gasoline[,1]
+lm1 = lm(y ~ X)
+summary(lm1)$r.squared
+```
+
+To fix this problem, we use PCA to reduce the dimension of the problem. After extracting the first 5 PCs, we calculate the socres of the observations on the 5 PCs, which are used as the new features to fit a linear model. The new model still fits the observations very well and has $R^{2}=0.979$, which means down to this point, the majority of information among the sample population is preserved.
+
+```{r, result="hold", comment=">"}
+pc_gasoline = prcomp(X, scale=TRUE)
+
+K = 5
+V = pc_gasoline$rotation[,1:K]
+scores = X %*% V
+pcr1 = lm(y ~ scores)
+summary(pcr1)$r.squared
+```
