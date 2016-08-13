@@ -1,12 +1,68 @@
 ---
 title: "STA 380 Homework 2"
-author: "Anthony Garino, Wenduo Wang"
+author: "Wenduo Wang"
 date: "August 12, 2016"
 output: 
   pdf_document: 
     latex_engine: xelatex
 ---
 
-```{r, result="hold", comment=">"}
-groceries <- read.transactions("data/groceries.txt", sep=",")
+Import `arules` library for association rule mining.
+
+```{r, message=FALSE}
+library(arules)
 ```
+
+Import data with `read.transactions()` function from `arules`, which will automatically convert each row into a list of items separated by commas, and the returned object is a `transactions` object. This function will also drop duplicate items from each basket if `rm.duplicates = TRUE`.
+
+```{r, result="hold", comment=">"}
+groceries <- read.transactions("data/groceries.txt", sep=",", rm.duplicates = TRUE)
+```
+
+We can assign each user an id by converting the `transactions` to a list with `as(from="transactions", to="list")`, and define `names()` of the list, and then convert the list back to `transactions`.
+
+```{r, result="hold", comment=">"}
+groceries_list <- as(groceries, "list")
+names(groceries_list) <- as.character(1:length(groceries_list))
+groceries <- as(groceries_list, "transactions")
+```
+
+At this point, the _groceries_ object is suitable for a priori analysis. Before applying the `apriori` function, we need to determine what the _support_ and _confidence_ thresholds, and _maxlen_ value. This is essentially a heuristic process, so here let's first try a higher _support_ level 0.01 and _confidence_ threshold 0.55 (just a little bit more than 0.5), and see what we get.
+
+```{r, result="hold", comment=">"}
+params <- list(support=.01, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=lift>=2))
+```
+
+Here we only selected the associations with _lift_ greater than 2, which gives 7 in total. And among them are items such as _other vegetables_ and _whole milk_, which are themselves frequent terms across all baskets. Such results provide limited information, so we need to look closer into more interesting and less ubiquitous items.
+
+So a natural question to be asked here is, which are the most frequent items? Let's make a plot to show the top 10 frequent terms.
+
+```{r, result="hold", fig.height=6, fig.width=8}
+itemFrequencyPlot(groceries, topN=10)
+```
+
+So here we can see clearly that _whole milk_ and _other vegetables_ are indeed frequent terms containing relatively less information.
+
+Therefore, let's lower _support_ level to 0.001 to include less often items. Also, when printing out the associations, we raise the _lift_ threshold to 10, which indicates highly correlated and dependent items.
+
+```{r, result="hold", comment=">"}
+params <- list(support=.001, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=lift>=10))
+```
+
+Here we see some intriguing associations which are less frequent among all baskets but exhibits huge correlation in terms of _lift_, which is a measure of dependence. While in the previous case there were only 7 associations even with _lift_ level higher than 2, here there are 7 associations with _lift_ higher than 10.
+
+Let's look at the association {liquor, red/blush wine} => {bottled beer}, it is intuitively this is some combination appealing to an alcohol lover. This intuition also holds for other association groups, such as {baking powder, flour} => {sugar} which is probably a part of common baking recipe.
+
+And what about other associations?
+
+```{r, result="hold", comment=">"}
+params <- list(support=.001, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=(lift<=10 & lift>8)))
+```
+
+Above are associations with _lift_ between 8 and 10. And here we can see some interesting combinations such as {butter, hard cheese, milk} => {whipped/sour cream}. Why is the customer buying such protein and fat heavy foots altogether? Probably it is simply because of the way these products are placed in the store. If some products are placed together, then they are more likely to be sold in a bundle. This can also be seen in {citrus fruit, grapes, tropical fruit} => {fruit/vegetable juice}.
