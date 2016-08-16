@@ -5,7 +5,7 @@ library(tm)
 # https://gist.github.com/jgscott/28d9d1287a0c3c1477e2113f6758d5ff
 
 ## Rolling two directories together into a single corpus
-author_dirs = Sys.glob('../data/ReutersC50/C50train/*')
+author_dirs = Sys.glob('data/ReutersC50/C50train/*')
 author_dirs = author_dirs[1:2]
 file_list = NULL
 labels = NULL
@@ -36,6 +36,7 @@ DTM # some basic summary statistics
 
 class(DTM)  # a special kind of sparse matrix format
 
+
 ## You can inspect its entries...
 inspect(DTM[1:10,1:20])
 DTM = removeSparseTerms(DTM, 0.975)
@@ -51,6 +52,7 @@ AC_train = X[51:95,]
 # AP's multinomial probability vector
 # Notice the smoothing factor
 # Why?
+
 smooth_count = 1/nrow(X)
 w_AP = colSums(AP_train + smooth_count)
 w_AP = w_AP/sum(w_AP)

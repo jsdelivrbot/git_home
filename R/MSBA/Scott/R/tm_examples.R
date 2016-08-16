@@ -11,7 +11,7 @@ readerPlain = function(fname){
 							id=fname, language='en') }
 							
 ## Test it on Adam Smith
-adam = readerPlain("../data/division_of_labor.txt")
+adam = readerPlain("data/division_of_labor.txt")
 adam # this is the tm 'PlainTextDocument'
 content(adam)
 
@@ -19,7 +19,7 @@ content(adam)
 
 ## apply to all of Simon Cowell's articles
 ## (probably not THE Simon Cowell: https://twitter.com/simoncowell)
-file_list = Sys.glob('../data/ReutersC50/C50train/SimonCowell/*.txt')
+file_list = Sys.glob('data/ReutersC50/C50train/SimonCowell/*.txt')
 simon = lapply(file_list, readerPlain) 
 
 # Some more concise document names via basic string manipulation

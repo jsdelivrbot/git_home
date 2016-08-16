@@ -1,11 +1,374 @@
 ---
 title: "STA 380 Homework 2"
-author: "Wenduo Wang"
-date: "August 12, 2016"
-output: 
-  pdf_document: 
-    latex_engine: xelatex
+author: "Summer Wang, Yawen Ye, Wenduo Wang"
+date: "August 15, 2016"
+output: html_document
 ---
+## Flights at ABIA
+
+In this dataset, we want to answer serveral questions: 
+1: Which carrier has the worst punctuality in departuring time and arriving time?Which carrier has the best punctuality in departuring time and arriving time?
+2: Which carrier has done the best job to minimize CarrierDelay?
+3: What is the best time of day to fly to minimize delays?
+4: What is the best time of year to fly to minimize delays?
+5: How do patterns of flights to different destinations or parts of the country change    over the course of the year?
+
+We will talk about each problem one by one. 
+
+### 1: Which carrier has the worst punctuality in departuring time and arriving time?
+### Which carrier has the best punctuality in departuring time and arriving time?
+
+```{r,message=FALSE}
+ABIA <-read.csv("data/ABIA.csv", header=T, na.strings=c("","NA"))
+attach(ABIA)
+library(dplyr)
+library(plotly)
+```
+
+
+```{r,warning=FALSE}
+p1 <- plot_ly(ggplot2::diamonds, y = ArrDelay, color = UniqueCarrier, type = "box")
+p1
+temp<- ABIA[which(ArrDelay!=649 & ArrDelay!= 948),]
+p2 <- plot_ly(ggplot2::diamonds, y = temp$ArrDelay, color = temp$UniqueCarrier, type = "box")
+print(p2)
+```
+
+We could actually see that OH flight is the worst when it comes to punctuality on arriving.
+
+
+```{r,warning=FALSE}
+temp1<- ABIA[which(DepDelay!=665 & DepDelay!= 875),]
+p3 <- plot_ly(ggplot2::diamonds, y = temp1$DepDelay, color = temp1$UniqueCarrier, type = "box")
+print(p3)
+```
+
+We could actually see that OH and EV flight are the worst when it comes to punctuality on departing. US airline did a much better job on departure punctuality 
+
+
+### 2: Which carrier has done the best job to minimize CarrierDelay?
+```{r,message=FALSE}
+temp2<-ABIA[!is.na(CarrierDelay),]
+attach(temp2)
+```
+
+```{r,warning=FALSE}
+#we could see that ArrDelay consist of five parts: 
+sum(temp2[,'ArrDelay']!=temp2[,'WeatherDelay']+temp2[,'NASDelay']+temp2[,'SecurityDelay']+ temp2[,'LateAircraftDelay']+temp2[,'CarrierDelay'])
+#let's get rid of the WeatherDelay, which people can not control
+temp2[,'ArrDelay_control']=temp2[,'NASDelay']+temp2[,'SecurityDelay']+
+                           temp2[,'LateAircraftDelay']+temp2[,'CarrierDelay']
+p4 <- plot_ly(ggplot2::diamonds, y = temp2[which(CarrierDelay!=875),]$CarrierDelay, 
+        color = temp2[which(CarrierDelay!=875),]$UniqueCarrier, type = "box")
+print(p4)
+```
+
+We could see that airline MQ did the best job in term of its own control of arriving time. Airline YV did a worest jobin term of its own control of arriving time. But this is actually part of the total list. So maybe, airline didn't accord many records. 
+So let's take a look at the records of each airline. 
+
+
+```{r,warning=FALSE}
+temp2_freq=data.frame(table(temp2$UniqueCarrier))
+ABIA_freq=data.frame(table(ABIA$UniqueCarrier))
+record_freq <- cbind(temp2_freq[1],temp2_freq[-1]/ABIA_freq[-1])
+record_freq
+#record_freq
+p <- plot_ly(
+  x = record_freq$Var1,
+  y = record_freq$Freq,
+  name = "record freq",
+  type = "bar")
+print(p)
+
+```
+
+We could see that actually MQ and YV give out the relatively good records on the five delay components. So we could say that, airline MQ did a good job on control its CarrierDelay time.YV did the worest. So for airline YV, it is important to improve its own control of arriving time
+
+
+
+### 3: What is the best time of day to fly to minimize delays?
+```{r, warning=FALSE}
+library(lubridate)
+ABIA$DepTime<-format(strptime(sprintf("%04d", ABIA$DepTime), format="%H%M"), format = "%H:%M")
+ABIA$DepTime<-hm(ABIA$DepTime)
+ABIA$DepTime_hour<-hour(ABIA$DepTime)
+p5 <- plot_ly(ggplot2::diamonds, y = ABIA$DepDelay, color =as.character(ABIA$DepTime_hour), type = "box")
+print(p5)
+
+ABIA$ArrTime<-format(strptime(sprintf("%04d", ABIA$ArrTime), format="%H%M"), format = "%H:%M")
+ABIA$ArrTime<-hm(ABIA$ArrTime)
+ABIA$ArrTime_hour<-hour(ABIA$ArrTime)
+p6 <- plot_ly(ggplot2::diamonds, y = ABIA$ArrDelay, color =as.character(ABIA$ArrTime_hour), type = "box")
+print(p6)
+```
+
+We can see from the plot that, 5:00am is the best time of the day to fly to minimize delays. In the early morning, 5:00am to 7:00am is a good period of time to fly to minimize delays. 
+
+
+### 4: What is the best time of year to fly to minimize delays?
+```{r,warning=FALSE}
+p7 <- plot_ly(ggplot2::diamonds, y = ABIA$DepDelay, color =as.character(ABIA$Month), type = "box")
+print(p7)
+p8 <- plot_ly(ggplot2::diamonds, y = ABIA$ArrDelay, color =as.character(ABIA$Month), type = "box")
+print(p8)
+```
+
+From the plots we could see that, September is the best month of the year to fly to minimize delays.
+
+
+### 5: How do patterns of flights to different destinations or parts of the country change over the course of the year?
+```{r,message=FALSE}
+library(plyr)
+
+group<- ABIA %>% 
+  dplyr::group_by(Month,Dest) %>%
+  dplyr::summarise(length(Dest))
+
+par(mfrow=c(2,2))
+colors <- rainbow(length(unique(group$Dest))) 
+linetype <- c(1:length(unique(group$Dest))) 
+plotchar <- seq(18,18+length(unique(group$Dest)),1)
+
+for (i in (1:length(unique(group$Dest)))) { 
+  temp3 <- subset(group,Dest==unique(group$Dest)[i]) 
+  xrange <- range(1:12) 
+  yrange<- range(temp3$`length(Dest)`)
+  plot(xrange, yrange, type="n", xlab="Month",ylab=paste("Number of Flights to ", as.character(unique(group$Dest)[i]), sep = ""))
+  lines(temp3$Month, temp3$`length(Dest)`, type="b", lwd=1.5) 
+  line <- readline()
+} 
+
+```
+
+There is clearly a drop in the frequency of the flights to some destinations starting around September. These destinations include ABQ, AUS, CLE, CVG, IAD, LAS, MEM, MSY, ONT, RDU, SLC, SNA, TUS, SEA. The frequency of the flights to some destinations even drop around June, which include BNA, DAL, MAF, MCI. 
+
+***
+
+## Author attribution
+
+Import `tm` and `dplyr` libraries. The former is the text mining library, and the latter provides tools for matrix operations.
+
+```{r, message=FALSE, result="hide"}
+library(compiler)
+enableJIT(3)
+rm(list=ls())
+gc()
+```
+
+
+```{r, message=FALSE}
+library(tm)
+library(dplyr)
+```
+
+The first thing to do with the documents is to convert them to `Corpus` objects defined in `tm` library. While the texts are read in, a series of operations are performed, including enforcing lowercase, removing numbers & punctuations, and stripping white spaces. It is sometimes problematic to remove _stopwords_ as such could change the meaning of the text. But given the abundance of data in this case, removing _stopwords_ provides more benefits in terms of simplifying computation.
+
+The training set and test set are converted into `Corpus` objects in the above way, and then the object is transformed into a `DocumentTermMatrix` and later normal matrix. No sparse terms are teased out at this stage.
+
+First let's define a set of helper functions.
+
+```{r, result="hold", comment=">"}
+# a function to read articles inside a folder
+readArticle <- function(article_url){
+    article_list <- lapply(article_url,
+                           function(article_url) readPlain(
+                               elem=list(content=readLines(article_url)),
+                               language="en",
+                               id=article_url
+                           ))
+    return(article_list)
+}
+
+# convert an article into Corpus
+get_corpus <- function(article){
+    corp <- Corpus(VectorSource(article))
+    return(corp)
+}
+
+# clean up the corpus object, i.e. standardize corpus format
+clean_corpus <- function(corp, tfidf=0){
+    corp <- tm_map(corp, content_transformer(tolower))
+    corp <- tm_map(corp, content_transformer(removeNumbers))
+    corp <- tm_map(corp, content_transformer(removePunctuation))
+    corp <- tm_map(corp, content_transformer(stripWhitespace))
+    corp <- tm_map(corp, content_transformer(removeWords), stopwords("en"))
+    
+    # define an optional "control" parameter
+    # to weight the terms according to their tfidf index
+    if (tfidf) {
+        control <- list(weighting=function(x) weightTfIdf(x, normalize=FALSE))
+        corp_DTM <- DocumentTermMatrix(corp, control=control)
+    } else {
+        corp_DTM <- DocumentTermMatrix(corp)
+    }
+    
+    corp_mat <- as.matrix(corp_DTM)
+    
+    return(corp_mat)
+}
+
+# a function to convert all the folders and articles inside the folders
+# into a list of corpus.
+# every element in the corpus list is a terms vector of a document
+# inside the same folder.
+get_mat <- function(url){
+    author_list <- Sys.glob(url)
+    folder_list <- Sys.glob(paste(author_list, "/*", sep=""))
+    articles <- lapply(folder_list, readArticle)
+    corpus_list <- lapply(articles, get_corpus)
+    corpus_list <- lapply(corpus_list, clean_corpus)
+    return(corpus_list)
+}
+
+# a function to calculate the angle between two given vecotrs
+get_cosine <- function(v1, v2){
+    # first measure the original length of each vector
+    len1 <- sqrt(v1%*%t(v1))
+    len2 <- sqrt(v2%*%t(v2))
+    # only the common columns between the two matrices are kept.
+    v1_conform <- v1[colnames(v1) %in% colnames(v2)]
+    v2_conform <- v2[colnames(v2) %in% colnames(v1)]
+    # if the two vectors are orthogonal, then return 0
+    if (length(v1_conform)*length(v2_conform)==0){
+        return(0)
+    } else {
+        # vector angle formula
+        cosine <- t(v1_conform) %*% v2_conform / (len1*len2)
+        return(cosine)
+    }
+}
+
+# translate the prediction matrix to author indices
+pred_author <- function(pred){
+    article_index <- lapply(pred, which.max)
+    author_index <- lapply(article_index, function(ind) ceiling(ind/50))
+    return(author_index)
+}
+
+# calculate prediction accuracy
+pred_accuracy <- function(author_list){
+    target <- rep(1:50, each=50)
+    len <- length(author_list)
+    accuracy <- mean(author_list==target[1:len])
+    return(accuracy)
+}
+
+# get term frequencies within each article for Naive Bayes
+get_frequency <- function(mat){
+    frequency_mat <- log(mat) / as.vector(rowSums(mat))
+}
+
+# calculate the cumulative term probability for each article
+# only the common columns between the two matrices are kept
+get_product <- function(v1, v2){
+    v1_conform <- v1[colnames(v1) %in% colnames(v2)]
+    v2_conform <- v2[colnames(v2) %in% colnames(v1)]
+    if (length(v1_conform)*length(v2_conform)==0){
+        return(0)
+    } else {
+        product <- t(v1_conform) %*% v2_conform
+        return(product)
+    }
+}
+```
+
+Read in training and test data.
+
+> Due to high resource consumption, the following chunks are disabled.
+
+```{r, eval=FALSE, comment=">"}
+train_mat <- get_mat("data/ReutersC50/C50train/*")
+
+test_mat <- get_mat("data/ReutersC50/C50test/*")
+```
+
+### Model 1: Vector angle
+
+The first model is based on the angle between the train article terms vector and the test article terms vector. In this model, each new article from the test set is compared with all articles in the train set, by calculating the cosine of their vector angle. The train article showing the smallest angle is taken as the output, and therefore the test article is deemed to belong to the same author as the former. 
+
+```{r, eval=FALSE, comment=">"}
+cosine_mat <- lapply(test_mat[1:100],
+                     function(v) lapply(train_mat, function(x) get_cosine(x, v)))
+
+author_list_1 <- pred_author(cosine_mat)
+accuracy_1 <- pred_accuracy(author_list_1)
+accuracy_1
+```
+
+> The accuracy is ~54%.
+
+Let's have a look at the authors whose articles are most difficult to guess.
+
+```{r, message=FALSE, comment=">"}
+authors <- Sys.glob("data/ReutersC50/C50train/*")
+authors <- gsub(".+/", "", authors)
+author_list_1 <- as.matrix((read.csv("author_list_vec.csv")[-1]))
+author_list_1 <- data.frame(t(author_list_1))
+author_df <- data.frame(author=rep(authors, each=50))
+author_df <- cbind(author_df, author_list_1[,1], rep(1:50, each=50))
+colnames(author_df) <- c("author", "prediction", "actual")
+author_df <- cbind(author_df, (author_df$prediction==author_df$actual)*1)
+colnames(author_df)[ncol(author_df)] <- "mistake"
+```
+
+```{r, result="hold", comment=">"}
+author_agg <- aggregate(mistake~author, data=author_df, FUN="sum")
+author_agg[order(author_agg$mistake, decreasing = TRUE),]
+```
+
+### Model 2: Naive Bayes
+
+We can also apply Naive Bayes method to determine the authors. Specifically, in this case our problem is to predict the probability $$P(the\ author\ is\ x|given\ the\ terms\ matrix\ of\ an\ author)$$ Where _x_ can be any of the known authors from the training set. According to the general Bayes theorem, the above probability is equal to $$\frac{P(the\ author's\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set|the\ author\ is\ x)\cdot P(author\ is\ x)}{P(a\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set)}$$ Since $\frac{P(author\ is\ x)}{P(a\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set)}$ is the same for all articles, we consider it as a constant, and therefore we can only calculate and compare $P(the\ author's\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set|the\ author\ is\ x)$.
+
+Take logarithm of the expression and we will get the log probability terms as matrix expression $$test * \log \frac{train}{sum(train)}$$
+
+```{r, eval=FALSE, comment=">"}
+# get term frequencies for each terms vector in the training set
+train_freq <- lapply(train_mat, get_frequency)
+# multiply the test set article vector by that in the training set
+prob_mat <- lapply(test_mat[1:100],
+                   function (v) lapply(train_freq, function(x) get_product(x, v)))
+# select the author with the highest conditional probability for each article
+author_list_2 <- pred_author(prob_mat)
+accuracy_2 <- pred_accuracy(author_list_2)
+accuracy_2
+author_agg <- aggregate(mistake~author, data=author_df, FUN="sum")
+author_agg[order(author_agg$mistake, decreasing = TRUE),]
+```
+
+> The accuracy is ~47%.
+
+Let's see the authors that were guesses wrong most.
+
+```{r, message=FALSE, comment=">"}
+author_list_2 <- as.matrix((read.csv("author_list_NB.csv")[-1]))
+author_list_2 <- data.frame(t(author_list_2))
+author_df <- data.frame(author=rep(authors, each=50))
+author_df <- cbind(author_df, author_list_2[,1], rep(1:50, each=50))
+colnames(author_df) <- c("author", "prediction", "actual")
+author_df <- cbind(author_df, (author_df$prediction==author_df$actual)*1)
+colnames(author_df)[ncol(author_df)] <- "mistake"
+```
+
+```{r, result="hold", comment=">"}
+author_agg <- aggregate(mistake~author, data=author_df, FUN="sum")
+author_agg[order(author_agg$mistake, decreasing = TRUE),]
+```
+
+It is seen that the two models give similar prediction accuracies, and the vanilla vector angle method is even a little bit more accurate than Naive Bayes, possibly suggesting dependency between terms (which is likely true).
+
+Let's see which authors' articles are hard to predict.
+
+***
+
+## Practice with association rule mining
+
+```{r, message=FALSE}
+library(compiler)
+enableJIT(3)
+rm(list=ls())
+gc()
+```
 
 Import `arules` library for association rule mining.
 

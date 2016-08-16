@@ -1,0 +1,282 @@
+---
+title: "STA 380 Homework 2"
+author: "Wenduo Wang"
+date: "August 13, 2016"
+output:
+  pdf_document:
+    latex_engine: xelatex
+  word_document: default
+---
+
+## Author attribution
+
+Import `tm` and `dplyr` libraries. The former is the text mining library, and the latter provides tools for matrix operations.
+
+```{r, echo=FALSE}
+library(compiler)
+enableJIT(3)
+rm(list=ls())
+gc()
+```
+
+
+```{r, message=FALSE}
+library(tm)
+library(dplyr)
+```
+
+The first thing to do with the documents is to convert them to `Corpus` objects defined in `tm` library. While the texts are read in, a series of operations are performed, including enforcing lowercase, removing numbers & punctuations, and stripping white spaces. It is sometimes problematic to remove _stopwords_ as such could change the meaning of the text. But given the abundance of data in this case, removing _stopwords_ provides more benefits in terms of simplifying computation.
+
+In detail, we defined a helper function that takes in a folder url which contains all the subfolders and documents, and then read in all the documents and convert them into a corpus object.
+
+The training set and test set are converted into `Corpus` objects in the above way, and then the object is transformed into a `DocumentTermMatrix` and later normal matrix. No sparse terms are teased out at this stage.
+
+```{r, result="hold", comment=">"}
+get_mat <- function(url, tfidf=0){
+    author_list <- Sys.glob(url)
+
+    file_list <- lapply(paste(author_list, "/*", sep=""),
+                        function(folder) Sys.glob(folder))
+    
+    readFolder <- function(folder){
+        article_list <- lapply(folder,
+                               function(fname) readPlain(
+                                   elem=list(content=readLines(fname)),
+                                   language="en",
+                                   id=fname))
+        names(article_list) <- folder
+        names(article_list) <- sapply(names(article_list),
+                                      function(s) gsub(".txt", "", s))
+        names(article_list) <- sapply(names(article_list),
+                                      function(s) gsub(".+/", "", s))
+        return(article_list)
+    }
+    
+    documents <- lapply(file_list, readFolder)
+    
+    names(documents) <- Sys.glob(url)
+    names(documents) <- sapply(names(documents),
+                               function(s) gsub(".+/", "", s))
+    
+    documents_corpus <- Corpus(VectorSource(documents))
+    names(documents_corpus) <- names(documents)
+    
+    documents_corpus <- tm_map(documents_corpus, content_transformer(tolower))
+    documents_corpus <- tm_map(documents_corpus, content_transformer(removeNumbers))
+    documents_corpus <- tm_map(documents_corpus, content_transformer(removePunctuation))
+    documents_corpus <- tm_map(documents_corpus, content_transformer(stripWhitespace))
+    documents_corpus <- tm_map(documents_corpus, content_transformer(removeWords), stopwords("en"))
+    
+    # define an optional "control" parameter
+    # to weight the terms according to their tfidf index
+    if (tfidf) {
+        control <- list(weighting=function(x) weightTfIdf(x, normalize=FALSE))
+        documents_DTM <- DocumentTermMatrix(documents_corpus, control=control)
+    } else {
+        documents_DTM <- DocumentTermMatrix(documents_corpus)
+    }
+    
+    
+    documents_mat <- as.matrix(documents_DTM)
+    
+    return(documents_mat)
+}
+
+train_mat <- get_mat("data/ReutersC50/C50train/*")
+```
+
+```{r}
+get_doc_mat <- function(url, tfidf=0){
+    doc_list <- Sys.glob(url)
+    
+    docs <- lapply(doc_list, function(doc) readPlain(
+                elem=list(content=readLines(doc)), language="en", id=doc))
+    
+    doc_corpus <- Corpus(VectorSource(docs))
+    
+    doc_corpus <- tm_map(doc_corpus, content_transformer(tolower))
+    doc_corpus <- tm_map(doc_corpus, content_transformer(removeNumbers))
+    doc_corpus <- tm_map(doc_corpus, content_transformer(removePunctuation))
+    doc_corpus <- tm_map(doc_corpus, content_transformer(stripWhitespace))
+    doc_corpus <- tm_map(doc_corpus, content_transformer(removeWords), stopwords("en"))
+    
+    # define an optional "control" parameter
+    # to weight the terms according to their tfidf index
+    if (tfidf) {
+        control <- list(weighting=function(x) weightTfIdf(x, normalize=FALSE))
+        doc_DTM <- DocumentTermMatrix(doc_corpus, control=control)
+    } else {
+        doc_DTM <- DocumentTermMatrix(doc_corpus)
+    }
+    
+    
+    doc_mat <- as.matrix(doc_DTM)
+    
+    return(doc_mat)
+}
+
+test_mat <- get_doc_mat("data/ReutersC50/C50test/AaronPressman/*", tfidf=1)
+```
+
+Another problem when it comes to modeling and prediction, particularly in text mining, is the difference of words between the training set and test set. Here we define another helper function to remove the different columns, so only the shared words will be considered in the two datasets.
+
+```{r, result="hold", comment=">"}
+drop_columns <- function(mat_1, mat_2){
+    drop_cols <- c()
+    mat_1_terms <- colnames(mat_1)
+    mat_2_terms <- colnames(mat_2)
+    
+    for (i in 1:length(mat_1_terms)){
+        if (!(mat_1_terms[i] %in% mat_2_terms)){
+            drop_cols <- c(drop_cols, i)
+        }
+    }
+    
+    mat_1 <- mat_1[, -drop_cols]
+}
+```
+
+Then using the above defined function, we transform the training and test sets. At this point, we also calculate the row vector length for training and test sets, which will be useful to calculate the vector angle between training and test vectors.
+
+```{r, result="hold", comment=">"}
+train_dropped <- drop_columns(train_mat, test_mat)
+train_rscalar <- sqrt(diag(train_dropped%*%t(train_dropped)))
+test_dropped <- drop_columns(test_mat, train_mat)
+test_rscalar <- sqrt(diag(test_dropped%*%t(test_dropped)))
+```
+
+### Model 1: matrix product and decide according to vector angle.
+
+> Important assumption: since the _test_ set files are also stored in a folder-subfolder structure, it is assumes all the articles in the subfolder belong to the same author, which in effect expands each _unknown author's_ terms matrix. This applies for model 2 as well.
+
+```{r, result="hold", comment=">"}
+# matrix multiplication between training  and test vectors
+product <- train_dropped %*% t(test_dropped)
+
+# scale the matrix product using training 
+# and test vector lengths to get the cosine of their angle
+product <- product/matrix(rep(train_rscalar, ncol(product)), ncol = ncol(product))
+product <- product/matrix(rep(test_rscalar, ncol(product)), ncol = ncol(product))
+
+# in this model, if the two vectors pointing to the same direction
+# then they are seen as from the same author.
+# Therefore the predicted authors (in terms of their row index in the training set)
+# are the row indices corresponding to the max value in each column.
+authors <- sapply(1:ncol(product), function(n) which.max(product[, n]))
+
+# since we know the true authors are in the same order
+# in the test set as in the training set, we can calculate the prediction accuracy
+# by comparing the authors indices with the sequence from 1 to the number of authors.
+accuracy_1 <- mean(authors==1)
+cat("Model 1 accuracy:", accuracy_1)
+```
+
+As seen from the output, this model gives accuracy of 80% (if the terms were not weighted according to their tfidf index, the accuracy is 30%).
+
+Now let's look at which authors' articles are hard to predict.
+
+```{r, result="hold", comment=">"}
+print(names(authors)[authors!=1:length(authors)])
+```
+
+### Model 2: Naive Bayes
+
+We can also apply Naive Bayes method to determine the authors. Specifically, in this case our problem is to predict the probability $$P(the\ author\ is\ x|given the terms matrix of an authors)$$ Where _x_ can be any of the known authors from the training set. According to the general Bayes theorem, the above probability is equal to $$\frac{P(the\ author's\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set|the\ author\ is\ x)\dot P(author\ is\ x)}{P(a\ new\ document\ terms\ matrix\ is\ like\ the\ test\ set)}$$ Take logarithm of the expression and you will get the log probability terms as matrix expression $$test\_dropped * \log \frac{train\_dropped + smoothing\ count}{sum(train\_dropped)} + \log \frac{\# articles by each author}{\# total articles} - test\_dropped*\log \frac{colSums(train\_dropped)}{sum(train\_dropped)}$$ Where _smoothing count_ is different from what was said durin the lecture, but is purely a tiny amount to avoid _infinity_ values inside logarithm. Since we now in our case # articles by each author is the same, i.e. 50, the second term above is a constant, and the third term is independent of author and therefore is also a constant given the test set. We only need to calculate and compare the first term to determine the author.
+
+However, for Naive Bayes method, the terms do not need to be converted to tfidf, so the _tfidf_ flag is turned off to obtain the DTM object.
+
+```{r, result="hold", comment=">"}
+train_mat <- get_mat("data/ReutersC50/C50train/*", tfidf=0)
+test_mat <- get_mat("data/ReutersC50/C50test/*", tfidf=0)
+train_dropped <- drop_columns(train_mat, test_mat)
+test_dropped <- drop_columns(test_mat, train_mat)
+```
+
+Similar to model 1, the accuracy is measure as the fraction of correct attribution.
+
+```{r, result="hold", comment=">"}
+train_prob <- log((train_dropped+1/50)/sum(train_dropped))
+author_prob <- train_prob %*% t(test_dropped)
+authors <- sapply(1:ncol(author_prob), function(n) which.max(author_prob[, n]))
+accuracy_2 <- mean(authors==1:length(authors))
+cat("Model 2 accuracy:", accuracy_2)
+```
+
+It is seen that Naive Bayes method gives a little higher accuracy over the vanilla vector angle method. But the different is small in this case: 88% vs 80%. Considering the small sample size (50 in total since each subfolder is assumed to belong to the same author) this makes it difficult to assert which model is better.
+
+Let's see which authors' articles are hard to predict.
+
+```{r, result="hold", comment=">"}
+print(names(authors)[authors!=1:length(authors)])
+```
+
+***
+
+## Practice with association rule mining
+
+```{r, echo=FALSE}
+library(compiler)
+enableJIT(3)
+rm(list=ls())
+gc()
+```
+
+Import `arules` library for association rule mining.
+
+```{r, message=FALSE}
+library(arules)
+```
+
+Import data with `read.transactions()` function from `arules`, which will automatically convert each row into a list of items separated by commas, and the returned object is a `transactions` object. This function will also drop duplicate items from each basket if `rm.duplicates = TRUE`.
+
+```{r, result="hold", comment=">"}
+groceries <- read.transactions("data/groceries.txt", sep=",", rm.duplicates = TRUE)
+```
+
+We can assign each user an id by converting the `transactions` to a list with `as(from="transactions", to="list")`, and define `names()` of the list, and then convert the list back to `transactions`.
+
+```{r, result="hold", comment=">"}
+groceries_list <- as(groceries, "list")
+names(groceries_list) <- as.character(1:length(groceries_list))
+groceries <- as(groceries_list, "transactions")
+```
+
+At this point, the _groceries_ object is suitable for a priori analysis. Before applying the `apriori` function, we need to determine what the _support_ and _confidence_ thresholds, and _maxlen_ value. This is essentially a heuristic process, so here let's first try a higher _support_ level 0.01 and _confidence_ threshold 0.55 (just a little bit more than 0.5), and see what we get.
+
+```{r, result="hold", comment=">"}
+params <- list(support=.01, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=lift>=2))
+```
+
+Here we only selected the associations with _lift_ greater than 2, which gives 7 in total. And among them are items such as _other vegetables_ and _whole milk_, which are themselves frequent terms across all baskets. Such results provide limited information, so we need to look closer into more interesting and less ubiquitous items.
+
+So a natural question to be asked here is, which are the most frequent items? Let's make a plot to show the top 10 frequent terms.
+
+```{r, result="hold", fig.height=6, fig.width=8}
+itemFrequencyPlot(groceries, topN=10)
+```
+
+So here we can see clearly that _whole milk_ and _other vegetables_ are indeed frequent terms containing relatively less information.
+
+Therefore, let's lower _support_ level to 0.001 to include less often items. Also, when printing out the associations, we raise the _lift_ threshold to 10, which indicates highly correlated and dependent items.
+
+```{r, result="hold", comment=">"}
+params <- list(support=.001, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=lift>=10))
+```
+
+Here we see some intriguing associations which are less frequent among all baskets but exhibits huge correlation in terms of _lift_, which is a measure of dependence. While in the previous case there were only 7 associations even with _lift_ level higher than 2, here there are 7 associations with _lift_ higher than 10.
+
+Let's look at the association {liquor, red/blush wine} => {bottled beer}, it is intuitively this is some combination appealing to an alcohol lover. This intuition also holds for other association groups, such as {baking powder, flour} => {sugar} which is probably a part of common baking recipe.
+
+And what about other associations?
+
+```{r, result="hold", comment=">"}
+params <- list(support=.001, confidence=.55, maxlen=4)
+grocery_rules <- apriori(groceries, parameter = params)
+inspect(subset(grocery_rules, subset=(lift<=10 & lift>8)))
+```
+
+Above are associations with _lift_ between 8 and 10. And here we can see some interesting combinations such as {butter, hard cheese, milk} => {whipped/sour cream}. Why is the customer buying such protein and fat heavy foots altogether? Probably it is simply because of the way these products are placed in the store. If some products are placed together, then they are more likely to be sold in a bundle. This can also be seen in {citrus fruit, grapes, tropical fruit} => {fruit/vegetable juice}.
