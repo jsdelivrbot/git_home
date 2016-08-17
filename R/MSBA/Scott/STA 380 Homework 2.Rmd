@@ -31,7 +31,7 @@ p1 <- plot_ly(ggplot2::diamonds, y = ArrDelay, color = UniqueCarrier, type = "bo
 p1
 temp<- ABIA[which(ArrDelay!=649 & ArrDelay!= 948),]
 p2 <- plot_ly(ggplot2::diamonds, y = temp$ArrDelay, color = temp$UniqueCarrier, type = "box")
-print(p2)
+p2
 ```
 
 We could actually see that OH flight is the worst when it comes to punctuality on arriving.
@@ -40,7 +40,7 @@ We could actually see that OH flight is the worst when it comes to punctuality o
 ```{r,warning=FALSE}
 temp1<- ABIA[which(DepDelay!=665 & DepDelay!= 875),]
 p3 <- plot_ly(ggplot2::diamonds, y = temp1$DepDelay, color = temp1$UniqueCarrier, type = "box")
-print(p3)
+p3
 ```
 
 We could actually see that OH and EV flight are the worst when it comes to punctuality on departing. US airline did a much better job on departure punctuality 
@@ -60,7 +60,7 @@ temp2[,'ArrDelay_control']=temp2[,'NASDelay']+temp2[,'SecurityDelay']+
                            temp2[,'LateAircraftDelay']+temp2[,'CarrierDelay']
 p4 <- plot_ly(ggplot2::diamonds, y = temp2[which(CarrierDelay!=875),]$CarrierDelay, 
         color = temp2[which(CarrierDelay!=875),]$UniqueCarrier, type = "box")
-print(p4)
+p4
 ```
 
 We could see that airline MQ did the best job in term of its own control of arriving time. Airline YV did a worest jobin term of its own control of arriving time. But this is actually part of the total list. So maybe, airline didn't accord many records. 
@@ -78,8 +78,7 @@ p <- plot_ly(
   y = record_freq$Freq,
   name = "record freq",
   type = "bar")
-print(p)
-
+p
 ```
 
 We could see that actually MQ and YV give out the relatively good records on the five delay components. So we could say that, airline MQ did a good job on control its CarrierDelay time.YV did the worest. So for airline YV, it is important to improve its own control of arriving time
@@ -93,13 +92,13 @@ ABIA$DepTime<-format(strptime(sprintf("%04d", ABIA$DepTime), format="%H%M"), for
 ABIA$DepTime<-hm(ABIA$DepTime)
 ABIA$DepTime_hour<-hour(ABIA$DepTime)
 p5 <- plot_ly(ggplot2::diamonds, y = ABIA$DepDelay, color =as.character(ABIA$DepTime_hour), type = "box")
-print(p5)
+p5
 
 ABIA$ArrTime<-format(strptime(sprintf("%04d", ABIA$ArrTime), format="%H%M"), format = "%H:%M")
 ABIA$ArrTime<-hm(ABIA$ArrTime)
 ABIA$ArrTime_hour<-hour(ABIA$ArrTime)
 p6 <- plot_ly(ggplot2::diamonds, y = ABIA$ArrDelay, color =as.character(ABIA$ArrTime_hour), type = "box")
-print(p6)
+p6
 ```
 
 We can see from the plot that, 5:00am is the best time of the day to fly to minimize delays. In the early morning, 5:00am to 7:00am is a good period of time to fly to minimize delays. 
@@ -108,9 +107,10 @@ We can see from the plot that, 5:00am is the best time of the day to fly to mini
 ### 4: What is the best time of year to fly to minimize delays?
 ```{r,warning=FALSE}
 p7 <- plot_ly(ggplot2::diamonds, y = ABIA$DepDelay, color =as.character(ABIA$Month), type = "box")
-print(p7)
+p7
+
 p8 <- plot_ly(ggplot2::diamonds, y = ABIA$ArrDelay, color =as.character(ABIA$Month), type = "box")
-print(p8)
+p8
 ```
 
 From the plots we could see that, September is the best month of the year to fly to minimize delays.
