@@ -1,6 +1,6 @@
 ---
 title: "STA 380 Homework 1"
-author: "Wenduo Wang"
+author: "Summer Wang, Yawen Ye, Wenduo Wang"
 date: "August 1, 2016"
 output: 
   pdf_document: 
@@ -75,7 +75,7 @@ The `greenbuildings` dataset includes the records of rental buildings across US,
 Let's explore the dataset a little bit and see where the analyst's forecast of 27.6 USD/sqft per year sits in the rent spectrum.
 
 ```{r, highlight=TRUE, results="hold", comment=">>>"}
-green <- read.csv("greenbuildings.csv", header=TRUE)
+green <- read.csv("data/greenbuildings.csv", header=TRUE)
 ggplot(data=green, aes(x=Rent)) + geom_histogram(bins=100) + geom_vline(xintercept=27.6, color="red")
 logistic_fit <- glm(Rent~., data=green, family="gaussian")
 confint(logistic_fit)
@@ -335,7 +335,7 @@ portfolio_summary
 ## Market segmentation
 
 ```{r, highlight=TRUE, results="hold", comment=">>>", warning=FALSE}
-tweets <- read.csv("~/git/git_home/data/social_marketing.csv")
+tweets <- read.csv("data/social_marketing.csv")
 ```
 
 In order to accurately tailor its messages to customers' demand, the company needs to understand what its customers most care about, and capture the primary topics that appeal to the broadest population among its followers.
