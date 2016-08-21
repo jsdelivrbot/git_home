@@ -68,10 +68,9 @@ get_cosine <- function(mat1, mat2){
     mat2_conform <- mat2_conform[, order(colnames(mat2_conform))]
     len1 <- diag(sqrt(mat1_conform%*%t(mat1_conform)))
     len2 <- diag(sqrt(mat2_conform%*%t(mat2_conform)))
-    print(sum(colnames(mat1_conform)!=colnames(mat2_conform)))
     cosine_mat <- (mat1_conform %*% t(mat2_conform)) / as.vector(len1*len2)
-    cosine_df <- data.frame(cosine_mat)
-    return(cosine_df)
+    # cosine_df <- data.frame(cosine_mat)
+    return(cosine_mat)
 }
 
 pred_author <- function(pred){
@@ -105,10 +104,28 @@ get_product <- function(v1, v2){
 train_mat <- get_mat("data/ReutersC50/C50train/*")
 test_mat <- get_mat("data/ReutersC50/C50test/*")
 
-cosine_df <- get_cosine(train_mat, test_mat)
+cosine_mat <- get_cosine(train_mat, test_mat)
 
-pred <- sapply(cosine_df, which.max)
-accuracy <- mean(ceiling(pred/50)==rep(1:50, each=50))
+top_500 <- function(v){
+    ind <- c()
+    v_sorted <- sort(v, decreasing = TRUE)
+    for (i in 1:500){
+        ind <- c(ind, which(v==v_sorted[i]))
+    }
+    return(ind)
+}
+
+getmode <- function(v) {
+    uniqv <- unique(v)
+    uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+pred <- sapply(1:ncol(cosine_mat), function(i) top_500(cosine_mat[, i]))
+
+pred <- sapply(pred, function(x) ceiling(x/50))
+pred <- sapply(pred, getmode)
+                                  
+accuracy <- mean(pred==rep(1:50, each=50))
 accuracy
 
 author_list_1 <- pred_author(cosine_df)
