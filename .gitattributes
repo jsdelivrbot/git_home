@@ -1,3 +1,5 @@
-python/kaggle/*.csv filter=lfs diff=lfs merge=lfs -text
-python/kaggle/*csv filter=lfs diff=lfs merge=lfs -text
-python/kaggle/redhat/act_train.csv filter=lfs diff=lfs merge=lfs -text
+
+kaggle/redhat/act_test.csv filter=lfs diff=lfs merge=lfs -text
+kaggle/redhat/act_train.csv filter=lfs diff=lfs merge=lfs -text
+kaggle/redhat/people.csv filter=lfs diff=lfs merge=lfs -text
+kaggle/redhat/sample_submission.csv filter=lfs diff=lfs merge=lfs -text
