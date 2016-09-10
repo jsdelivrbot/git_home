@@ -1,0 +1,272 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE238DD8-BC1D-29C5-10C0-A0E2760AF294" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="TRANSACTION">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>TRANSACTION</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCTID" id="AD1D29AD-327A-A526-5D7D-BD18353A19AD">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>PRODUCTID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4748A2C-05C6-64AC-DD1A-0E9950661AD0" referredColumn="EB29DA60-71E2-C0C9-FC08-F4A3E33AF80A"/>
+</associations>
+</Column>
+<Column name="AREA_CODE" id="CAF4A0A0-61CD-CA10-6A50-614F72C38963">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>AREA_CODE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D3DDF02-E2C2-D3ED-FE12-F20F4D828B26" referredColumn="2417954E-806A-BAA8-1CD2-1FBDB79FC54A"/>
+</associations>
+</Column>
+<Column name="TRANSACTION_DATE" id="679AED60-18C3-3BFA-ABD6-5144D2C916DF">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>TRANSACTION_DATE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROFIT" id="69CB84B8-4308-69AF-6727-D4BE1ABBC918">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>PROFIT</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARGIN" id="FCD8DC3E-C0D2-444C-9130-11DE4E4B0F90">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>MARGIN</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALES" id="A3EFDA22-07B8-C409-98CD-8C8DC750E586">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>SALES</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COGS" id="7E42B4EA-26B0-4701-FC35-61DDDDC9E3FB">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>COGS</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TOTAL_EXPENSES" id="CB769C1D-8902-F6DE-576D-0C32A3B1D5A3">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>TOTAL_EXPENSES</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARKETING" id="2FD66EB1-7687-8E26-17B1-F5455C416054">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>MARKETING</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INVENTORY" id="AB4F7C2F-C4A7-4B95-7770-68E398D3240E">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>INVENTORY</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUDGET_PROFIT" id="16580243-DAC8-0162-4E6B-93BA1A191FF1">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>BUDGET_PROFIT</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUDGET_MARGIN" id="F29351B7-9B7F-9A33-6C11-7EEECD7FAB71">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>BUDGET_MARGIN</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUDGET_SALES" id="F4B67F05-905F-E4DB-10F5-C156D1D25CCC">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>BUDGET_SALES</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUDGET_COGS" id="152E6030-2E17-6928-2BF9-A54B7AD5B331">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>TRANSACTION</sourceObjSchema>
+<sourceObjName>BUDGET_COGS</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="65391E85-DF7F-BD97-E7CB-FFF19412C205" name="TRANSACTION_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>TRANSACTION_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD1D29AD-327A-A526-5D7D-BD18353A19AD"/>
+<colUsage columnID="CAF4A0A0-61CD-CA10-6A50-614F72C38963"/>
+<colUsage columnID="679AED60-18C3-3BFA-ABD6-5144D2C916DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="33FEDA0C-2DAE-9E4B-FB7C-B3566329C6D0" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="TRANSACTION_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>TRANSACTION_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:02 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD1D29AD-327A-A526-5D7D-BD18353A19AD"/>
+<colUsage columnID="CAF4A0A0-61CD-CA10-6A50-614F72C38963"/>
+<colUsage columnID="679AED60-18C3-3BFA-ABD6-5144D2C916DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D061B99D-7CE4-47B0-485C-CB488B078644" name="TRANSACTION_PRODUCT_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:22:13 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD1D29AD-327A-A526-5D7D-BD18353A19AD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1E6A9C95-2FBB-BFF1-C887-C57A7A1EDF50" name="TRANSACTION_REGION_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:22:29 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAF4A0A0-61CD-CA10-6A50-614F72C38963"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

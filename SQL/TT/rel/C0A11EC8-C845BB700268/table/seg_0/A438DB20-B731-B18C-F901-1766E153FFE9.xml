@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A438DB20-B731-B18C-F901-1766E153FFE9" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="INVENTORY">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>INVENTORY</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PART" id="A1FD512D-E0AF-B0D5-C8D7-357C873746EA">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>INVENTORY</sourceObjSchema>
+<sourceObjName>PART</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>0</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,0,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="097EF9D7-1A13-839E-08C7-138A2914CC7E" referredColumn="F352E599-8C67-EA88-428F-0370609511BB"/>
+</associations>
+</Column>
+<Column name="NO" id="0720B39D-1433-303E-2E21-192E4045F32C">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>INVENTORY</sourceObjSchema>
+<sourceObjName>NO</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REORDER" id="B2466F4B-2D96-7F7B-2544-E90C0087B179">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>INVENTORY</sourceObjSchema>
+<sourceObjName>REORDER</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7C2EC2F-4EB2-7F19-E992-31E40A2919CC" name="INVENTORY_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>INVENTORY_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1FD512D-E0AF-B0D5-C8D7-357C873746EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C1516E16-0F55-DD3F-BBAD-B84023A1D9BB" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="INVENTORY_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>INVENTORY_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:24 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1FD512D-E0AF-B0D5-C8D7-357C873746EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="17B8DA08-5CBC-2BC0-C131-40E778E31EE9" name="INVENTORY_PART_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:39:25 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A1FD512D-E0AF-B0D5-C8D7-357C873746EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

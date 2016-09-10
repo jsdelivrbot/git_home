@@ -1,0 +1,191 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A8964FF3-1AEC-AE85-96F1-001BCC94AB12" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="PURCHASE">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PURCHASE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ORDER_ID" id="6EAE0EF1-A0A4-8384-E101-B39E02F6ECF8">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>ORDER_ID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_ID" id="1D8CDA20-997D-9792-302A-7B35172DA609">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>PART_ID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8278911-53F2-C246-38BE-A20F0361E2FF" referredColumn="B08EBD54-DBC7-214F-59A5-28E1A38C4E3F"/>
+<colAssociation fkAssociation="22E23FB7-AD3D-146B-92B1-297168C90C16" referredColumn="F352E599-8C67-EA88-428F-0370609511BB"/>
+</associations>
+</Column>
+<Column name="PART_NO" id="9E9BCFE6-E3E5-04E4-C761-82F60715290C">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>PART_NO</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUPPLIER" id="AB542D15-65B0-335D-9140-F76703AF1FFD">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>SUPPLIER</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E8278911-53F2-C246-38BE-A20F0361E2FF" referredColumn="B267827F-B674-7531-2FD1-173D330B64B5"/>
+</associations>
+</Column>
+<Column name="ETA" id="D9D8CFCF-235A-D4CC-223B-0BABED75C2B2">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>ETA</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ATA" id="A3073C1D-F31F-6A76-B3B8-2AFF1A6609A0">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>ATA</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIME" id="C398097F-4863-BCEE-62CB-C38A05CD6A2D">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>TIME</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VALUE" id="FD4BFAD1-766E-7545-41AF-2BF5A8F09299">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>VALUE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B03016A1-9BA1-7C08-3796-BBC1BC2B191F" name="PURCHASE_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PURCHASE_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:46 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EAE0EF1-A0A4-8384-E101-B39E02F6ECF8"/>
+<colUsage columnID="1D8CDA20-997D-9792-302A-7B35172DA609"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D2A309B-A324-0E4F-3E00-B397702A88CF" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="PURCHASE_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PURCHASE_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6EAE0EF1-A0A4-8384-E101-B39E02F6ECF8"/>
+<colUsage columnID="1D8CDA20-997D-9792-302A-7B35172DA609"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1F4F0893-E53A-9DA9-9D09-0AA7C07DAE5C" name="PURCHASE_SUPPLIER_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:32:44 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB542D15-65B0-335D-9140-F76703AF1FFD"/>
+<colUsage columnID="1D8CDA20-997D-9792-302A-7B35172DA609"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0111E52-9989-10BD-68CA-36ACE08FEB9F" name="PURCHASE_PART_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:39:45 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D8CDA20-997D-9792-302A-7B35172DA609"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

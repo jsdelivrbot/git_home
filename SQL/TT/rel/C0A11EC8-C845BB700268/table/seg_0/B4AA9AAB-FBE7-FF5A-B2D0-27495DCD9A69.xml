@@ -1,0 +1,157 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B4AA9AAB-FBE7-FF5A-B2D0-27495DCD9A69" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="SUPPLIER">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>SUPPLIER</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SUPPLIER_ID" id="B267827F-B674-7531-2FD1-173D330B64B5">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>SUPPLIER_ID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<ownDataTypeParameters>,*,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PART_ID" id="B08EBD54-DBC7-214F-59A5-28E1A38C4E3F">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>PART_ID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1727361E-D196-3D4E-43EC-DE63742B44E2" referredColumn="F352E599-8C67-EA88-428F-0370609511BB"/>
+</associations>
+</Column>
+<Column name="PRICE" id="142852CE-107B-0ECB-9B1E-FD3B08E94A0B">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>PRICE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUANTITY_MIN" id="1421F783-7C1C-C01E-512B-1B461E4BA172">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>QUANTITY_MIN</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUANTITY_MAX" id="5A567A5A-E06E-C88F-8878-8F2BC76977E1">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>QUANTITY_MAX</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>126</dataTypePrecision>
+<ownDataTypeParameters>,126,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEADTIME" id="8663A469-ADF2-9FBB-4D5E-78913AC9F78A">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>LEADTIME</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RANK" id="CC4F311F-B2E3-30C1-9457-123682FDC08C">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>SUPPLIER</sourceObjSchema>
+<sourceObjName>RAND</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="66FC8AA9-EEA4-51A3-B46B-68B78FC977BD" name="SUPPLIER_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>SUPPLIER_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B267827F-B674-7531-2FD1-173D330B64B5"/>
+<colUsage columnID="B08EBD54-DBC7-214F-59A5-28E1A38C4E3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F51A6ABD-ADFD-C120-593C-05200717AEAE" schemaObject="39A1698D-8B4C-EA71-C13A-A385F20C5DD9" name="SUPPLIER_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>SUPPLIER_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:29:23 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B267827F-B674-7531-2FD1-173D330B64B5"/>
+<colUsage columnID="B08EBD54-DBC7-214F-59A5-28E1A38C4E3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="77B59ECF-6921-59C7-5B8A-F1655DCF9B84" name="SUPPLIER_PART_FK">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:33:03 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B08EBD54-DBC7-214F-59A5-28E1A38C4E3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

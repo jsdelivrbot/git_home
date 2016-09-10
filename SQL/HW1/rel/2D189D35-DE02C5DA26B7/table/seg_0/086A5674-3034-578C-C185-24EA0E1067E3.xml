@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="086A5674-3034-578C-C185-24EA0E1067E3" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="REGION">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>REGION</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AREA_CODE" id="2417954E-806A-BAA8-1CD2-1FBDB79FC54A">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>REGION</sourceObjSchema>
+<sourceObjName>AREA_CODE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARKET" id="E5B38B62-61F3-3855-36A6-629BC6AD021E">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>REGION</sourceObjSchema>
+<sourceObjName>MARKET</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>7 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATE" id="95843BA0-FA40-74D4-FDF7-A53F799C42BB">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>REGION</sourceObjSchema>
+<sourceObjName>STATE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARKET_SIZE" id="C1A4EEEB-AE28-B734-152F-8105A0894D02">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>REGION</sourceObjSchema>
+<sourceObjName>MARKET_SIZE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 BYTE</dataTypeSize>
+<ownDataTypeParameters>12 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="616CE617-E62A-FAE2-9636-67574076AD28" name="REGION_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>REGION_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:53 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2417954E-806A-BAA8-1CD2-1FBDB79FC54A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B39E703-7158-1765-0084-6273ABE6A64A" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="REGION_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>REGION_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2417954E-806A-BAA8-1CD2-1FBDB79FC54A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

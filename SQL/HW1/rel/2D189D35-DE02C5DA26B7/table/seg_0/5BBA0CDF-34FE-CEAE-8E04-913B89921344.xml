@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5BBA0CDF-34FE-CEAE-8E04-913B89921344" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="PRODUCT">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PRODUCT</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUCTID" id="EB29DA60-71E2-C0C9-FC08-F4A3E33AF80A">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCTID</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT" id="58C48F53-CA8A-48D8-9861-AB36D0450AEF">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>17 BYTE</dataTypeSize>
+<ownDataTypeParameters>17 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_LINE" id="207EA820-8F76-B4E2-67DC-E8BBD194D670">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_LINE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TYPE" id="293EA00F-7757-C040-5389-DD474D1B6303">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PRODUCT</sourceObjSchema>
+<sourceObjName>TYPE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>26 BYTE</dataTypeSize>
+<ownDataTypeParameters>26 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_TYPE" id="1C11892E-E58F-3D0E-0957-186B4E0C7288">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>PRODUCT</sourceObjSchema>
+<sourceObjName>PRODUCT_TYPE</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FDD2BAE7-0044-E5B0-3B44-F90B18469DA1" name="PRODUCT_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PRODUCT_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB29DA60-71E2-C0C9-FC08-F4A3E33AF80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A5E9F8D2-F8DA-AC47-B9BF-3D9E56439CBB" schemaObject="2C2813FC-287B-9373-0DDC-A1546633CFC1" name="PRODUCT_PK">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjSchema>WW7473</sourceObjSchema>
+<sourceObjName>PRODUCT_PK</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB29DA60-71E2-C0C9-FC08-F4A3E33AF80A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

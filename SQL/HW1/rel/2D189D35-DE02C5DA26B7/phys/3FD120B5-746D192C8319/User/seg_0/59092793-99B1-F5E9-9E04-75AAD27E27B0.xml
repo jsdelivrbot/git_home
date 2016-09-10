@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="WW7473" directorySegmentName="seg_0" id="59092793-99B1-F5E9-9E04-75AAD27E27B0">
+<sourceConnName>ww7473</sourceConnName>
+<sourceObjName>WW7473</sourceObjName>
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<schemaObject>2C2813FC-287B-9373-0DDC-A1546633CFC1</schemaObject>
+<defTableSpace>E942F030-196E-D71B-7787-EA887D634E72</defTableSpace>
+<quotaItems>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem1" id="78457526-90D8-7743-7D49-6E29246666D2">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<size>52428800</size>
+</QuotaItem>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem2" id="AE1FA307-5355-0B39-C093-25477E95A443">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<size>52428800</size>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+</QuotaItem>
+<QuotaItem class="oracle.dbtools.crest.model.design.storage.oracle.v10g.QuotaItemOraclev10g" name="QuotaItem3" id="5FDA5CCA-F34F-DAE3-13A3-789F9FDD7630">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:14:01 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<size>52428800</size>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+</QuotaItem>
+</quotaItems>
+</UserOraclev10g>

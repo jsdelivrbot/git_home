@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="COMPONENT" directorySegmentName="seg_0" id="C2555A8D-9412-EC7D-8ECF-D5A06075BB5D">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<schemaObject>39A1698D-8B4C-EA71-C13A-A385F20C5DD9</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>26357E8A-F269-23E1-4CC5-8C3E3333F5FD</segment>
+<tableSpace>694BA787-73C6-66DC-C646-426B76150E2A</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PART_ID" id="1B674638-BAF7-366A-C490-07D881569376">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_ID" id="3C573959-FA0B-9987-DEC4-7D18225F56E6">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PART_NO" id="BB1943CF-F3C7-47F8-B56B-92C17D53697B">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="COMPONENT_PK" id="B493D091-62BD-9656-5BE7-D8D10C0C1D45">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<schemaObject>39A1698D-8B4C-EA71-C13A-A385F20C5DD9</schemaObject>
+<segment>C03665A3-3C80-BAD4-289D-EA59CE50512B</segment>
+<tableSpace>694BA787-73C6-66DC-C646-426B76150E2A</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="COMPONENT_PART_FK" id="65FA6B7D-C237-8DA9-2A60-00E126A4D8C0">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:36:46 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="COMPONENT_PK" id="15DAF4D9-3D27-FF84-7F8F-35A710016F04">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:55 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<segment>C03665A3-3C80-BAD4-289D-EA59CE50512B</segment>
+<tableSpace>694BA787-73C6-66DC-C646-426B76150E2A</tableSpace>
+<existingIndex>B493D091-62BD-9656-5BE7-D8D10C0C1D45</existingIndex>
+<indexSegment>C03665A3-3C80-BAD4-289D-EA59CE50512B</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="REGION" directorySegmentName="seg_0" id="086A5674-3034-578C-C185-24EA0E1067E3">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<schemaObject>2C2813FC-287B-9373-0DDC-A1546633CFC1</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>09B9FF18-3EB9-586B-993A-422783ABD5B8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="AREA_CODE" id="2417954E-806A-BAA8-1CD2-1FBDB79FC54A">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATE" id="95843BA0-FA40-74D4-FDF7-A53F799C42BB">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MARKET_SIZE" id="C1A4EEEB-AE28-B734-152F-8105A0894D02">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MARKET" id="E5B38B62-61F3-3855-36A6-629BC6AD021E">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="REGION_PK" id="7B39E703-7158-1765-0084-6273ABE6A64A">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:52 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<schemaObject>2C2813FC-287B-9373-0DDC-A1546633CFC1</schemaObject>
+<segment>C35C2497-91E7-A131-B162-BCCD445804D8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="REGION_PK" id="616CE617-E62A-FAE2-9636-67574076AD28">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:53 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<segment>C35C2497-91E7-A131-B162-BCCD445804D8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+<existingIndex>7B39E703-7158-1765-0084-6273ABE6A64A</existingIndex>
+<indexSegment>C35C2497-91E7-A131-B162-BCCD445804D8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

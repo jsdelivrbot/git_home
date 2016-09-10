@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PRODUCT" directorySegmentName="seg_0" id="5BBA0CDF-34FE-CEAE-8E04-913B89921344">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<schemaObject>2C2813FC-287B-9373-0DDC-A1546633CFC1</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>09B9FF18-3EB9-586B-993A-422783ABD5B8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PRODUCT_TYPE" id="1C11892E-E58F-3D0E-0957-186B4E0C7288">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_LINE" id="207EA820-8F76-B4E2-67DC-E8BBD194D670">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TYPE" id="293EA00F-7757-C040-5389-DD474D1B6303">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT" id="58C48F53-CA8A-48D8-9861-AB36D0450AEF">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCTID" id="EB29DA60-71E2-C0C9-FC08-F4A3E33AF80A">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PRODUCT_PK" id="A5E9F8D2-F8DA-AC47-B9BF-3D9E56439CBB">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<schemaObject>2C2813FC-287B-9373-0DDC-A1546633CFC1</schemaObject>
+<segment>C35C2497-91E7-A131-B162-BCCD445804D8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PRODUCT_PK" id="FDD2BAE7-0044-E5B0-3B44-F90B18469DA1">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 20:13:41 UTC</createdTime>
+<ownerDesignName>HW1</ownerDesignName>
+<segment>C35C2497-91E7-A131-B162-BCCD445804D8</segment>
+<tableSpace>E942F030-196E-D71B-7787-EA887D634E72</tableSpace>
+<existingIndex>A5E9F8D2-F8DA-AC47-B9BF-3D9E56439CBB</existingIndex>
+<indexSegment>C35C2497-91E7-A131-B162-BCCD445804D8</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

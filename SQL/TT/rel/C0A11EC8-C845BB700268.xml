@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="TT" id="C0A11EC8-E487-A7AD-2735-C845BB700268" mainViewID="151A2BB9-65BB-F99E-49E1-2AFF50FFD4D5">
+<createdBy>wenduowang</createdBy>
+<createdTime>2016-09-03 21:28:21 UTC</createdTime>
+<ownerDesignName>TT</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>3FD120B5-9F4E-6278-D5E2-746D192C8319</selectedRDBMSSite>
+<importConnectionStamps>
+<importConnectionStamp class="oracle.dbtools.crest.imports.DBConnectionStamp">
+<connName>ww7473</connName>
+<connUrl>jdbc:oracle:thin:@MSBMIS.mccombs.utexas.edu:1521:ORCL</connUrl>
+<connUser>WW7473</connUser>
+<connType>1</connType>
+</importConnectionStamp>
+</importConnectionStamps>
+</relationalModel>
