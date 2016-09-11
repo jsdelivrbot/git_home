@@ -10,9 +10,6 @@
 ### haskell
 + haskell scripts for fun
 
-### kaggle
-+ kaggle competition scripts for fun. Just moved out files due to large size of data.
-
 ### python
 + django web-scripts for fun
 + flask web_scripts for fun
