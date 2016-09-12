@@ -1,1 +1,0 @@
-squrethenumber x = x*x
