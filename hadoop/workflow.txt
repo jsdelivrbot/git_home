@@ -1,0 +1,7 @@
+hdfs namenode -format
+start-dfs.sh
+start-yarn.sh
+hdfs dfs -mkdir /user
+hdfs dfs -copyFromLocal file /user/
+hadoop jar /hadoop-streaming-2.7.2.jar -files <local mapper> -mapper <local mapper> -files <local reducer> -reduce <local reducer> -input <hdfs input> -output <hdfs output>
+hdfs dfs -copyToLocal <hdfs output> <local directory>
