@@ -1,12 +1,19 @@
 /*Part A Coffee Sales*/
 
 /*1. Extract the total sales for each product for each month. List all months (like January, February, etc) in the columns.*/
-SELECT prodname, EXTRACT(MONTH FROM factdate) AS month, SUM(actsales) AS sales
-FROM prodcoffee, factcoffee
-WHERE prodcoffee.productid = factcoffee.productid
-GROUP BY prodname, EXTRACT(MONTH FROM factdate)
-ORDER BY prodname ASC, month ASC;
-
+WITH temp AS (
+  SELECT prodname, EXTRACT(MONTH FROM factdate) AS month, SUM(actsales) AS sales
+  FROM prodcoffee, factcoffee
+  WHERE prodcoffee.productid = factcoffee.productid
+  GROUP BY prodname, EXTRACT(MONTH FROM factdate)
+  ORDER BY prodname ASC, month ASC
+)
+SELECT *
+FROM temp
+PIVOT (
+  SUM(SALES) FOR MONTH IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+)
+ORDER BY prodname;
 /*2*/
 
 WITH temp AS (
@@ -161,6 +168,14 @@ SELECT temp.*, ROUND((profit2013-profit2012)/profit2012*100, 2) AS percentage_gr
 FROM temp
 ORDER BY (profit2013-profit2012)/profit2012 ASC;
 -------
+
+/*6*/
+
+SELECT productid, EXTRACT(YEAR FROM factdate) AS year, SUM(actmarkcost) AS mktexpense
+FROM factcoffee
+GROUP BY productid, EXTRACT(YEAR FROM factdate)
+ORDER BY productid;
+
 WITH product_expense AS (
   SELECT prodname AS product, EXTRACT(YEAR FROM factdate) AS YEAR, SUM(actmarkcost) AS mktexpense, SUM(actsales) AS sales
   FROM prodcoffee, factcoffee
@@ -190,9 +205,68 @@ sales_growth AS (
   )
   ORDER BY product ASC
 )
+
 SELECT *
 FROM mktexpense_growth;
+SELECT *
+FROM (
+  SELECT areaid, EXTRACT(YEAR FROM factdate) AS year, SUM(actprofit) AS profit
+  FROM factcoffee
+  GROUP BY areaid, EXTRACT(YEAR FROM factdate)
+)
+PIVOT (
+ SUM(profit) FOR year IN (2012 AS Y2012, 2013 AS Y2013)
+)
+ORDER BY areaid;
 
+CREATE VIEW area_profit AS
+  SELECT *
+  FROM (
+    SELECT areaid, EXTRACT(YEAR FROM factdate) AS year, SUM(actprofit) AS profit
+    FROM factcoffee
+    GROUP BY areaid, EXTRACT(YEAR FROM factdate)
+  )
+  PIVOT (
+   SUM(profit) FOR year IN (2012 AS Y2012, 2013 AS Y2013)
+  )
+  ORDER BY areaid;
+  
+CREATE VIEW area_mktexpense AS
+  SELECT *
+  FROM (
+    SELECT areaid, EXTRACT(YEAR FROM factdate) AS year, SUM(actmarkcost) AS mktexpense
+    FROM factcoffee
+    GROUP BY areaid, EXTRACT(YEAR FROM factdate)
+  )
+  PIVOT (
+    SUM(mktexpense) FOR year IN (2012 AS Y2012, 2013 AS Y2013)
+  )
+  ORDER BY areaid;
+  
+CREATE OR REPLACE VIEW mktexpense_payback AS
+  SELECT area_profit.areaid, 
+         ROUND((area_profit.y2013-area_profit.y2012)/(area_mktexpense.y2013-area_mktexpense.y2012), 2) AS payback
+  FROM area_profit, area_mktexpense
+  WHERE area_profit.areaid=area_mktexpense.areaid
+        AND area_mktexpense.y2013<>area_mktexpense.y2012;
+
+SELECT *
+FROM (
+  SELECT areaid, payback
+  FROM mktexpense_payback
+  ORDER BY payback DESC
+)
+WHERE ROWNUM<6;
+
+SELECT *
+FROM (
+  SELECT areaid, payback
+  FROM mktexpense_payback
+  ORDER BY payback ASC
+)
+WHERE ROWNUM<6;
+
+SELECT area
 SELECT mktexpense_growth.state, (mkt2013-mkt2012) AS expense_growth, (sales2013-sales2012) AS sales_growth,
         (sales2013-sales2012)/(1+(mkt2013-mkt2012)) AS correlation
 FROM mktexpense_growth, sales_growth
@@ -625,7 +699,7 @@ PIVOT (
 )
 ORDER BY subcat;
 ------------------------------------------------------
-SELECT quarter, SUM(orderid) AS orders
+SELECT quarter, COUNT(orderid) AS orders
 FROM (
   SELECT TO_CHAR(orddate, '"Q"Q') AS quarter, orderid
   FROM orderdet
