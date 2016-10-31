@@ -49,14 +49,14 @@ COPY (
 	SELECT admission.subject_id AS subject_id,
 		   admission.hadm_id AS hadm_id,
 		   gender,
-		   dob,
-		   dod,
-		   dod_hosp,
-		   dod_ssn,
+		   TO_CHAR(dob, 'YYYY/MM/DD') AS dob,
+		   TO_CHAR(dod, 'YYYY/MM/DD') AS dod,
+		   TO_CHAR(dod_hosp, 'YYYY/MM/DD') AS dod_hosp,
+		   TO_CHAR(dod_ssn, 'YYYY/MM/DD') AS dod_ssn,
 		   expire_flag,
-		   admittime,
-		   dischtime,
-		   deathtime,
+		   TO_CHAR(admittime, 'YYYY/MM/DD') AS admittime,
+		   TO_CHAR(dischtime, 'YYYY/MM/DD') AS dischtime,
+		   TO_CHAR(deathtime, 'YYYY/MM/DD') AS deathtime,
 		   admission_type,
 		   admission.diagnosis AS initial_diagnosis,
 		   diagnosis_seq,
@@ -80,4 +80,4 @@ COPY (
 
 	ORDER BY subject_id ASC,
 			 hadm_id ASC
-) TO 'E:\Data\mimic3\postgresql\extract_diagnosis.csv' WITH CSV DELIMITER ',' HEADER;
+) TO 'E:\Data\mimic3\postgresql\extract_diagnosis_2.csv' WITH CSV DELIMITER ',' HEADER;
