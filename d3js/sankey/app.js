@@ -29,17 +29,16 @@ var OPACITY = {
            "mental disorders",
            "diseases of the blood and blood-forming organs",
            "diseases of the sense organs",
-           "others",
-           "external causes of injury",
+           "External causes of injury",
            "Supplementary classification of factors influencing health status and contact with health services"
           ],
 
-  TYPE_COLORS = ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#beaed4","#fdc086","#ffff99","#386cb0","#f0027f","#bf5b17","#666666"],
-  TYPE_HIGHLIGHT_COLORS = ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494", "#fdcdac","#cbd5e8","#f4cae4","#e6f5c9","#fff2ae","#f1e2cc","#cccccc"],
+  TYPE_COLORS = ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#e6ab02", "#a6761d", "#beaed4","#fdc086","#ffff99","#386cb0","#f0027f","#bf5b17"],
+  TYPE_HIGHLIGHT_COLORS = ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f", "#e5c494", "#fdcdac","#cbd5e8","#f4cae4","#e6f5c9","#fff2ae","#f1e2cc"],
   LINK_COLOR = "#b3b3b3",
   INFLOW_COLOR = "#2E86D1",
   OUTFLOW_COLOR = "#D63028",
-  NODE_WIDTH = 36,
+  NODE_WIDTH = 50,
   COLLAPSER = {
     RADIUS: NODE_WIDTH / 2,
     SPACING: 2
@@ -53,9 +52,9 @@ var OPACITY = {
   },
   TRANSITION_DURATION = 400,
   // Need to adjust the canvas size
-  HEIGHT = 800 - MARGIN.TOP - MARGIN.BOTTOM,
-  WIDTH = 1280 - MARGIN.LEFT - MARGIN.RIGHT,
-  LAYOUT_INTERATIONS = 100,
+  HEIGHT = 2000 - MARGIN.TOP - MARGIN.BOTTOM,
+  WIDTH = 5000 - MARGIN.LEFT - MARGIN.RIGHT,
+  LAYOUT_INTERATIONS = 100000,
   REFRESH_INTERVAL = 700;
 
 var formatNumber = function (d) {
@@ -85,7 +84,7 @@ hideTooltip = function () {
 showTooltip = function () {
   return tooltip
     .style("left", d3.event.pageX + "px")
-    .style("top", d3.event.pageY + 15 + "px")
+    .style("top", d3.event.pageY + 15 + "px") // was 15
     .transition()
       .duration(TRANSITION_DURATION)
       .style("opacity", 1);
@@ -115,8 +114,8 @@ biHiSankey = d3.biHiSankey();
 // Set the biHiSankey diagram properties
 biHiSankey
   .nodeWidth(NODE_WIDTH)
-  .nodeSpacing(10)
-  .linkSpacing(4)
+  .nodeSpacing(1)           // Changed
+  .linkSpacing(.4)          // Changed
   .arrowheadScaleFactor(0.5) // Specifies that 0.5 of the link's stroke WIDTH should be allowed for the marker at the end of the link.
   .size([WIDTH, HEIGHT]);
 
@@ -407,7 +406,7 @@ function update () {
 
       tooltip
         .style("left", g.x + MARGIN.LEFT + "px")
-        .style("top", g.y + g.height + MARGIN.TOP + 15 + "px")
+        .style("top", g.y + g.height + MARGIN.TOP + 15 + "px") // was 50
         .transition()
           .duration(TRANSITION_DURATION)
           .style("opacity", 1).select(".value")
@@ -439,8 +438,9 @@ function update () {
     .select("text")
       .attr("x", -6)
       .attr("y", function (d) { return d.height / 2; })
-      .attr("dy", ".35em")
+      .attr("dy", ".35em") // was .35
       .attr("text-anchor", "end")
+      .style("font-size", "25px") // newly added
       .attr("transform", null)
       .text(function (d) { return d.name; })
     .filter(function (d) { return d.x < WIDTH / 2; })
@@ -539,5 +539,4 @@ d3.json("diagnoses.json", function(error, data){
     disableUserInterractions(2 * TRANSITION_DURATION);
     
     update();
-
-})
+});
