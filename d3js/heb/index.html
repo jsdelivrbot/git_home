@@ -3,7 +3,7 @@
 <style>
 
 .node {
-  font: 300 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 300 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
   fill: #bbb;
 }
 
@@ -13,7 +13,7 @@
 
 .link {
   stroke: steelblue;
-  stroke-opacity: .4;
+  stroke-opacity: .5;
   fill: none;
   pointer-events: none;
 }
@@ -35,7 +35,7 @@
 .link--source,
 .link--target {
   stroke-opacity: 1;
-  stroke-width: 2px;
+  stroke-width: 0.2px;
 }
 
 .link--source {
@@ -51,7 +51,7 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var diameter = 960,
+var diameter = 2480,    // Was 960
     radius = diameter / 2,
     innerRadius = radius - 120;
 
@@ -69,15 +69,15 @@ var line = d3.svg.line.radial()
     .angle(function(d) { return d.x / 180 * Math.PI; });
 
 var svg = d3.select("body").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
+    .attr("width", diameter + 500)
+    .attr("height", diameter + 500)
   .append("g")
-    .attr("transform", "translate(" + radius + "," + radius + ")");
+    .attr("transform", "translate(" + (radius + 250) + "," + (radius + 250) + ")"); // Added 100, 100 shift
 
 var link = svg.append("g").selectAll(".link"),
     node = svg.append("g").selectAll(".node");
 
-d3.json("flare.json", function(error, classes) {
+d3.json("heb.json", function(error, classes) {
   if (error) throw error;
 
   var nodes = cluster.nodes(packageHierarchy(classes)),
