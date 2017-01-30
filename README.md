@@ -16,3 +16,6 @@
 + MSBA course materials at McCombs
 + python3 virtualenv
 + webscraping scripts for fun
+
+### C++
++ Exercises to solve algorithm prolems
