@@ -14,7 +14,7 @@ package main
 
 import "fmt"
 
-// import "log"
+import "log"
 import "time"
 import "math/rand"
 import "math"
@@ -452,6 +452,7 @@ func MCTS(deck []int, id int, target Target, played []int, counts []int, max_ite
       Actions: []Hand{},
     }
     CurrentState.Child = append(CurrentState.Child, ChildState)
+    // fmt.Printf("Child node: %+v\n", ChildState.Cards)
   }
   var next_player int = id + 1
   if next_player >= len(counts) {
@@ -468,13 +469,16 @@ func MCTS(deck []int, id int, target Target, played []int, counts []int, max_ite
   var GoodActions []Hand
   var best_ucb float64
   var random_index int
+  cards := make(map[int][]int)
   for iter := 0; iter < max_iters; iter++ {
     // Find the highest UCB child or the first unvisited child.
     best_ucb = -1
     StartChild = nil
     GoodChildren = []*State{}
     for cid, child := range CurrentState.Child {
-      if child.Visited == 0 {
+      // Visit each child for at least N times before making selection
+      // based on UCB score.
+      if child.Visited <= 30 {
         StartChild = &CurrentState.Child[cid]
         StartAction = CurrentState.Actions[cid]
         break
@@ -495,8 +499,7 @@ func MCTS(deck []int, id int, target Target, played []int, counts []int, max_ite
     }
     StartChild.Visited += 1
     CurrentState.Visited += 1
-    var remaining_cards []int = utils.SliceDifference(deck, StartAction.Cards)
-    if len(remaining_cards) == 0 {
+    if len(StartChild.Cards) == 0 {
       // Early return if no more card is left then win
       return StartAction
     }
@@ -508,9 +511,17 @@ func MCTS(deck []int, id int, target Target, played []int, counts []int, max_ite
     copy(new_played, played)
     new_played = append(new_played, StartAction.Cards...)
     new_counts = make([]int, len(counts))
+    cards = make(map[int][]int)
+    for _, card := range StartChild.Cards {
+      cards[id] = append(cards[id], card)
+    }
     copy(new_counts, counts)
-    new_counts[id] = len(remaining_cards)
-    winner, depth := ExpandTree(new_target, new_played, new_counts, next_player, &DECK, 0)
+    new_counts[id] = len(StartChild.Cards)
+    if len(cards[id]) != new_counts[id] {
+      fmt.Printf("Counts: %v, Cards: %+v\n", new_counts, cards)
+      log.Fatal("Inconsistent cards.")
+    }
+    winner, depth := ExpandTree(new_target, new_played, new_counts, &cards, next_player, &DECK, 0)
     if winner == id {
       StartChild.Value += 1*math.Pow(DISCOUNT, depth)
     }
@@ -548,18 +559,21 @@ func MCTS(deck []int, id int, target Target, played []int, counts []int, max_ite
 //   4) the next player to play -> id (starting from 0)
 // DECK: all cards
 // depth: recursion depth
-// return: winner id
-func ExpandTree(target Target, played []int, counts []int, id int, DECK *[]int, depth float64) (winner int, end_depth float64) {
-  var card_pool []int = utils.SliceDifference(*DECK, played)
-  var deck []int
-  var random_order []int = rand.Perm(len(card_pool))
-  for i := 0; i < counts[id]; i++ {
-    deck = append(deck, card_pool[random_order[i]])
+// Return: winner id
+func ExpandTree(target Target, played []int, counts []int, cards *map[int][]int, id int, DECK *[]int, depth float64) (winner int, end_depth float64) {
+  // Initialize the current player's hand
+  if len((*cards)[id]) != counts[id] {
+    var card_pool []int = utils.SliceDifference(*DECK, played)
+    var random_order []int = rand.Perm(len(card_pool))
+    for i := 0; i < counts[id]; i++ {
+      (*cards)[id] = append((*cards)[id], card_pool[random_order[i]])
+    }
   }
-  var options []Hand = ComposeOptions(deck, id, target)
+  // fmt.Printf("Player %v cards %v\n", id, (*cards)[id])
+  var options []Hand = ComposeOptions((*cards)[id], id, target)
   var option Hand = options[rand.Intn(len(options))]
-  var remaining_cards []int = ReduceHand(deck, option.Cards)
-  if len(remaining_cards) == 0 {
+  (*cards)[id] = ReduceHand((*cards)[id], option.Cards)
+  if len((*cards)[id]) == 0 {
     // Return the current player's id if no card is left.
     return id, depth
   } else {
@@ -571,14 +585,14 @@ func ExpandTree(target Target, played []int, counts []int, id int, DECK *[]int, 
     new_played := make([]int, len(played))
     copy(new_played, played)
     new_played = append(new_played, option.Cards...)
-    new_counts := make([]int, len(counts))
-    copy(new_counts, counts)
-    new_counts[id] = len(remaining_cards)
+    // new_counts := make([]int, len(counts))
+    // copy(new_counts, counts)
+    counts[id] = len((*cards)[id])
     var new_target Target = target
     if option.Shape != "empty" {
       new_target = Target{player: id, hand: option}
     }
-    return ExpandTree(new_target, new_played, new_counts, next_player, DECK, depth+1)
+    return ExpandTree(new_target, new_played, counts, cards, next_player, DECK, depth+1)
   }
 }
 
@@ -628,8 +642,10 @@ func main() {
   played := []int{}
   target := Target{player: 1, hand: Hand{Cards: []int{}, Shape: "empty", Length: 0, Value: 0}}
   choice := MCTS(deck, 1, target, played, []int{46-len(deck)-len(played), len(deck)}, 1000000)
-  fmt.Printf("The choice is: %+v.\n", choice)
+  fmt.Printf("When iteration is %v the choice is: %+v.\n", 1000000, choice)
   PrintHand(choice)
   // options := ComposeOptions(deck, 1, target)
   // fmt.Println(options)
+  // var full_deck []int = GetNewDeck(1)
+  // fmt.Println(len(utils.ChooseFrom(utils.Counter(utils.SliceDifference(full_deck, deck)), 23)))
 }

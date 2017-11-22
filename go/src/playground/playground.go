@@ -130,6 +130,11 @@ func main() {
   fmt.Printf("Before modification the map is %+v\n", some_map)
   ModifyMap(some_map)
   fmt.Printf("After modification the map is %+v\n", some_map)
+  pointer_to_map := &some_map
+  fmt.Printf("Dereference the pointer to the map: %v\n", *pointer_to_map)
+  fmt.Printf("Dereference the pointer to the map[1]: %v\n", (*pointer_to_map)[1])
+  (*pointer_to_map)[1] = 100
+  fmt.Printf("After changing the pointer, the original map is: %+v\n", some_map)
   combinations := ChooseFrom(some_map, 2)
   fmt.Println(combinations)
   fmt.Printf("Original slice: %v\n", s1)
@@ -144,10 +149,14 @@ func main() {
   } else {
     fmt.Printf("The pointer is not nil. It is %p.\n", some_state)
   }
-
-  // if *some_state == State(nil) {
-  //   fmt.Println("The pointer points to nil.")
-  // } else {
-  //   fmt.Printf("The pointer does not point to nil. It points to %v.\n", *some_state)
-  // }
+  another_map := make(map[int][]int)
+  another_map[1] = []int{1,2,3}
+  another_map[2] = []int{2,4,6}
+  another_map[3] = []int{3,6,9}
+  fmt.Printf("Now I have another map %+v\n", another_map)
+  xxx := []int{100,200,300}
+  another_map[1] = xxx
+  fmt.Printf("I have changed value of '1' to xxx: %v, now the map is %+v\n", xxx, another_map)
+  xxx[2] = 333
+  fmt.Printf("Then I changed xxx[2] to 333, now the map is %+v, and xxx is %+v\n", another_map, xxx)
 }
