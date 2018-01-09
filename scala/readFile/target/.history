@@ -1,0 +1,12 @@
+run
+~testQuick
+console
+cnosole
+console
+~testQuick
+run
+compile
+run
+clean
+compile
+run

@@ -1,0 +1,113 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.12.3
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+3 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> /home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/Demo$.class
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> /home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/Demo.class
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> /home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/fileReader.class
+binary dependencies:
+2 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> /home/wenduowang/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.3.jar
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> /usr/lib/jvm/java-8-oracle/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+3 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> custom.Demo
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> custom.Demo$
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> custom.fileReader
+used names:
+32 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> <init>
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> <repeated>
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Any
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> AnyRef
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Array
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> BufferedSource
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Codec
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Demo
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Function1
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Iterator
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Nothing
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Object
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Predef
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Source
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> StdIn
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> String
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> U
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> Unit
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> custom
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> fallbackSystemCodec
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> fileReader
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> filename
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> foreach
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> fromFile
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> getLines
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> io
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> line
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> println
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> read
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> readLine
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> reader
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> scala
+product stamps:
+3 items
+/home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/Demo$.class -> lastModified(1502169216000)
+/home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/Demo.class -> lastModified(1502169216000)
+/home/wenduowang/git/git_home/scala/readFile/target/scala-2.12/classes/custom/fileReader.class -> lastModified(1502169216000)
+source stamps:
+1 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> hash(76b70a3b70a8b6dd2844c29f40f8174a0aa85478)
+binary stamps:
+2 items
+/home/wenduowang/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.3.jar -> lastModified(1500979666000)
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> lastModified(1501690059000)
+class names:
+2 items
+/home/wenduowang/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.3.jar -> scala.io.StdIn
+/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+1 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlSjH5SdlLSkQCAAdJAAdhcGlIYXNoWgAIaGFzTWFjcm9aABBoYXNQYWNrYWdlT2JqZWN0TAAYX2ludGVybmFsT25seV9uYW1lSGFzaGVzdAAkTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoZXM7TAADYXBpdAAVTHhzYnRpL2FwaS9Tb3VyY2VBUEk7TAALY29tcGlsYXRpb250ABdMeHNidGkvYXBpL0NvbXBpbGF0aW9uO1sABGhhc2h0AAJbQnhwNSAkfwAAc3IAInhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoZXNU2r6Z+tTsTAIAAlsAD2ltcGxpY2l0TWVtYmVyc3QAI1tMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2g7WwAOcmVndWxhck1lbWJlcnNxAH4AB3hwdXIAI1tMeHNidGkuYXBpLl9pbnRlcm5hbE9ubHlfTmFtZUhhc2g7SVqAtt2Wi/QCAAB4cAAAAAB1cQB+AAkAAAAYc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwFzsbp3QABm5vdGlmeXNxAH4ADKX387F0AARyZWFkc3EAfgAMtB4FIXQABHdhaXRzcQB+AAxCwDBRdAANJGFzSW5zdGFuY2VPZnNxAH4ADH00mDF0AAZlcXVhbHNzcQB+AAyjkSiKdAAMYXNJbnN0YW5jZU9mc3EAfgAM+mqYaXQADHN5bmNocm9uaXplZHNxAH4ADOmlhhp0AA0kaXNJbnN0YW5jZU9mc3EAfgAM19KC03QABERlbW9zcQB+AAwAlTgEdAAEbWFpbnNxAH4ADJjzVKF0AAlub3RpZnlBbGxzcQB+AAzUbBvudAAMaXNJbnN0YW5jZU9mc3EAfgAMQUyJeXQABjxpbml0PnNxAH4ADG8oszR0AAI9PXNxAH4ADPbptV10AAVjbG9uZXNxAH4ADAt+zw10AAh0b1N0cmluZ3NxAH4ADD7j0gh0AAIhPXNxAH4ADFJv/PV0AAhnZXRDbGFzc3NxAH4ADHlkKdJ0AApmaWxlUmVhZGVyc3EAfgAMpBcfP3QAAm5lc3EAfgAMWE3/UXQAAmVxc3EAfgAMnLsee3QAAiMjc3EAfgAMkgOQu3QACGZpbmFsaXplc3EAfgAM8G0MRnQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAnNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AR3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzl+dh3BMme7MCAAFCAAVmbGFnc3hwAHQAEWN1c3RvbS5maWxlUmVhZGVydXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAIXhzYnRpLmFwaS5BYnN0cmFjdExhenkkU3RyaWN0TGF6eQ1mHGspFiq4AgABTAAFdmFsdWV0ABJMamF2YS9sYW5nL09iamVjdDt4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AF9zcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AR0wACWluaGVyaXRlZHEAfgBHTAAHcGFyZW50c3EAfgBHeHEAfgBkc3EAfgBfdXEAfgBCAAAAAHNxAH4AX3VxAH4AQgAAAABzcQB+AF91cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGN0AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGNzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AHx0AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AH1zcQB+AHB0AANBbnlzcQB+AHRzcQB+AHd1cQB+AHoAAAACc3EAfgB8dAAFc2NhbGFxAH4Ag3NxAH4ARHEAfgBRdXEAfgBSAAAAAHNxAH4AVAB0AAtjdXN0b20uRGVtb3VxAH4AVwAAAAB+cQB+AFl0AAZNb2R1bGV1cQB+AF0AAAAAc3EAfgBfcQB+AGVzcQB+AF9zcQB+AGdzcQB+AF91cQB+AEIAAAABc3IADXhzYnRpLmFwaS5EZWZSvp/ifLQ2aQIAAkwACnJldHVyblR5cGV0ABBMeHNidGkvYXBpL1R5cGU7WwAPdmFsdWVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvUGFyYW1ldGVyTGlzdDt4cQB+AEhxAH4AUXVxAH4AUgAAAABzcQB+AFQAcQB+ACF1cQB+AFcAAAAAc3EAfgBwdAAEVW5pdHNxAH4AdHNxAH4Ad3VxAH4AegAAAAJzcQB+AHxxAH4AinEAfgCDdXIAGltMeHNidGkuYXBpLlBhcmFtZXRlckxpc3Q79dM6HfKzcO4CAAB4cAAAAAFzcgAXeHNidGkuYXBpLlBhcmFtZXRlckxpc3TWxbwcZEl04wIAAloACmlzSW1wbGljaXRbAApwYXJhbWV0ZXJzdAAcW0x4c2J0aS9hcGkvTWV0aG9kUGFyYW1ldGVyO3hwAHVyABxbTHhzYnRpLmFwaS5NZXRob2RQYXJhbWV0ZXI7z7jFXaXdtW0CAAB4cAAAAAFzcgAZeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlch9FrhfTSbDqAgAEWgAKaGFzRGVmYXVsdEwACG1vZGlmaWVydAAdTHhzYnRpL2FwaS9QYXJhbWV0ZXJNb2RpZmllcjtMAARuYW1lcQB+AA1MAAN0cGVxAH4AmXhwAH5yABt4c2J0aS5hcGkuUGFyYW1ldGVyTW9kaWZpZXIAAAAAAAAAABIAAHhxAH4AWnQABVBsYWludAAEYXJnc3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4AcVsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4AY3NxAH4AcHQABUFycmF5cQB+AKF1cQB+AG4AAAABc3EAfgBwdAAGU3RyaW5nc3EAfgB0c3EAfgB3dXEAfgB6AAAAA3NxAH4AfHEAfgB/c3EAfgB8cQB+AIFxAH4Ag3NxAH4AX3VxAH4AQgAAAABzcQB+AF91cQB+AG4AAAACc3EAfgBwcQB+AHNxAH4Au3NxAH4AcHEAfgCFcQB+AKF1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAXNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AAZjdXN0b21zcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAV3AQywUdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQARi9ob21lL3dlbmR1b3dhbmcvZ2l0L2dpdF9ob21lL3NjYWxhL3JlYWRGaWxlL3RhcmdldC9zY2FsYS0yLjEyL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABR2two7cKi23ShEwp9A+BdKCqhUeA==
+external apis:
+0 items
+source infos:
+1 items
+/home/wenduowang/git/git_home/scala/readFile/src/main/scala/custom/main.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXcBDLBR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQARi9ob21lL3dlbmR1b3dhbmcvZ2l0L2dpdF9ob21lL3NjYWxhL3JlYWRGaWxlL3RhcmdldC9zY2FsYS0yLjEyL2NsYXNzZXN0AAEv
