@@ -1,0 +1,1001 @@
+iyear,imonth,iday,city,country,region,provstate,nkill,nkillter
+1988,8,19,Lisnaskea,603,8,Northern Ireland,0,
+1987,5,25,Ponce,217,1,Puerto Rico,0,
+2001,11,9,Jakarta,93,5,Jakarta (Special Capital Region),0,0
+1984,10,11,Arauca,45,3,Arauca,,
+2006,4,6,Karachi,153,6,Sindh,0,0
+1981,2,16,Paris,69,8,Paris,0,
+1977,6,30,Florence,98,8,Tuscany,1,
+2014,3,31,Tillo,209,10,Siirt,1,0
+2011,3,24,Landi Kotal,153,6,Federally Administered Tribal Areas,0,0
+2015,5,5,Sufiyah,95,10,Al Anbar,0,0
+2003,7,3,Nong Chik District,205,5,Pattani (Province),2,0
+2000,5,20,Marseille,69,8,Provence-Alpes-Cote d'Azur,0,0
+2009,6,6,Kunduz,4,6,Kunduz,0,0
+2014,10,1,Imphal,92,6,Manipur,1,0
+2009,6,22,Khost,4,6,Khost,7,1
+1985,8,11,Santiago,43,3,Santiago Metropolitan,0,
+1990,10,30,Tel Aviv,97,10,Tel Aviv,1,1
+1991,3,7,Nablus,155,10,West Bank,0,
+2014,1,14,Tuba,147,11,Borno,5,0
+1970,5,4,Norman,217,1,Oklahoma,0,0
+1992,9,25,Oranienburg,75,8,Brandenburg,0,
+2009,12,27,Taoudouch,6,10,Tizi Ouzou Province,0,0
+2008,12,31,General Santos,160,5,South Cotabato,0,0
+2011,5,16,Maynooth,96,8,Kildare,0,0
+2014,3,2,Borsah,95,10,Nineveh,0,0
+2009,7,17,Nizhniye Achaluki,167,9,Ingushetia,2,0
+1977,8,19,Diyarbakir,209,10,Diyarbakir,,
+2016,2,13,Jalalzo,4,6,Helmand,7,5
+2009,7,4,Quetta,153,6,Balochistan,0,0
+2009,1,10,Sibi,153,6,Balochistan,2,0
+2013,4,11,Tiixo,182,11,Lower Juba,,
+2011,5,26,Baghdad,95,10,Baghdad,0,0
+2015,1,15,Dhaka,19,6,Dhaka,0,0
+2014,3,24,Fallujah,95,10,Al Anbar,1,0
+1997,6,12,Paez district,222,3,Miranda,0,
+2010,5,13,Nawa-i-Barakzayi district,4,6,Helmand,2,0
+2013,11,19,Swabi District,153,6,Khyber Pakhtunkhwa,2,0
+2012,9,11,Sultangazi district,209,10,Istanbul,2,1
+2014,12,16,Tripoli,113,10,Tripoli,0,0
+2016,7,10,Pulwama,92,6,Jammu and Kashmir,0,0
+1983,5,8,Cerro El Castillo,145,2,,,
+1992,8,7,Baraka Bounao,174,11,Ziguinchor,0,
+1995,7,9,Karachi,153,6,Sindh,0,
+2008,2,1,Unknown,195,11,Central Equatoria,4,0
+1979,5,29,San Salvador,61,2,,0,
+1992,12,16,San Pedro de Uraba,45,3,Antioquia,5,
+1992,8,26,Marseilles,69,8,Provence-Alpes-Cote d'Azur,0,
+2013,10,6,Muslimabad,153,6,Khyber Pakhtunkhwa,0,0
+2014,10,24,Kagizman,209,10,Kars,3,3
+2016,1,7,Philadelphia,217,1,Pennsylvania,0,0
+2011,11,27,Baghdad,95,10,Baghdad,2,0
+1983,8,5,Unknown,155,10,West Bank,3,
+2014,2,18,Unknown,95,10,Nineveh,0,0
+1986,8,22,Umlazi,183,11,KwaZulu-Natal,1,0
+1984,4,8,Palmira,45,3,Valle del Cauca,1,
+1981,3,31,Bulawayo,231,11,Bulawayo,2,
+2013,3,12,Chtaura,110,10,Beqaa,1,0
+2010,3,13,Mosul,95,10,Nineveh,0,0
+1979,3,23,Newry,603,8,Northern Ireland,,
+1984,5,25,Magdeburg,499,9,,0,
+1997,2,2,Unknown,69,8,Corsica,0,
+1984,6,2,San Fernando,145,2,,0,
+2014,7,17,Baghdad,95,10,Baghdad,5,1
+1986,6,21,San Fernando,45,3,Magdalena,10,
+1995,6,6,Arba Minch,65,11,Southern Nations,1,
+2015,7,15,Faiyum,60,10,Faiyum,0,0
+2016,7,14,Tumakuru,92,6,Karnataka,0,0
+2014,7,23,Jalawla,95,10,Diyala,1,0
+2004,1,15,Tikrit,95,10,Saladin,3,0
+2005,7,31,Haswah,95,10,Babil,7,0
+2013,3,17,Khok Pho district,205,5,Pattani,1,0
+1984,7,17,Onambo,139,11,Unknown,0,
+1999,7,21,Baramulla,92,6,Jammu and Kashmir,3,0
+1980,7,2,San Salvador,61,2,,,
+1986,6,8,Jutiapa,61,2,,,
+1987,8,2,Chalhuanca district,159,3,Apurimac,0,
+1983,7,7,Bogota,45,3,Bogota,0,
+2012,7,21,Spin Thal,153,6,Federally Administered Tribal Areas,10,1
+1997,4,11,Belgrade,235,9,,1,
+1992,12,10,Dublin,96,8,Dublin,0,
+2007,11,18,Parachinar,153,6,Federally Administered Tribal Areas,90,
+1990,2,2,Nawashah,153,6,Punjab,3,
+2007,1,1,Jaffna,186,6,Northern,1,0
+2009,5,11,Kadiria,6,10,Bouira Province,0,0
+2012,4,7,Khash Rod,4,6,Nimroz,0,0
+1997,7,26,San Francisco,217,1,California,0,
+2008,9,8,Rawalpindi,153,6,Punjab,0,0
+1995,3,29,Offenbach,75,8,Hesse,0,
+2013,9,16,Benghazi,113,10,Benghazi,0,0
+1991,4,5,Trincomalee,186,6,Eastern,6,
+1988,6,14,Phagwara,92,6,Punjab,1,
+2015,10,12,Tenambo,229,11,North Kivu,3,0
+2004,2,19,Grozny,167,9,Chechnya (Federal District),0,0
+2014,11,12,Giza,60,10,Giza,1,1
+1984,4,9,Zuinuapata,159,3,Unknown,2,
+2015,3,9,Bujumbura,34,11,Bujumbura Mairie,0,0
+1997,11,27,Belfast,603,8,Northern Ireland,,
+1984,10,19,Belfast,603,8,Northern Ireland,1,
+1987,5,14,Esteli,145,2,,0,
+2012,2,23,Baghdad,95,10,Baghdad,2,0
+2014,9,17,Naw Zad district,4,6,Helmand,18,18
+2011,5,16,Baqubah,95,10,Diyala,0,0
+2007,7,4,Baiji,95,10,Saladin,5,
+2007,6,10,Tikrit,95,10,Saladin,16,1
+1992,9,25,Jinotega,145,2,,0,
+1994,1,26,Unknown,209,10,Bingol,10,
+1983,10,22,Giron,45,3,Santander,,
+2016,8,3,Salvacion Baybay,160,5,Camarines Sur,1,0
+2008,11,21,Dera Ismail Khan,153,6,North-West Frontier Province,10,0
+1991,1,28,Ankara,209,10,Ankara,0,
+2015,2,10,Tirana,5,9,Tirana,0,0
+2012,8,19,El Tibiso,45,3,Narino,0,0
+2015,10,4,Nahrawan,95,10,Diyala,1,0
+2012,3,4,Baghdad,95,10,Baghdad,2,0
+2015,6,22,Tika,113,10,Benghazi,3,0
+2014,10,29,Harad,228,10,Hajjah,0,0
+2011,10,9,Baghdad,95,10,Baghdad,0,0
+1996,4,25,Unknown,92,6,Assam,5,
+2013,11,10,Gereshk,4,6,Helmand,3,3
+2016,11,14,Rutshuru,229,11,North Kivu,2,0
+1992,2,6,Azzun,155,10,West Bank,0,
+2014,5,16,Kabul,4,6,Kabul,0,0
+2009,12,27,Baghdad,95,10,Baghdad,1,0
+2014,8,23,Kach Phattak,153,6,Khyber Pakhtunkhwa,0,0
+1977,2,19,Konya,209,10,Konya,,
+2016,2,16,Hamidhiyah,95,10,Al Anbar,0,0
+2015,6,26,Aden,228,10,Adan,1,0
+2010,5,14,Baghdad,95,10,Baghdad,4,0
+2016,4,21,Mosul,95,10,Nineveh,250,0
+1994,1,26,Khan Yunis,155,10,Gaza Strip,,
+1997,5,25,Dundalk,96,8,Louth,0,
+2009,11,24,Narathiwat,205,5,Narathiwat,1,0
+1987,5,25,Chalhuanca district,159,3,Apurimac,0,
+1984,11,13,San Agustin,61,2,,25,
+1990,6,4,Santa Ana,61,2,,0,
+2011,8,2,Baghdad,95,10,Baghdad,0,0
+2014,6,1,Bijapur district,92,6,Chhattisgarh,1,0
+1984,7,4,Lima,159,3,Lima,0,0
+2014,8,3,Sbeitla,208,10,Kasserine,0,0
+1972,12,11,New York City,217,1,New York,0,
+2013,10,10,Guapo,207,2,Point Fortin,0,0
+1992,12,7,Belvedere-Campomoro,69,8,Corsica,0,
+1987,5,17,Madrid,185,8,Madrid,,
+2015,3,26,Mekhtar,153,6,Balochistan,1,0
+2012,5,17,Badaber,153,6,Khyber Pakhtunkhwa,1,0
+2014,6,3,Unknown,209,10,Van,0,0
+1986,4,23,Lima,159,3,Lima,2,
+2011,10,23,Tikrit,95,10,Saladin,2,0
+2016,2,6,Albu Shejel,95,10,Al Anbar,0,0
+2014,5,4,Kunduz,4,6,Kunduz,1,0
+1990,10,27,Manila,160,5,Metropolitian Manila,2,
+2008,11,16,Kohbarba Rasulpur,92,6,Bihar,4,0
+2015,8,11,Jalalabad,4,6,Nangarhar,0,0
+1982,5,10,Chupaca,159,3,Junin,0,
+1999,1,3,Raiwind,153,6,Punjab,4,0
+1979,1,22,Rome,98,8,Lazio,0,
+1995,7,5,Bugarama,34,11,Muramvya,0,
+1985,8,4,Luabo,137,11,Zambezia,0,
+2014,5,30,Cairo,60,10,Cairo,1,1
+2013,7,21,Arihah,200,10,Idlib,20,0
+2014,9,9,Mogadishu,182,11,Banaadir,,0
+2015,11,9,Al-Halabisah,95,10,Al Anbar,0,0
+1978,7,6,Algrange,69,8,Moselle,0,
+1989,11,29,Londonderry,603,8,Northern Ireland,0,
+1990,7,2,A Coruna district,185,8,Galicia,0,
+2011,4,25,Chama,92,6,Jharkhand,1,0
+2010,3,2,Mosul,95,10,Nineveh,0,0
+1974,2,24,Boulder,217,1,Colorado,0,0
+2014,9,1,Shindand district,4,6,Herat,1,0
+1991,8,28,Markethill,603,8,Northern Ireland,0,
+1995,1,29,Thessaloniki,78,8,Central Macedonia,0,
+2009,3,16,Wajid,182,11,Bakool,0,0
+1996,5,18,Kokrajhar district,92,6,Assam,1,
+1970,5,26,Oxford,217,1,North Carolina,0,0
+2006,1,5,Valaichchenai,186,6,Eastern,1,0
+1980,4,7,Unknown,110,10,South,2,
+2013,11,28,Tuz Khormato,95,10,Saladin,3,0
+2009,8,14,Istanbul,209,10,Istanbul,1,0
+2014,7,4,Eker,18,10,Central,1,0
+1998,10,16,Oued Hamama,6,10,Relizane (Province),4,0
+2011,11,29,Mahmudiyah,95,10,Babil,0,0
+2012,7,26,Cork,96,8,Cork,0,0
+1980,10,15,Belfast,603,8,Northern Ireland,2,2
+2013,1,17,Dujail,95,10,Saladin,6,0
+1990,11,5,New York City,217,1,New York,1,
+1991,5,23,Ankara,209,10,Ankara,1,
+1990,3,19,Los Encuentros,83,2,,1,
+1982,8,19,Rome,98,8,Lazio,0,
+1972,8,31,Belfast,603,8,Northern Ireland,1,
+1986,6,20,Lima,159,3,Lima,0,
+1976,6,24,Washington,217,1,District of Columbia,0,
+2016,6,3,Baghdad,95,10,Baghdad,2,0
+2005,8,8,Mazu,4,6,Ghazni,1,0
+1980,9,18,San Miguel,61,2,,0,
+2015,2,12,Donetskyi,214,9,Luhansk,0,0
+2016,6,4,Unknown,229,11,Bas-Uele,,0
+1986,6,28,Cuenca,59,3,Azuay,1,
+2016,1,13,Baghdad,95,10,Baghdad,2,0
+2016,5,8,Husseiniyah,95,10,Diyala,2,0
+1978,1,4,Piedimonte San Germano,98,8,Lazio,1,
+2016,8,4,Unknown,160,5,Surigao del Sur,0,0
+2016,3,4,Gush Etzion,155,10,West Bank,1,1
+2014,4,15,Tagcatong,160,5,Agusan del Norte,0,0
+1994,3,9,Hamadan,94,10,Hamadan,0,
+2014,12,15,Bagrami district,4,6,Kabul,0,0
+1994,4,27,Umlazi,183,11,KwaZulu-Natal,0,
+2008,4,5,Nasirabad,153,6,Balochistan,0,0
+2016,6,5,Tripoli,113,10,Tripoli,,0
+2012,8,15,Chagai district,153,6,Balochistan,0,0
+2015,7,5,Kismayo,182,11,Lower Juba,,
+2011,2,1,Kizlyar,167,9,Dagestan,0,0
+2008,6,17,Baghdad,95,10,Baghdad,1,
+1979,7,26,Santiago,43,3,Santiago Metropolitan,0,
+1991,1,16,Turin,98,8,Piedmont,0,
+2010,2,19,Kohat,153,6,North-West Frontier Province,0,0
+2014,11,12,Unknown,60,10,Unknown,0,0
+2012,11,19,Bara,153,6,Khyber Pakhtunkhwa,0,0
+2007,8,22,Mogadishu,182,11,Banaadir,2,0
+2016,5,5,Abu Qurayn,113,10,Misrata,7,0
+2014,6,21,Uspenka,214,9,Donetsk,0,0
+1996,6,18,Nat'l Hwy 5 between Phnom Penh and Battambang,36,5,,0,
+1995,11,3,Minya,60,10,,5,
+2013,10,1,Unknown,60,10,North Sinai,0,0
+1992,3,8,Green Bushes,183,11,Eastern Cape,0,
+2014,8,23,Turbat,153,6,Balochistan,0,0
+2014,5,27,Daji Badimagre,92,6,Meghalaya,1,0
+2010,5,14,Ranaba,92,6,Orissa,0,0
+2003,3,27,Zwedru,112,11,Grand Gedeh,0,0
+2016,11,17,Vanimal,92,6,Kerala,0,0
+1995,10,16,Seoul,184,4,,0,
+2014,11,20,Babilan,95,10,Diyala,7,3
+2015,11,23,Tikrit,95,10,Saladin,6,4
+2012,12,8,Bak,4,6,Khost,2,0
+2016,10,27,Tangla,92,6,Assam,0,0
+1981,12,1,Chupol,83,2,,13,
+1984,4,11,Amritsar,92,6,Punjab,2,
+2014,8,8,Kabul,4,6,Kabul,0,0
+2016,7,2,Buadi Sacayo,160,5,Lanao del Sur,1,0
+2014,6,24,Nuwaidrat,18,10,Central,0,0
+2003,11,18,Hamchir,6,10,Oum el-Bouaghi,1,0
+2010,6,30,Baghdad,95,10,Baghdad,0,0
+1990,10,5,Guatemala City,83,2,,0,
+2007,3,21,Berlin,75,8,Berlin,0,0
+2016,6,22,Lahij,228,10,Lahij,1,0
+2015,10,29,Tripoli,113,10,Tripoli,0,0
+2011,11,7,Katlang,153,6,Khyber Pakhtunkhwa,0,0
+2015,1,30,Kirkuk,95,10,Kirkuk,47,0
+1977,10,5,Dublin,96,8,Dublin,1,
+1984,4,8,Waslala,145,2,,0,
+1989,8,11,Tamun,97,10,West Bank,,
+1996,7,22,Lahore,153,6,Punjab,4,
+2015,3,8,Baghdad,95,10,Baghdad,3,0
+2012,9,15,Baiji,95,10,Saladin,1,0
+1983,5,20,Ayacucho district,159,3,Ayacucho,,
+1989,3,25,Battambang Prov.,36,5,,3,
+2016,3,16,Maiduguri,147,11,Borno,27,2
+1997,11,7,Degala,95,10,Arbil,0,
+1989,9,11,Los Andes,43,3,Valparaiso,0,
+2012,3,12,Belfast,603,8,Northern Ireland,0,0
+2014,10,11,Afang,147,11,Plateau,3,0
+2016,2,26,Kibia,160,5,North Cotabato,0,0
+1987,4,10,Ahuachapan,61,2,,0,
+2015,11,24,Tubruq,113,10,Butnan,0,0
+1978,2,8,Lyon,69,8,Rhone,0,
+2015,7,27,Ajdabiya,113,10,Wahat,1,0
+1980,8,26,Santa Lucia Cotzumalguapa,83,2,,1,
+2015,9,10,Diyarbakir,209,10,Diyarbakir,0,0
+1987,1,15,Lima,159,3,Lima,0,
+2013,2,1,Anitapan,160,5,Compostela Valley,0,0
+2002,10,21,Ormoc,160,5,Leyte,1,0
+2015,9,13,Dublin,96,8,Dublin,0,0
+2007,2,20,Baghdad,95,10,Baghdad,9,0
+1980,4,12,Bucaramanga,45,3,Santander,0,
+1991,8,18,Zagreb,50,9,,0,
+2015,9,4,Dushanbe,202,7,Unknown,5,1
+2013,10,17,Baghdad,95,10,Baghdad,4,0
+1983,4,0,Zamboanga City,160,5,Zamboanga del Sur,0,
+2016,1,14,Maradah,113,10,Wahat,3,0
+1979,8,30,Mexico City,130,1,,1,
+1990,2,19,Sequeslambra,159,3,Unknown,9,
+1994,1,6,Belfast,603,8,Northern Ireland,0,
+1989,11,15,Magat,160,5,Unknown,0,
+1994,4,21,Yankipinar,209,10,Kars,7,
+2013,12,30,Albu-Hashmah,95,10,Saladin,4,0
+2014,9,23,Benghazi,113,10,Benghazi,1,0
+2011,2,7,Karachi,153,6,Sindh,0,0
+2013,6,23,Gassaneyah,200,10,Homs,3,0
+2014,9,11,Benghazi,113,10,Benghazi,0,0
+2010,11,10,Mogadishu,182,11,Banaadir,2,0
+1979,11,12,San Salvador,61,2,,,
+1971,5,21,San Bruno,217,1,California,0,0
+2008,6,18,Baqubah,95,10,Diyala,1,
+1996,3,10,Lima,159,3,Lima,0,
+1970,7,28,Pamplona,185,8,Navarre,,
+2007,2,21,Mosul,95,10,Nineveh,1,1
+1997,2,27,Belfast,603,8,Northern Ireland,0,
+2015,6,15,Fallujah,95,10,Al Anbar,6,0
+2014,8,24,Eshkol regional council,97,10,Southern,0,0
+1972,12,14,Killeter,603,8,Northern Ireland,1,
+2015,12,10,Quetta,153,6,Balochistan,0,0
+2016,7,20,Latifiyah,95,10,Babil,1,0
+2007,3,17,Ashkelon,97,10,Southern,,0
+1987,4,14,La Paz,26,3,La Paz,0,
+2015,7,17,Giza,60,10,Giza,0,0
+2014,6,5,Banbury,603,8,England,0,0
+2013,10,6,Amiriyat al-Fallujah,95,10,Al Anbar,2,0
+2016,3,22,Baghdad,95,10,Baghdad,2,0
+2015,6,19,Centro,160,5,Isabela,2,0
+1996,5,15,Vilnius,115,9,,0,
+1977,1,4,Aachen,362,8,North Rhine-Westphalia,,
+2007,3,20,Baghdad,95,10,Baghdad,3,0
+2006,7,3,Baghdad,95,10,Baghdad,1,1
+2016,9,13,Albu Alwan,95,10,Al Anbar,1,0
+2016,4,25,Baghdad,95,10,Baghdad,1,0
+2007,1,4,Ghaziabad,4,6,Kunar,0,0
+2016,8,11,Samtah,173,10,Jazan,1,0
+2006,11,28,Baghdad,95,10,Baghdad,4,0
+2013,9,29,Baqubah,95,10,Diyala,0,0
+1996,10,15,Unknown,45,3,Antioquia,0,
+1996,6,9,Aguas Calientes,145,2,,0,
+2002,2,6,Unknown,160,5,Sarangani,0,0
+1988,1,2,Unknown,83,2,Solola,18,
+2014,7,11,Jakarta,93,5,Jakarta,0,0
+2013,3,20,Bostan,153,6,Balochistan,0,0
+2007,11,18,Baghdad,95,10,Baghdad,10,0
+1981,11,12,San Juan Opico,61,2,,4,
+2000,7,8,Hubli,92,6,Karnataka,0,0
+2016,8,22,Goof Gaduud,182,11,Bay,8,8
+2005,9,7,Unknown,155,10,Gaza Strip,1,0
+1970,7,27,San Francisco,217,1,California,0,0
+1999,3,5,Cankiri,209,10,Cankiri,4,0
+1979,5,7,Unknown,69,8,Corsica,0,
+2013,1,5,Tejgaon,19,6,Dhaka,0,0
+2013,11,12,Kathmandu,141,6,Central,0,0
+2015,6,2,Aqcha district,4,6,Jawzjan,3,0
+2013,10,14,Yathrib,95,10,Saladin,1,0
+2015,10,25,Bardere,182,11,Gedo,0,0
+2011,9,20,Ankara,209,10,Ankara,5,0
+1981,9,21,Beirut,110,10,Beirut,0,
+2014,4,14,Khartsyzk,214,9,Donetsk,0,0
+1982,5,5,Alamicamba,145,2,,15,
+2008,11,25,Dera Allah Yar,153,6,Balochistan,0,0
+1994,1,1,Belfast,603,8,Northern Ireland,0,
+2009,9,6,Zuwaybi,228,10,Al Jawf,12,0
+1994,4,23,Nablus,155,10,West Bank,0,
+1988,5,3,San Salvador,61,2,,0,
+2016,8,14,Yaha,205,5,Yala,0,0
+1995,2,27,Karachi,153,6,Sindh,1,
+2013,9,10,Kottamateru,92,6,Odisha,1,0
+2013,4,28,Derna,113,10,Derna,0,0
+1996,7,24,AsPerg,75,8,Baden-Wurttemberg,0,
+2008,8,7,Bongaigaon,92,6,Assam,0,0
+2015,6,29,Deh Rahwod district,4,6,Uruzgan,0,0
+1992,7,16,Shari al-Juwaybir,95,10,Unknown,0,
+1988,6,21,Unknown,45,3,Santander,0,
+1988,1,8,Huayanay,159,3,Cusco,6,
+2004,6,26,Lahore,153,6,Punjab,3,0
+1982,10,16,Elizalde,185,8,Basque Country,0,
+2005,5,30,Kabul,4,6,Kabul,0,0
+2014,8,14,Unknown,228,10,Hadramawt,1,0
+1989,9,11,Medellin,45,3,Antioquia,0,
+1981,3,17,San Jose,49,2,,0,
+1997,7,21,Istanbul,209,10,Istanbul,0,
+2014,5,15,Bangkok,205,5,Bangkok,2,0
+1983,1,9,Hebron,155,10,West Bank,0,
+2013,10,28,Tripoli,110,10,North,0,0
+1984,8,26,Unknown,69,8,Corsica,0,
+2016,1,21,Nusaybin district,209,10,Mardin,0,0
+2008,11,4,Sukhirin,205,5,Narathiwat,,
+1989,3,4,Reggio nell Emilia,98,8,Emilia-Romagna,0,
+2006,12,4,Peshawar,153,6,North-West Frontier Province,0,0
+2016,4,5,Shahabuddin,4,6,Baghlan,7,5
+2003,4,9,Kanthapur,92,6,Jammu and Kashmir,1,0
+1974,8,14,Aleppo,200,10,Aleppo,0,
+1988,9,4,Ayacucho district,159,3,Ayacucho,1,
+2014,9,16,Cizre district,209,10,Sirnak,0,0
+2002,10,6,Gulf of Aden,422,10,Gulf of Aden,1,
+1984,8,25,Valparaiso,43,3,Valparaiso,0,
+1979,6,29,Benidorm,185,8,Valencia,0,
+2016,4,9,Baqubah,95,10,Diyala,1,0
+2014,12,20,Nahri Saraj district,4,6,Helmand,5,5
+2016,8,8,Unknown,123,11,Mopti,6,1
+2014,3,8,Tikrit,95,10,Saladin,0,0
+2011,7,3,Dhaka,19,6,Dhaka,0,0
+2013,12,24,Ramadi,95,10,Al Anbar,0,0
+1972,6,2,Rosslea,603,8,Northern Ireland,2,
+2014,5,30,Severodonetsk,214,9,Luhansk,,0
+1975,8,6,Everett,217,1,Washington,0,0
+1996,7,27,Jakarta,93,5,,0,
+2009,5,22,Nablus,155,10,West Bank,0,0
+1985,6,24,Yarima,45,3,Santander,1,
+1975,8,4,Kuala Lumpur,121,5,,0,
+1999,10,0,San Onofre,45,3,Sucre,1,0
+1984,9,13,Callao,159,3,Callao,0,
+2009,7,23,Khairpur,153,6,Sindh,0,0
+1970,12,13,Montevideo,218,3,Montevideo,0,
+2013,7,21,Arteche,160,5,Eastern Samar,0,0
+2007,7,18,Duwailiya,95,10,Diyala,29,0
+1991,7,28,Salociai,359,9,,0,
+2005,10,23,Doti district,141,6,Far-Western,0,0
+1987,9,10,Lahore,153,6,Punjab,2,
+1981,8,13,Unknown,83,2,Quiche,,
+1991,1,25,Myaukkamai,138,5,,1,
+2016,10,26,Unknown,214,9,Donetsk,,0
+2016,7,2,Khalidiyah,95,10,Al Anbar,0,0
+2013,2,18,Sitra,18,10,Central,0,0
+1979,6,4,Isfahan,94,10,Esfahan,0,
+2013,11,26,Buenaventura,45,3,Valle del Cauca,0,0
+2013,12,1,Baidoa district,182,11,Bay,,
+2011,11,11,Jaar,228,10,Abyan,0,0
+1974,3,13,Belfast,603,8,Northern Ireland,1,
+2010,3,0,Orakzai district,153,6,Federally Administered Tribal Areas,1,0
+1975,2,1,New York City,217,1,New York,0,
+2006,4,7,Welikanda,186,6,North Central,2,0
+2015,6,10,Jenin,155,10,West Bank,1,1
+1976,5,26,Bilbao,185,8,Biscay,0,
+1981,6,16,San Jose,49,2,,0,
+2006,10,5,Doom Dooma,92,6,Assam,0,0
+2015,2,10,Popasna,214,9,Luhansk,1,0
+2012,6,2,Imphal,92,6,Manipur,0,0
+2012,7,25,Chahar Dara,4,6,Kunduz,4,0
+2010,8,17,Baghdad,95,10,Baghdad,8,0
+1975,3,25,Ortuella,185,8,Biscay,,
+2005,7,2,Baghdad,95,10,Baghdad,0,0
+2015,5,19,Tambolak,153,6,Khyber Pakhtunkhwa,1,1
+2011,2,23,Ataq,228,10,Shabwah,0,0
+1983,2,28,Ballygawley,603,8,Northern Ireland,1,
+2015,6,22,Hamamiyat,95,10,Saladin,2,0
+1977,9,13,Guadalajara,130,1,,0,
+2013,2,19,Mogadishu,182,11,Banaadir,3,0
+2004,2,1,Boulakharachef,6,10,Skikda,2,0
+2006,8,26,,205,5,Yala,2,0
+2009,11,23,Puli Alam,4,6,Logar,0,0
+2015,6,23,Sapa Bulak,160,5,Basilan,2,0
+2009,3,29,Quetta,153,6,Balochistan,0,0
+2013,5,4,Yarang district,205,5,Pattani,0,0
+2016,11,26,Zareenabad,153,6,Khyber Pakhtunkhwa,1,0
+2013,12,8,Baqubah,95,10,Diyala,1,0
+2015,2,19,Baghdad,95,10,Baghdad,0,0
+1995,10,7,Cotabato City,160,5,Maguindanao,0,
+2016,8,20,Ukpo,147,11,Anambra,1,0
+1994,10,12,Bordj El Bahri,6,10,,1,
+2015,6,20,Bujumbura,34,11,Bujumbura Mairie,0,0
+2012,11,2,Maiduguri,147,11,Borno,2,0
+1988,12,11,Matucana,159,3,Lima,0,
+1984,3,2,Medellin,45,3,Antioquia,0,
+1989,8,2,Mantaro district,159,3,Junin,0,
+2012,3,28,Multan,153,6,Punjab,1,0
+2002,11,4,Grozny,167,9,Chechnya (Republic),17,2
+2008,6,28,Karez,4,6,Logar,2,0
+2014,10,31,Karachi,153,6,Sindh,0,0
+1994,2,1,Newry,603,8,Northern Ireland,0,
+1996,8,30,Bogota,45,3,Bogota,5,
+1972,2,2,Stewartstown,603,8,Northern Ireland,1,
+1989,10,15,Rafah,155,10,Gaza Strip,1,
+2016,1,28,Peshawar,153,6,Khyber Pakhtunkhwa,1,0
+1997,10,20,Unknown,168,11,Unknown,9,
+2016,4,10,Nhampassa,137,11,Manica,16,15
+2015,2,6,Baghdad,95,10,Baghdad,1,0
+2008,10,12,Imphal,92,6,Manipur,1,0
+2010,3,17,Unknown,92,6,Manipur,0,0
+2014,10,8,Harabhanga,19,6,Khulna,0,0
+1973,5,23,Buenos Aires,11,3,Buenos Aires,1,
+2007,11,24,Baghdad,95,10,Baghdad,0,0
+2003,9,26,Negohot,155,10,West Bank,2,1
+2012,8,14,Ghaljo,153,6,Federally Administered Tribal Areas,35,30
+1973,7,20,Armagh,603,8,Northern Ireland,1,
+2009,1,19,Nazran,167,9,Ingushetia,0,
+2016,7,31,Imelda,160,5,Zamboanga Sibugay,0,0
+1996,6,27,Gisenyi,168,11,Gisenyi,27,
+1987,6,7,Totoro,45,3,Cauca,10,
+1985,1,12,Beirut,110,10,Beirut,0,
+2011,2,13,La Hormiga,45,3,Putumayo,0,0
+2015,6,26,Shahley Nawa,4,6,Uruzgan,6,4
+2014,9,14,Daquq district,95,10,Kirkuk,0,0
+2009,1,19,Tikrit,95,10,Saladin,0,0
+2016,5,21,Arish,60,10,North Sinai,2,0
+1970,2,6,Denver,217,1,Colorado,0,0
+1990,4,5,Srinagar,92,6,Jammu and Kashmir,1,
+2013,3,12,Pabbi,153,6,Khyber Pakhtunkhwa,0,0
+1989,1,15,Durban,183,11,KwaZulu-Natal,0,0
+1981,4,23,San Salvador,61,2,,1,
+2015,4,14,Adraskan district,4,6,Herat,1,0
+1994,11,25,Jhang,153,6,Punjab,7,
+1988,10,7,Ilobasco,61,2,,0,
+2015,6,13,Derna,113,10,Derna,4,1
+1996,1,20,Karachi,153,6,Sindh,3,
+1985,5,15,Unknown,45,3,Santander,0,
+2008,6,21,Paris,69,8,Ile-de-France,0,0
+2015,6,7,Bala Buluk district,4,6,Farah,0,0
+2015,12,13,Kasik,95,10,Nineveh,,
+1977,4,29,Santiago,43,3,Santiago Metropolitan,0,
+2006,5,6,Si Mustapha,6,10,Boumerdès,0,0
+2013,2,16,Qatif,173,10,Eastern,0,0
+1990,6,11,Zahedan,94,10,Sistan and Balochistan,1,
+1970,11,16,Belfast,603,8,Northern Ireland,2,
+2013,8,28,Mogadishu,182,11,Banaadir,1,0
+2006,11,22,Baramulla district,92,6,Jammu and Kashmir,1,0
+2015,2,20,Khalis district,95,10,Diyala,2,2
+2011,8,21,Zinjibar,228,10,Abyan,10,1
+2003,2,21,Koronadal,160,5,South Cotabato,0,0
+1985,5,24,Santiago,43,3,Santiago Metropolitan,0,
+2010,9,22,Al-Hota,228,10,Shabwah,6,2
+1984,7,9,San Salvador,61,2,,0,
+1996,6,10,Aruwakalu,186,6,North Western,14,
+1996,6,13,Mae Sot,205,5,,0,
+2012,10,30,Maruf,4,6,Kandahar,6,0
+1996,1,22,Hamburg,75,8,Hamburg,0,
+2015,6,16,Aleppo,200,10,Aleppo,1,0
+1987,4,16,Corinto,61,2,,,
+2007,2,12,Baghdad,95,10,Baghdad,66,0
+1986,8,4,Akrotiri,53,8,Limassol,0,
+1988,9,7,A Coruna district,185,8,Galicia,0,
+1979,1,1,Ajaccio,69,8,Corse-du-Sud,0,
+1990,6,9,Batticaloa district,186,6,Eastern,0,
+2014,9,30,Datu Piang,160,5,Maguindanao,2,0
+2009,7,8,Kulgam,92,6,Jammu and Kashmir,1,0
+2016,10,21,Arish,60,10,North Sinai,2,0
+1981,12,4,Nueva Concepcion,61,2,,,
+2014,7,11,Oleksandrivsk,214,9,Luhansk,1,0
+2014,12,9,Maramag,160,5,Bukidnon,10,0
+2016,7,7,Warri North district,147,11,Delta,0,0
+1996,3,13,Casablanca,136,10,,0,
+1996,12,1,Phoenix,217,1,Arizona,0,
+1996,5,18,Kokrajhar district,92,6,Assam,1,
+2009,5,28,Peshawar,153,6,North-West Frontier Province,7,2
+2016,3,2,Unknown,95,10,Kirkuk,1,0
+2013,7,18,Balad,95,10,Saladin,1,0
+1988,11,22,Madrid,185,8,Madrid,2,
+1984,8,14,San Francisco Javier,61,2,,,
+2012,5,17,Sarband,153,6,Khyber Pakhtunkhwa,0,0
+2014,1,9,Unknown,155,10,Gaza Strip,0,0
+2014,8,27,Nahrin district,4,6,Baghlan,3,2
+2008,12,10,Joondalup,14,12,Western Australia,0,0
+1999,8,7,Bijni,92,6,Assam,0,0
+2007,2,21,Muang district,205,5,Yala (Province),0,0
+2008,4,2,Kirkuk,95,10,Kirkuk,1,0
+2011,5,1,Baqubah,95,10,Diyala,1,0
+2009,3,13,Baqubah,95,10,Diyala,0,0
+2012,7,1,Garissa,104,11,North Eastern,9,0
+2005,4,30,Mosul,95,10,Nineveh,2,1
+2001,3,10,Ballymena,603,8,Northern Ireland,0,0
+2012,4,16,Hamad,18,10,Northern,1,0
+1990,8,9,Srinagar,92,6,Jammu and Kashmir,0,
+2006,7,4,Ade,42,11,Ouaddai,,
+1992,7,13,Istanbul,209,10,Istanbul,0,
+2006,4,20,Mssestas,6,10,Boumerdès,1,0
+2012,6,25,Bannu,153,6,Khyber Pakhtunkhwa,0,0
+1998,3,22,Thenia,6,10,Boumerdès,0,0
+1988,1,4,Somotillo,145,2,,0,
+1986,11,8,Lima,159,3,Lima,0,
+1995,8,28,Bogota,45,3,Bogota,1,
+1991,5,29,Vic,185,8,Catalonia,9,
+2009,5,5,Luton,603,8,England,0,0
+1986,1,19,Silvia,45,3,Cauca,8,
+1994,1,25,Diyarbakir,209,10,Diyarbakir,1,
+2010,7,23,Charkh,4,6,Logar,2,0
+2011,2,27,Darra Adam Khel,153,6,Federally Administered Tribal Areas,0,0
+1989,12,18,Prat de Llobregat,185,8,Catalonia,1,
+2015,4,28,Chermalyk,214,9,Donetsk,1,0
+1983,12,13,Santiago,43,3,Santiago Metropolitan,0,
+2008,12,11,Malgobek,167,9,Ingushetia,0,0
+1983,8,15,Bloomington,217,1,Indiana,0,0
+2016,1,9,Malabog,160,5,Davao del Sur,0,0
+2004,7,22,Kirkuk,95,10,At Tamim,0,0
+2016,4,14,Rajnandgaon,92,6,Chhattisgarh,0,0
+1994,5,3,Lima,159,3,Lima,0,
+2002,12,13,Athens,78,8,Attica,0,0
+1980,11,3,San Bartolome Perulapia,61,2,,2,
+2010,9,9,Kurram district,153,6,Federally Administered Tribal Areas,10,0
+2012,3,6,Krong Pinang,205,5,Yala,0,0
+2009,10,16,Fallujah,95,10,Al Anbar,0,0
+2013,7,29,Mahmudiyah,95,10,Babil,3,0
+1990,1,13,Tripoli,110,10,North,0,0
+1987,7,15,Gugulethu,183,11,Western Cape,0,0
+2015,1,29,Port Said,60,10,Port Said,0,0
+2008,7,20,Kiblawan,160,5,Davao Del Sur,0,0
+2015,4,3,Baghdad,95,10,Baghdad,1,0
+1994,3,13,London,603,8,England,0,
+1988,11,19,Thondamanaru,186,6,Northern,1,
+2011,12,7,Pachuca,130,1,Hidalgo,0,0
+2011,1,28,Chegemskiy (District),167,9,Kabardino Balkariya,1,0
+1974,10,28,San Juan,217,1,Puerto Rico,0,
+2016,9,21,Dawr district,95,10,Saladin,0,0
+2015,3,31,Tacloban,160,5,Leyte,0,0
+2014,10,12,Mogadishu,182,11,Banaadir,0,0
+1991,4,3,Athens,78,8,Attica,0,
+2012,6,24,Chora district,4,6,Uruzgan,6,0
+1985,7,1,Rome,98,8,Lazio,0,
+1992,6,27,Islahiye District,209,10,Gaziantep,1,
+1989,9,18,Papudo,43,3,Valparaiso,0,
+1997,4,9,Binangun,93,5,,0,
+1992,10,15,Ahmedpura,186,6,Unknown,10,
+2016,5,30,Gizab district,4,6,Uruzgan,0,0
+2012,8,3,Morghab district,4,6,Badghis,0,0
+1992,9,10,Athens,78,8,Attica,0,
+2016,8,13,Golkofa,147,11,Kaduna,6,0
+2011,7,12,Karachi,153,6,Sindh,1,0
+2013,6,28,Baghdad,95,10,Baghdad,3,0
+1989,9,3,Kandy,186,6,Central,2,
+1991,12,23,Juanjui,159,3,San Martin,10,
+2006,7,4,Shela Bagh,153,6,Balochistan,2,
+2009,10,16,Belfast,603,8,Northern Ireland,0,0
+2013,5,11,Unknown,153,6,Unknown,0,0
+2011,9,7,Quetta,153,6,Balochistan,23,2
+2014,7,27,Eshkol regional council,97,10,Southern,0,0
+2005,1,21,Baghdad,95,10,Baghdad,15,1
+2008,1,8,Baghdad,95,10,Baghdad,0,0
+1995,2,10,Unknown,92,6,Manipur,0,
+1988,12,2,Beirut,110,10,Beirut,0,
+2013,7,15,Buynaksk,167,9,Dagestan,0,0
+1990,3,23,Cali,45,3,Valle del Cauca,0,
+1992,4,12,Silvania,45,3,Cundinamarca,2,
+2015,8,10,Fuah,200,10,Idlib,0,0
+2014,10,31,Kobani,200,10,Aleppo,0,0
+2012,7,13,Damascus,200,10,Damascus,0,0
+2008,11,13,Latifiyah,95,10,Babil,1,0
+2007,5,22,Ankara,209,10,Ankara,5,
+2013,6,17,Maiduguri,147,11,Borno,13,0
+1984,4,4,Corinto,45,3,Cauca,1,
+2016,8,23,Rusamilae,205,5,Pattani,0,0
+1996,12,23,Zaragoza,45,3,Antioquia,0,
+1992,3,4,Nairobi,104,11,Nairobi,0,
+2015,7,16,Baghdad,95,10,Baghdad,1,0
+2011,6,13,Dungu,229,11,Kasai Oriental,2,0
+2008,6,4,Jadran district,4,6,Paktia,0,0
+1984,6,15,Unknown,92,6,Punjab,1,
+1987,7,28,Valparaiso,43,3,Valparaiso,0,
+1995,7,12,Myawadi,138,5,,3,
+2016,2,2,Kanker district,92,6,Chhattisgarh,1,1
+2003,5,5,Rugazi,34,11,Bubanza,25,23
+2013,2,28,Mosul,95,10,Nineveh,1,0
+1994,10,12,Myawadi,138,5,,6,
+1983,4,14,Unknown,160,5,Abra,1,
+2015,10,2,Bohe Suyak,160,5,Basilan,0,0
+2013,6,30,Wadh,153,6,Balochistan,2,0
+2000,4,25,Berne,199,8,Bern,0,0
+1985,12,16,Santiago,43,3,Santiago Metropolitan,0,
+2012,5,23,Saydabad district,4,6,Wardak,0,0
+1992,8,21,Lula,98,8,Sardinia,0,
+2008,9,21,Ondarroa,185,8,Basque Country,0,0
+2000,6,6,Tokyo,101,4,Tokyo (Metropolis),0,0
+1999,10,19,Aksarayskiy,167,9,Astrakhan,4,0
+2015,1,19,Watangahtu,4,6,Laghman,2,0
+2000,5,15,Mandi Pora,92,6,Jammu and Kashmir,5,0
+2015,2,16,Saba al-Bor,95,10,Saladin,2,0
+2015,9,28,Baghdad,95,10,Baghdad,2,0
+1984,12,0,Tehran,94,10,Tehran,0,
+2015,9,8,Salubunga,93,5,Central Sulawesi,1,0
+2012,3,13,Baghdad,95,10,Baghdad,0,0
+2014,8,5,Tripoli,113,10,Tripoli,18,0
+1981,4,19,Campanario,45,3,Cordoba,0,
+1990,1,13,Vina del Mar,43,3,Valparaiso,0,
+1989,2,10,Hira,92,6,Karnataka,1,
+2000,1,20,Bloomington,217,1,Indiana,0,0
+2016,6,11,Kathmandu,141,6,Central,0,0
+2007,12,4,Kabul,4,6,Kabul,1,1
+2014,6,1,Benghazi,113,10,Benghazi,0,0
+2005,1,7,Yalas Muang (District),205,5,Yala (Province),0,0
+1981,5,24,Istanbul,209,10,Istanbul,4,
+2013,4,8,Damascus,200,10,Damascus,14,1
+1979,12,6,Lisburn,603,8,Northern Ireland,,
+2010,5,17,Ezo,195,11,West Equatoria,3,0
+2016,12,25,Baghdad,95,10,Baghdad,3,0
+2013,7,17,Mogadishu,182,11,Banaadir,,0
+1984,8,26,Unknown,69,8,Corsica,0,
+1978,12,29,New York City,217,1,New York,0,
+2015,1,29,Gaza,155,10,Gaza Strip,0,0
+1999,11,18,Istanbul,209,10,Istanbul,0,0
+1977,3,3,Belfast,603,8,Northern Ireland,2,
+2014,12,29,Hadithah,95,10,Al Anbar,30,30
+1992,6,25,Jenin,155,10,West Bank,4,
+2014,3,31,Sheikh Zuweid,60,10,North Sinai,3,3
+1988,6,17,Malimbada,186,6,Southern,1,
+2011,7,21,Landi Kotal,153,6,Federally Administered Tribal Areas,0,0
+2012,5,28,Unknown,4,6,Helmand,1,0
+1983,7,4,ayacucho,159,3,Ayacucho,1,
+2012,4,13,Gereshk,4,6,Helmand,1,0
+2016,4,25,Sibulan,160,5,Davao del Sur,1,0
+1984,1,15,Tyre,110,10,South,0,
+1997,10,4,Havana,51,2,,0,
+1996,4,9,Unknown,19,6,Unknown,0,
+1988,8,5,Unknown,160,5,Albay,0,
+2013,2,8,Mand,153,6,Balochistan,2,0
+2014,4,1,Juntas de Birmania,45,3,Cauca,0,0
+1999,12,11,Chiffa,6,10,Algiers (Province),15,0
+2013,5,20,Yusufiyah,95,10,Babil,,0
+2013,11,17,Kharan district,153,6,Balochistan,1,0
+1987,6,7,Tiaong,160,5,Unknown,1,
+2014,9,6,Mariupol,214,9,Donetsk,1,0
+2014,10,30,Bani-Bangou,146,11,Tillaberi,0,0
+2015,8,14,Kohsan district,4,6,Herat,0,0
+1990,4,30,Santiago,43,3,Santiago Metropolitan,0,
+1980,4,22,La Concepcion,156,2,,0,
+2016,4,11,Falahat,95,10,Al Anbar,4,0
+1989,11,15,Upper Siring,160,5,Unknown,0,
+1998,10,30,Bouchrahil,6,10,Medea (Province),6,0
+1991,1,20,El Refugio,61,2,,0,
+2011,7,18,Bara,153,6,Khyber Pakhtunkhwa,1,0
+1996,12,15,Cavite,160,5,Cavite,1,
+1987,6,20,Darjeeling,92,6,West Bengal,0,
+1988,3,14,Jhangerian,92,6,Punjab,4,
+2016,11,19,Koro,123,11,Mopti,,0
+2015,4,1,Pir Koh,153,6,Balochistan,0,0
+2010,2,15,Ordzhonikidzevskaya,167,9,Ingushetia,0,0
+2009,9,16,Hayatabad,153,6,North-West Frontier Province,0,0
+2010,7,26,Ghorband district,4,6,Parwan,6,0
+1995,6,28,Kebethegollawa,186,6,North Central,10,
+2004,5,9,Grozny,167,9,Chechnya (Republic),24,0
+1985,12,23,Lima,159,3,Lima,0,
+2007,4,11,Algiers,6,10,Algiers (Province),30,2
+2012,9,27,Karachi,153,6,Sindh,1,0
+1997,8,6,Canasgordas,45,3,Antioquia,1,
+2016,5,11,Sadadah,113,10,Misrata,6,2
+2014,9,23,Hawijah district,95,10,Kirkuk,0,0
+1997,2,7,Datu Piang,160,5,Maguindanao,4,
+1997,8,21,Souhane,6,10,,64,
+1977,10,11,New York City,217,1,New York,0,
+1989,10,10,Huancayo,159,3,Junin,0,
+2008,3,13,Zab,95,10,Kirkuk,4,1
+1997,6,16,Algiers,6,10,,5,
+2009,8,3,Bach,15,8,Styria,0,0
+2015,11,23,Jerusalem,97,10,Jerusalem,1,1
+2014,11,2,Chaman,153,6,Balochistan,0,0
+2013,3,29,Kirkuk,95,10,Kirkuk,0,0
+1983,6,26,Sultanpur Lodhi,92,6,Punjab,1,
+2013,5,6,Munger district,92,6,Bihar,0,0
+2008,3,19,Kandahar,4,6,Kandahar,0,0
+2006,9,8,Vavuniya,186,6,Northern,0,0
+2008,4,26,Tipaimukh,92,6,Manipur,0,0
+2016,5,8,Taizz,228,10,Taizz,2,0
+1992,10,29,Rihane,110,10,South,0,
+1987,5,20,Johannesburg,183,11,Gauteng,3,0
+1972,6,26,Newry,603,8,Northern Ireland,1,
+2014,7,14,Harardhere,182,11,Mudug,,0
+1990,6,18,Srinagar,92,6,Jammu and Kashmir,6,
+2015,11,24,Cizre,209,10,Sirnak,1,0
+2016,6,20,Aleppo,200,10,Aleppo,,0
+2014,1,14,Baghdad,95,10,Baghdad,2,0
+1999,11,14,El Khardja,6,10,El Khardja,6,0
+2013,7,4,Wana,153,6,Federally Administered Tribal Areas,0,0
+2015,7,2,Unknown,45,3,Meta,0,0
+2008,11,13,Fallujah,95,10,Al Anbar,0,0
+1981,12,27,Remedios,45,3,Antioquia,1,
+1984,2,9,Errenteria,185,8,Basque Country,,
+2014,10,25,Khwaja Sabz Posh district,4,6,Faryab,4,4
+2013,8,2,Chuap,205,5,Narathiwat,1,0
+1983,2,26,Hebron,155,10,West Bank,0,
+2012,3,25,Bagumbayan,160,5,Sultan Kudarat,0,0
+2007,3,29,Baghdad,95,10,Baghdad,2,0
+1980,1,20,Madrid,185,8,Madrid,0,
+2016,4,4,Mushahidah,95,10,Saladin,4,1
+2016,4,4,Abu Ghraib,95,10,Al Anbar,,
+2016,6,23,Dawr district,95,10,Saladin,1,0
+1978,1,5,Rome,98,8,Lazio,0,
+1974,6,3,New York City,217,1,New York,,
+2012,11,11,Vitebsk,35,9,Vitebsk,0,0
+1988,5,13,Santiago,43,3,Santiago Metropolitan,0,
+2016,1,9,Shabramant district,60,10,Giza,2,0
+1982,1,12,San Jose Guayabal,61,2,,,
+1992,2,6,Madrid,185,8,Madrid,5,
+1994,5,16,Vilcashuaman,159,3,Ayacucho,0,0
+2009,6,23,Unknown,92,6,Orissa,0,0
+2010,9,18,Dawlatabad,4,6,Faryab,0,0
+1995,12,16,Karachi,153,6,Sindh,1,
+1982,2,20,Dublin,96,8,Dublin,1,
+1983,11,11,Sachapite,159,3,Huancavelica,0,
+1985,5,28,Luxembourg,116,8,Luxembourg,0,
+1992,4,13,Soweto,183,11,Gauteng,2,
+2014,10,8,Bagram,4,6,Parwan,0,0
+2009,2,28,Ashkelon,97,10,Southern,0,
+1973,10,7,Milan,98,8,Lombardy,0,
+2015,7,1,Yusufiyah,95,10,Babil,2,0
+2015,12,9,Rafah,60,10,North Sinai,1,0
+1972,12,3,Belfast,603,8,Northern Ireland,1,
+1988,9,9,Unknown,139,11,Unknown,4,
+1994,4,25,Unknown,183,11,Unknown,0,
+2013,8,2,Alhmeirah,95,10,Kirkuk,2,0
+1984,9,21,Dannhauser,183,11,KwaZulu-Natal,,
+1979,10,14,Guatemala city,83,2,,0,
+2013,9,25,Hawijah,95,10,Kirkuk,4,0
+1975,10,30,Belfast,603,8,Northern Ireland,1,
+2013,5,25,Lashkar Gah,4,6,Helmand,0,0
+2011,4,14,Masayi district,4,6,Kabul,1,1
+2013,6,8,Mogasishu,182,11,Banaadir,1,0
+1982,6,14,New Delhi,92,6,Delhi,1,
+2000,9,26,Argun,167,9,Chechnya (Republic),1,
+2013,6,10,Mosul,95,10,Nineveh,5,0
+2005,1,3,Banda Aceh City,93,5,Aceh (Province),3,0
+2005,4,8,Puerto Rico,45,3,Caqueta,1,0
+1972,11,27,Belfast,603,8,Northern Ireland,1,
+2013,9,30,Nahri Saraj district,4,6,Helmand,13,13
+2014,3,13,Baghdad,95,10,Baghdad,0,0
+2011,12,10,Kishtwar district,92,6,Jammu and Kashmir,1,0
+2016,9,21,Ankara,209,10,Ankara,0,0
+2008,11,12,Baghdad,95,10,Baghdad,12,0
+2007,6,7,Sonari,92,6,Assam,0,0
+1989,9,8,Icel,209,10,Mersin,0,
+2014,1,7,Baqubah,95,10,Diyala,1,0
+2015,5,17,Panjgur district,153,6,Balochistan,0,0
+2015,1,5,Rubaydah,95,10,Kirkuk,,0
+2014,4,21,Baqubah,95,10,Diyala,1,0
+2014,10,22,Sibida,92,6,Odisha,,0
+1990,8,12,Unknown,186,6,Unknown,37,
+1987,6,2,Abisinia,145,2,,0,
+1980,2,2,Aleppo,200,10,Aleppo,1,
+2008,8,8,Miljevac,50,9,Karlovacka,0,0
+2007,8,13,Fahraj,94,10,Kerman,0,0
+1984,8,10,Trujillo,159,3,La Libertad,0,
+2010,10,8,Tippapur,92,6,Andhra pradesh,1,0
+2008,6,24,Baghdad,95,10,Baghdad,0,0
+2014,6,1,Baghdad,95,10,Baghdad,1,0
+1997,5,8,Rudna,161,9,,1,
+1997,11,8,Bongabong,160,5,Oriental Mindoro,7,
+1994,8,26,Ajaccio,69,8,Corsica,0,
+2011,4,4,Baghdad,95,10,Baghdad,1,0
+2008,10,7,Mogadishu,182,11,Banaadir,20,0
+1989,10,17,Rome,98,8,Lazio,0,
+1995,9,4,Karachi,153,6,Sindh,0,
+2016,10,25,Mastung,153,6,Balochistan,4,0
+1989,11,12,Peshawar,153,6,North-West Frontier Province,0,
+1988,5,6,Crucero,159,3,Puno,7,
+2006,2,7,Wana,153,6,Federally Administered Tribal Areas,0,0
+2008,4,20,Cookstown,603,8,Northern Ireland,0,0
+1998,3,3,Miraflores,45,3,Boyaca,0,0
+1983,11,18,Cardenas,145,2,,8,
+1991,6,12,Lima,159,3,Lima,0,
+2016,7,11,Laantabuur,182,11,Lower Shebelle,21,13
+2004,9,15,Ankara,209,10,Ankara,0,0
+2013,5,27,Karachi,153,6,Sindh,0,0
+2014,7,28,Maharabi,92,6,Manipur,0,0
+2001,3,21,Skopje,118,9,Skopje (Municipality),2,0
+1994,3,7,Dairut,60,10,,0,
+2010,9,1,Baghdad,95,10,Baghdad,1,0
+2012,11,4,Lahij,228,10,Lahij,0,0
+2014,6,5,Baghdad,95,10,Baghdad,1,0
+2015,5,3,Julmi,92,6,Jharkhand,0,0
+1976,1,21,Rome,98,8,Lazio,0,
+1990,3,15,Unknown,61,2,San Vicente,0,
+2004,1,1,Kfar Aza,97,10,Southern,0,0
+1996,3,21,Donnybrook,183,11,KwaZulu-Natal,11,
+1994,6,17,Hebron,155,10,West Bank,0,
+1995,10,22,Akoupe,99,11,Agneby,0,
+1991,12,3,San Antonio del Prado,45,3,Antioquia,5,
+1979,12,5,Porrillo,61,2,,1,
+2015,6,8,Mardi,1004,11,Western Equatoria,,0
+1985,6,20,Santiago,43,3,Santiago Metropolitan,,
+1988,10,26,Berlin,61,2,,0,
+2014,5,28,Wasta,60,10,Beni Suef,0,0
+1980,6,8,Gultepe,209,10,Izmir,1,
+2013,5,5,Arish,60,10,North Sinai,1,0
+2016,1,27,Upper Tungawan,160,5,Zamboanga Sibugay,1,0
+2015,7,12,Sandana,153,6,Federally Administered Tribal Areas,2,0
+1979,11,4,Newry,603,8,Northern Ireland,0,
+2016,12,30,Dara Morghab,4,6,Ghor,0,0
+2014,7,25,Aleppo,200,10,Aleppo,4,0
+1997,9,28,Chebli,6,10,,48,
+2010,2,18,Baghdad,95,10,Baghdad,0,0
+2014,9,26,El Doce,45,3,Antioquia,0,0
+2011,6,18,Ramadi,95,10,Al Anbar,1,0
+2014,8,25,Kathmandu,141,6,Central,0,0
+2015,12,14,Newtownabbey,603,8,Northern Ireland,0,0
+2001,8,13,Netzarim,155,10,Gaza Strip,0,0
+1981,1,9,Unknown,185,8,Unknown,0,
+1991,12,17,Chonguene,137,11,Gaza,25,
+2012,9,5,Jandol,153,6,Khyber Pakhtunkhwa,1,1
+2016,12,7,Sukma,92,6,Chhattisgarh,0,0
+1984,1,27,Londonderry,603,8,Northern Ireland,0,
+2008,6,27,Kabal,153,6,North-West Frontier Province,0,0
+1997,10,8,Caracas,222,3,Caracas,0,
+1994,10,7,Hebron,155,10,West Bank,1,
+2015,10,15,Zerkoh,4,6,Herat,0,0
+2014,2,13,Kismayo,182,11,Lower Juba,,
+2013,12,22,Qush Tepa district,4,6,Jawzjan,1,0
+2015,5,10,Tigabon,160,5,Zamboanga Sibugay,1,0
+2011,11,1,Santiago,43,3,Santiago Metropolitan,0,0
+1994,9,27,Kafr Facus,110,10,Unknown,0,
+2014,4,2,Baleguda,92,6,Odisha,1,0
+2013,3,21,Abu al Khaseeb,95,10,Basra,1,0
+2008,6,14,Bonny,147,11,Rivers,0,0
+1995,5,22,Karachi,153,6,Sindh,1,
+2009,9,9,Nazran,167,9,Ingushetia,0,0
+2015,12,2,Belfast,603,8,Northern Ireland,0,0
+2014,12,30,Baghdad,95,10,Baghdad,1,0
+2013,2,19,Jamrud,153,6,Khyber Pakhtunkhwa,0,0
+2010,12,20,Palamu district,92,6,Jharkhand,0,0
+2010,11,1,Athens,78,8,Attica,0,0
+1989,5,4,Mdantsane,183,11,Eastern Cape,0,
+2003,12,24,Arbil,95,10,Arbil,4,1
+1987,8,16,Unknown,83,2,,0,
+1981,6,10,Majes,159,3,Arequipa,0,
+2015,5,14,Nahrawan,95,10,Diyala,2,0
+1991,3,20,Istanbul,209,10,Istanbul,0,
+1986,1,20,Cerro de Pasco,159,3,Pasco,0,
+1974,5,22,Liege,21,8,Wallonia,0,
+2009,1,18,Mingora,153,6,North-West Frontier Province,2,0
+2012,11,5,Khan Tepa,4,6,Logar,3,3
+1977,8,6,Belfast,603,8,Northern Ireland,0,
+2010,3,6,Bara,153,6,North-West Frontier Province,1,0
+1985,7,10,Lima,159,3,Lima,0,
+1999,8,4,Veppankulam,186,6,Eastern,15,1
+2014,10,22,Gogdara,153,6,Khyber Pakhtunkhwa,0,0
+1992,5,30,Mabalacat City,160,5,Pampanga,1,
+2015,11,18,Ajdabiya,113,10,Wahat,1,0
+1985,5,3,Trujillo,159,3,La Libertad,0,
+2016,6,23,Payapag,160,5,Surigao del Norte,1,0
+2005,1,10,Nazran,167,9,Ingushetia (Republic),0,0
+2013,5,4,Urdaneta,160,5,Pangasinan,0,0
+1977,9,2,San Francisco,217,1,California,0,
+1994,11,19,Karachi,153,6,Sindh,7,
+2011,1,21,Saluka,92,6,West Bengal,1,0
+2013,5,2,Khuzdar district,153,6,Balochistan,0,0
+1981,11,30,San Salvador,61,2,,0,
+2013,10,7,Maydan Shahr,4,6,Wardak,3,0
+2014,9,11,Unknown,4,6,Unknown,4,0
+2012,4,12,Bordumsa,92,6,Assam,0,0
+2016,1,28,Donetsk,214,9,Donetsk,,0
+1982,5,25,Unknown,61,2,Cabañas,0,
+1978,6,7,Chicago,217,1,Illinois,0,0
+1997,6,7,Dili,93,5,,0,
+2015,9,12,Qarabagh district,4,6,Kabul,2,2
+2013,4,15,Unknown,228,10,Ad Dali,0,0
+1992,7,3,Panama City,156,2,,0,
+2014,3,15,Magpet,160,5,North Cotabato,4,2
+2014,5,5,Khogyani district,4,6,Nangarhar,15,15
+1986,3,26,Valparaiso,43,3,Valparaiso,0,
+1991,3,30,Luango,8,11,Unknown,0,
+1986,8,13,Huancavelica,159,3,Huancavelica,0,
+2012,6,22,Baraki Rajan,4,6,Logar,3,1
+1978,12,12,Lisburn,603,8,Northern Ireland,0,
+1971,5,4,Chico,217,1,California,0,0
+1995,4,10,Hengelo,142,8,Overijssel,0,
+2009,1,28,Lamitan,160,5,Basilan,0,0
+2016,11,15,Athy,96,8,Kildare,0,0
+2001,3,20,Gudermes,167,9,Chechnya (Republic),0,0
+2006,9,13,Baghdad,95,10,Baghdad,14,0
+2006,7,10,Zemmouri,6,10,Boumerdès,1,0
+1980,1,22,Istanbul,209,10,Istanbul,,
+1985,5,26,Puente Piedra,159,3,Lima,1,
+2014,1,23,Abu Ghraib,95,10,Al Anbar,2,0
+2014,5,27,Peshawar,153,6,Khyber Pakhtunkhwa,1,0
+1995,10,27,Karachi,153,6,Sindh,0,
+2014,8,13,Matallah,60,10,North Sinai,1,0
+2014,7,3,Benghazi,113,10,Benghazi,0,0
+2011,8,29,Swabi,153,6,Khyber Pakhtunkhwa,0,0
+1984,8,10,Huancavelica,159,3,Huancavelica,0,
+2015,11,13,Al-Tawila,113,10,Sirte,0,0
+2004,7,8,Samarra,95,10,Saladin,14,4
+1975,10,2,Salamanca,185,8,Salamanca,0,
+1996,10,15,Unknown,45,3,Antioquia,0,
+2007,10,29,Baqubah,95,10,Diyala,0,0
+2016,7,27,Kamunuan,160,5,Davao del Norte,1,0
+1984,10,23,Santa Rosa,159,3,Lambayeque,1,
+1990,4,30,Istanbul,209,10,Istanbul,0,
+2015,5,15,Tse Atakpa,147,11,Benue,1,0
+1983,5,9,Placitas,61,2,,,
+2016,3,17,Ariel,155,10,West Bank,2,2
+1986,5,31,Aretxabaleta,185,8,Basque Country,,
+2010,11,3,Jhargam,92,6,West Bengal,1,0
+2013,9,8,Diyarbakir,209,10,Diyarbakir,0,0
+2014,11,29,Senapati district,92,6,Manipur,0,0
+1985,10,17,Medellin,45,3,Antioquia,0,
+1981,1,8,Florencia,45,3,Caqueta,2,
+2014,8,28,Vlore,5,9,Vlore,1,0
+2013,6,3,Quezon City,160,5,Metropolitan Manila,0,0
+2007,7,16,Dera Ismail Khan,153,6,North-West Frontier Province,21,1
+2014,1,1,Campo Alegre,45,3,Norte de Santander,0,0
+1994,3,10,Yarimtas,209,10,Batman,10,
+2016,10,5,Ladysmith,183,11,KwaZulu-Natal,1,0
+2013,11,4,Bunagana,229,11,North Kivu,4,0
+2016,7,25,Sheikh Zuweid,60,10,North Sinai,1,0
+1989,8,11,Quinches,159,3,Lima,4,
+2014,8,28,Al-Rahwe,110,10,Beqaa,1,
+2005,1,31,Rangae (District),205,5,Narathiwat (Province),1,0
+2012,8,9,Siraha district,141,6,Eastern,0,0
+1995,6,22,Karachi,153,6,Sindh,0,
+1987,4,14,Lima,159,3,Lima,0,
+2002,4,11,Unknown,208,10,Djerba,10,1
+2014,9,21,Sanaa,228,10,Amanat Al Asimah,0,0
+1992,7,3,Unknown,209,10,Sirnak,1,
+2015,10,8,Baghdad,95,10,Baghdad,0,0
+2014,9,11,Yaring district,205,5,Pattani,0,0
+1987,9,30,Santiago,43,3,Santiago Metropolitan,0,
+1996,1,29,Markaba,110,10,An Nabatiyah,2,
+2002,8,15,Skopje,118,9,Skopje (Municipality),0,0
+2012,11,28,Rann,147,11,Borno,5,0
+1990,1,16,Srinagar,92,6,Jammu and Kashmir,1,
+2009,3,7,Besikduzu,209,10,Trabzon,0,0
+2005,3,22,Bolan District,153,6,Balochistan,0,0
+2016,7,4,Jeddah,173,10,Makkah,1,1
+1986,12,12,Killen,603,8,Northern Ireland,1,
+2016,8,5,Imphal,92,6,Manipur,0,0
+1987,7,24,Medellin,45,3,Antioquia,0,
+1994,12,8,Dhaka,19,6,Dhaka,0,
+1988,4,9,Lima,159,3,Lima,1,
+2015,3,19,An Nawfaliyah,113,10,Sirte,12,0
+2012,11,15,Nehru Park,92,6,Jammu and Kashmir,1,0
+1970,4,5,Trona,217,1,California,0,0
+1980,1,31,Hebron,155,10,West Bank,1,
+1982,9,13,Unknown,61,2,,,

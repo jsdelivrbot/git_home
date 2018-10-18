@@ -63,13 +63,20 @@ set tabstop=2 shiftwidth=2 expandtab "Set tab to 2 spaces and replace all tabs w
 inoremap <C-c> <Esc><Esc>
 " Remove search highlighting
 nnoremap <silent><C-l> :nohl<CR><C-l>
+
+highlight LineNr cterm=None ctermfg=046 ctermbg=233
+" Highlight current line number
+highlight CursorLineNr cterm=bold ctermfg=Red ctermbg=233 gui=bold guifg=Red
+set cursorline
+" Turn off highlight current line
+highlight CursorLine cterm=none gui=none
+
 " Enable PostgreSQL syntax highlighting
 autocmd BufRead,BufNewFile *.psql set filetype=psql
 autocmd BufRead,BufNewFile *.java set filetype=java
 autocmd BufRead,BufNewFile *.scala set filetype=scala
 autocmd BufRead,BufNewFile *.go set filetype=go
 
-highlight LineNr cterm=None ctermfg=046 ctermbg=233
 highlight Statement ctermfg=002 cterm=italic,bold
 highlight Include ctermfg=002 cterm=italic,bold
 highlight Comment ctermfg=062 cterm=italic
@@ -100,4 +107,3 @@ highlight goConstants  ctermfg=039  cterm=bold
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-
